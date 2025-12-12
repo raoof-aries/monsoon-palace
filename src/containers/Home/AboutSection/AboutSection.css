@@ -1,0 +1,322 @@
+/* About Section Styles */
+
+:root {
+  /* Adjust to your actual navbar height if needed */
+  --navbar-height: 80px;
+}
+
+.about-section {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #000 0%, #0a0e27 100%);
+  padding: 8rem 5%;
+  /* IMPORTANT: allow sticky to work nicely and avoid weird clipping */
+  overflow: visible; /* was: hidden */
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  /* Let the sticky element pin near the top, not vertically centered */
+  align-items: flex-start; /* was: center */
+}
+
+/* ===== IMAGE GALLERY ===== */
+.about-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.gallery-main,
+.gallery-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-main {
+  height: 450px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  height: 220px;
+}
+
+.gallery-main img,
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-main:hover,
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-main:hover img,
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+.gallery-main:hover .image-overlay,
+.gallery-item:hover .image-overlay {
+  opacity: 0.4;
+}
+
+/* ===== TEXT CONTENT (STICKY) ===== */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInRight 0.8s ease-out;
+
+  /* KEY PART: sticky behavior */
+  position: sticky; /* makes it stick within this column */
+  top: calc(
+    var(--navbar-height) + 1.5rem
+  ); /* near top of viewport, below navbar */
+  align-self: flex-start; /* ensure it starts at top of its grid cell */
+}
+
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: fit-content;
+}
+
+.about-title {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.about-text {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  font-family: var(--font-desc);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+}
+
+/* ===== BACKGROUND DECORATION ===== */
+.about-bg-decoration {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.about-bg-decoration::before,
+.about-bg-decoration::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+}
+
+.about-bg-decoration::before {
+  top: 20%;
+  right: -200px;
+  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+.about-bg-decoration::after {
+  bottom: 20%;
+  left: -200px;
+  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+  .about-section {
+    padding: 5rem 3%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .gallery-main {
+    height: 400px;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  /* On smaller screens you usually don't want sticky */
+  .about-content {
+    position: static;
+    top: auto;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-container {
+    gap: 2rem;
+  }
+
+  .gallery-main {
+    height: 300px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 250px;
+  }
+
+  .about-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
