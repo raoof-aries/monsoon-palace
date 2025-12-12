@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 // Main Pages
 
 const HomePage = lazy(() => import("../pages/Home/Home.jsx"));
+const GalleryPage = lazy(() => import("../pages/GalleryPage/GalleryPage.jsx"));
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
     // >
     <Routes>
       <Route path="/" element={<HomePage />} exact />
+      <Route path="/gallery" element={<GalleryPage />} exact />
 
       {/* Unknown Routes */}
 
