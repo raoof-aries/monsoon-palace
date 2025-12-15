@@ -35,34 +35,22 @@ const VideoSection = () => {
         </div>
 
         {/* Full-width video */}
-        <div className="video-wrapper" onClick={handleTogglePlay}>
-          <video
-            ref={videoRef}
-            className="video-element"
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-            poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop"
-            playsInline
-            preload="metadata"
-            muted
-          />
-          {!isPlaying && (
-            <button
-              type="button"
-              className="video-play-overlay"
-              aria-label="Play property video"
-            >
-              <span className="video-play-icon">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M8 5v14l11-7-11-7z" fill="currentColor" />
-                </svg>
-              </span>
-            </button>
-          )}
+        <div className="video-wrapper">
+          <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <iframe
+              src="https://player.vimeo.com/video/1146485151?badge=0&autopause=0&autoplay=1&muted=1&loop=1&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              title="MANSOON PALACE"
+            />
+          </div>
         </div>
       </div>
 

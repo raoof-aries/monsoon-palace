@@ -1,5 +1,9 @@
 import "./AboutSection.css";
 
+import Image2 from "../../../assets/images/home/image2.webp";
+import Image5 from "../../../assets/images/home/image5.webp";
+import Image6 from "../../../assets/images/home/image6.webp";
+
 const AboutSection = () => {
   return (
     <section className="about-section">
@@ -7,25 +11,16 @@ const AboutSection = () => {
         {/* Image Gallery */}
         <div className="about-gallery">
           <div className="gallery-main">
-            <img
-              src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80"
-              alt="Resort view"
-            />
+            <img src={Image6} alt="Resort view" />
             <div className="image-overlay"></div>
           </div>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
-                alt="Pool view"
-              />
+              <img src={Image5} alt="Pool view" />
               <div className="image-overlay"></div>
             </div>
             <div className="gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80"
-                alt="Interior"
-              />
+              <img src={Image2} alt="Interior" />
               <div className="image-overlay"></div>
             </div>
           </div>

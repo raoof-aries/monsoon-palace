@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import "./HeroSection.css";
+import Image1 from "../../../assets/images/home/image1.webp";
+import Image4 from "../../../assets/images/home/image4.webp";
+import Image8 from "../../../assets/images/home/image8.webp";
+import Image7 from "../../../assets/images/home/image7.webp";
+import Image9 from "../../../assets/images/home/image9.webp";
+import Image3 from "../../../assets/images/home/image3.webp";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const images = [
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80",
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80",
-    "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920&q=80",
-  ];
+  const images = [Image1, Image4, Image8, Image7, Image9, Image3];
 
   useEffect(() => {
     const timer = setInterval(() => {
