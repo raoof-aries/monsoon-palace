@@ -33,15 +33,6 @@ const Navbar = () => {
 
         <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
           <li>
-            <a href="#suites">Suites</a>
-          </li>
-          <li>
-            <a href="#experiences">Experiences</a>
-          </li>
-          <li>
-            <a href="#dining">Dining</a>
-          </li>
-          <li>
             <a href="#gallery">Gallery</a>
           </li>
           <li>
@@ -50,11 +41,10 @@ const Navbar = () => {
           <li>
             <a href="#contact">Contact</a>
           </li>
+          <div className="navbar-actions">
+            <button className="btn-book">Book Now</button>
+          </div>
         </ul>
-
-        <div className="navbar-actions">
-          <button className="btn-book">Book Now</button>
-        </div>
       </div>
     </nav>
   );

@@ -13,3 +13,11 @@
   --muted: #cbd5e1;
   --font-desc: "Montserrat", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mt1 {
+  margin-top: 1.5rem;
+}

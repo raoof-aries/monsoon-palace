@@ -59,9 +59,14 @@ const ContactSection = () => {
               <div>
                 <h4>Location</h4>
                 <p>
-                  Hilltop Retreat, Angamāli
+                  Urooli, Palloor P.O
                   <br />
-                  Kerala, India
+                  Deshamangalam
+                  <br />
+                  Thrissur, Kerala, India
+                  <br />
+                  Pin : 679532
+                  <br />
                 </p>
               </div>
             </div>
@@ -81,11 +86,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4>Phone</h4>
-                <p>
-                  +91 1234 567 890
-                  <br />
-                  +91 0987 654 321
-                </p>
+                <p>+91 8714 804 320</p>
               </div>
             </div>
 
@@ -105,11 +106,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>
-                  reservations@monsoonpalace.com
-                  <br />
-                  info@monsoonpalace.com
-                </p>
+                <p>keralamonsoonpalace@gmail.com</p>
               </div>
             </div>
           </div>
@@ -233,7 +230,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="contactSection-inputGroup contactSection-fullWidth">
+            <div className="contactSection-inputGroup contactSection-fullWidth mt1">
               <label htmlFor="message">Special Requests</label>
               <textarea
                 id="message"

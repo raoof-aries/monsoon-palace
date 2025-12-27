@@ -1,4 +1,4 @@
-/* Gallery Page Styles */
+/* Gallery Page Styles - Enhanced */
 
 .galleryPage-wrapper {
   position: relative;
@@ -12,8 +12,8 @@
 
 /* ===== HEADER ===== */
 .galleryPage-header {
-  max-width: 800px;
-  margin: 0 auto 4rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -22,38 +22,49 @@
 .galleryPage-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15),
+    rgba(78, 205, 196, 0.15)
+  );
   backdrop-filter: blur(10px);
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
 }
 
 .galleryPage-title {
   font-family: "Sora", sans-serif;
-  font-size: clamp(48px, 6vw, 72px);
+  font-size: clamp(48px, 7vw, 84px);
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.galleryPage-titleGradient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 .galleryPage-description {
-  font-size: clamp(16px, 1.2vw, 18px);
+  font-size: clamp(17px, 1.3vw, 20px);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 600px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
   margin: 0 auto;
+  font-weight: 400;
 }
 
 /* ===== FILTERS ===== */
@@ -68,32 +79,73 @@
 }
 
 .galleryPage-filterBtn {
-  padding: 0.75rem 1.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 100px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.galleryPage-filterBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(78, 205, 196, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.galleryPage-filterBtn:hover::before {
+  opacity: 1;
+}
+
+.galleryPage-filterIcon {
+  font-size: 1.1rem;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
 }
 
 .galleryPage-filterBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 107, 107, 0.3);
   color: #fff;
-  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.15);
+}
+
+.galleryPage-filterBtn:hover .galleryPage-filterIcon {
+  filter: grayscale(0);
 }
 
 .galleryPage-filterBtn.active {
-  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-  border-color: transparent;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.25),
+    rgba(78, 205, 196, 0.15)
+  );
+  border-color: rgba(255, 107, 107, 0.4);
   color: #fff;
-  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.galleryPage-filterBtn.active .galleryPage-filterIcon {
+  filter: grayscale(0);
 }
 
 /* ===== GALLERY GRID ===== */
@@ -109,24 +161,67 @@
 
 .galleryPage-item {
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
-  height: 350px;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .galleryPage-item.large {
   grid-column: span 2;
   grid-row: span 2;
-  height: 720px;
+  height: 780px;
+}
+
+.galleryPage-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1) 0%,
+    transparent 50%,
+    rgba(78, 205, 196, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.galleryPage-item:hover::after {
+  opacity: 1;
 }
 
 .galleryPage-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.galleryPage-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.galleryPage-item:hover .galleryPage-shimmer {
+  transform: translateX(100%);
 }
 
 .galleryPage-overlay {
@@ -134,16 +229,17 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.95) 100%
   );
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 2rem;
   opacity: 0;
   transition: opacity 0.4s ease;
+  z-index: 3;
 }
 
 .galleryPage-item:hover .galleryPage-overlay {
@@ -151,29 +247,42 @@
 }
 
 .galleryPage-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 107, 107, 0.3);
+  box-shadow: 0 20px 60px rgba(255, 107, 107, 0.2),
+    0 0 0 1px rgba(255, 107, 107, 0.1);
 }
 
 .galleryPage-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
+}
+
+.galleryPage-overlayContent {
+  margin-top: auto;
 }
 
 .galleryPage-overlay h3 {
   font-family: "Sora", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.galleryPage-icon {
+.galleryPage-overlay p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.galleryPage-expandIcon {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 50%;
   display: flex;
@@ -181,45 +290,41 @@
   justify-content: center;
   color: #fff;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.galleryPage-item:hover .galleryPage-icon {
-  background: rgba(255, 107, 107, 0.9);
-  transform: rotate(90deg);
+.galleryPage-item:hover .galleryPage-expandIcon {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.9),
+    rgba(255, 142, 83, 0.9)
+  );
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
 }
 
 /* ===== LIGHTBOX ===== */
 .galleryPage-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(30px);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .galleryPage-closeBtn {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -231,34 +336,30 @@
 }
 
 .galleryPage-closeBtn:hover {
-  background: rgba(255, 107, 107, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.9),
+    rgba(255, 142, 83, 0.9)
+  );
   border-color: transparent;
-  transform: rotate(90deg);
+  box-shadow: 0 4px 30px rgba(255, 107, 107, 0.5);
 }
 
 .galleryPage-lightboxContent {
   max-width: 90vw;
   max-height: 85vh;
   position: relative;
-  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .galleryPage-lightboxContent img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+  background: #000;
 }
 
 .galleryPage-lightboxInfo {
@@ -266,35 +367,57 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
-  padding: 2rem;
-  border-radius: 0 0 12px 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  padding: 3rem 2.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  backdrop-filter: blur(10px);
 }
 
-.galleryPage-lightboxInfo h3 {
+.galleryPage-lightboxText h3 {
   font-family: "Sora", sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.galleryPage-lightboxText p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
 }
 
 .galleryPage-category {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 107, 107, 0.2);
+  display: inline-flex;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.25),
+    rgba(255, 142, 83, 0.25)
+  );
   border: 1px solid rgba(255, 107, 107, 0.4);
   border-radius: 100px;
-  color: #ff6b6b;
+  color: #ff8e53;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
 }
 
 /* ===== BACKGROUND DECORATION ===== */
 .galleryPage-bgDecoration {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
@@ -305,22 +428,22 @@
 .galleryPage-bgDecoration::after {
   content: "";
   position: absolute;
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   border-radius: 50%;
   filter: blur(150px);
-  opacity: 0.08;
+  opacity: 0.1;
 }
 
 .galleryPage-bgDecoration::before {
-  top: 10%;
+  top: -200px;
   right: -300px;
   background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
   animation: float 25s ease-in-out infinite;
 }
 
 .galleryPage-bgDecoration::after {
-  bottom: 10%;
+  bottom: -200px;
   left: -300px;
   background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
   animation: float 30s ease-in-out infinite reverse;
@@ -332,10 +455,10 @@
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(40px, -60px) scale(1.15);
+    transform: translate(60px, -80px) scale(1.2);
   }
   66% {
-    transform: translate(-30px, 30px) scale(0.85);
+    transform: translate(-50px, 50px) scale(0.9);
   }
 }
 
@@ -348,7 +471,7 @@
   .galleryPage-item.large {
     grid-column: span 1;
     grid-row: span 1;
-    height: 350px;
+    height: 380px;
   }
 }
 
@@ -367,8 +490,8 @@
   }
 
   .galleryPage-filterBtn {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
   }
 
   .galleryPage-grid {
@@ -376,7 +499,7 @@
   }
 
   .galleryPage-item {
-    height: 300px;
+    height: 320px;
   }
 
   .galleryPage-overlay {
@@ -384,18 +507,30 @@
   }
 
   .galleryPage-overlay h3 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
-  .galleryPage-icon {
-    width: 40px;
-    height: 40px;
+  .galleryPage-overlay p {
+    font-size: 0.875rem;
+  }
+
+  .galleryPage-expandIcon {
+    width: 44px;
+    height: 44px;
     top: 1.5rem;
     right: 1.5rem;
   }
 
-  .galleryPage-lightboxInfo h3 {
-    font-size: 1.5rem;
+  .galleryPage-lightboxInfo {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .galleryPage-lightboxText h3 {
+    font-size: 1.6rem;
+  }
+
+  .galleryPage-lightboxText p {
+    font-size: 0.9rem;
   }
 }
 
@@ -415,6 +550,7 @@
 
   .galleryPage-filterBtn {
     width: 100%;
+    justify-content: center;
   }
 
   .galleryPage-lightbox {
@@ -424,11 +560,13 @@
   .galleryPage-closeBtn {
     top: 1rem;
     right: 1rem;
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
   }
 
   .galleryPage-lightboxInfo {
-    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
