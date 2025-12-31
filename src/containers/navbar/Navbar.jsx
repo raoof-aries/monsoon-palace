@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
+import LogoFull from "../../assets/images/logo/logo2.png";
+import LogoWhite from "../../assets/images/logo/logo-white.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +20,11 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span className="logo-text">MP</span>
+          <img
+            src={scrolled ? LogoFull : LogoWhite}
+            className="logo-img"
+            alt="Logo"
+          />
         </div>
 
         <button
@@ -33,13 +39,13 @@ const Navbar = () => {
 
         <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
           <li>
-            <a href="#gallery">Gallery</a>
+            <a href="/gallery">Gallery</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="/#contact">Contact</a>
           </li>
           <div className="navbar-actions">
             <button className="btn-book">Book Now</button>

@@ -29,16 +29,12 @@
 
 /* Logo */
 .navbar-logo {
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
-.logo-text {
-  font-family: "Sora", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  letter-spacing: -0.5px;
-  text-transform: uppercase;
+.logo-img {
+  height: 3.5rem;
 }
 
 /* Menu Toggle (Mobile) */
