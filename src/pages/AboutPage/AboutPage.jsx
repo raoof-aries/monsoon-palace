@@ -2,6 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./AboutPage.css";
 
+import About1 from "../../assets/images/about/about1.jpg";
+import About2 from "../../assets/images/about/about2.jpg";
+import About3 from "../../assets/images/about/about3.jpg";
+import AboutMain from "../../assets/images/about/about4.jpg";
+
 const AboutPage = () => {
   const places = [
     { name: "Mulla Kadavu Pallam View Point", icon: "🏞️" },
@@ -77,13 +82,10 @@ const AboutPage = () => {
         <motion.div
           className="aboutPage-heroImage"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
+          animate={{ opacity: 0.35 }}
           transition={{ duration: 1.5 }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80"
-            alt="Desamangalam Village"
-          />
+          <img src={AboutMain} alt="Desamangalam Village" />
           <div className="aboutPage-imageOverlay"></div>
         </motion.div>
       </section>
@@ -137,10 +139,7 @@ const AboutPage = () => {
               </motion.div>
             </div>
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
-              <img
-                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80"
-                alt="Geography"
-              />
+              <img src={About3} alt="Geography" />
               <div className="aboutPage-imageOverlay"></div>
             </motion.div>
           </motion.div>
@@ -158,10 +157,7 @@ const AboutPage = () => {
             variants={staggerContainer}
           >
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
-              <img
-                src="https://images.unsplash.com/photo-1583223965949-c7b29d45a0b4?w=800&q=80"
-                alt="History"
-              />
+              <img src={About2} alt="History" />
               <div className="aboutPage-imageOverlay"></div>
             </motion.div>
             <div className="aboutPage-textContent">
@@ -263,10 +259,7 @@ const AboutPage = () => {
               </motion.div>
             </div>
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
-              <img
-                src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80"
-                alt="Art and Culture"
-              />
+              <img src={About1} alt="Art and Culture" />
               <div className="aboutPage-imageOverlay"></div>
             </motion.div>
           </motion.div>

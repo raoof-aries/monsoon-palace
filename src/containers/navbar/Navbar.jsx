@@ -19,13 +19,13 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        <div className="navbar-logo">
+        <a href="/#contact" className="navbar-logo">
           <img
             src={scrolled ? LogoFull : LogoWhite}
             className="logo-img"
             alt="Logo"
           />
-        </div>
+        </a>
 
         <button
           className={`menu-toggle ${menuOpen ? "open" : ""}`}
@@ -47,9 +47,9 @@ const Navbar = () => {
           <li>
             <a href="/#contact">Contact</a>
           </li>
-          <div className="navbar-actions">
+          <a href="/#contact" className="navbar-actions">
             <button className="btn-book">Book Now</button>
-          </div>
+          </a>
         </ul>
       </div>
     </nav>
