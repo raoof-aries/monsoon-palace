@@ -1,0 +1,296 @@
+/* Booking Page Styles */
+
+:root {
+  --navbar-height: 80px;
+}
+
+.bookingPage-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  padding: 8rem 5%;
+  overflow: visible;
+  font-family: "Inter", sans-serif;
+}
+
+.bookingPage-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.bookingPage-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bookingPage-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.bookingPage-title {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.bookingPage-gradient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.bookingPage-description {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bookingPage-form {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.bookingPage-formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bookingPage-inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bookingPage-fullWidth {
+  grid-column: 1 / -1;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.bookingPage-inputGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.bookingPage-inputGroup input,
+.bookingPage-inputGroup select,
+.bookingPage-inputGroup textarea {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.bookingPage-inputGroup input:focus,
+.bookingPage-inputGroup select:focus,
+.bookingPage-inputGroup textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 107, 107, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.bookingPage-inputGroup input::placeholder,
+.bookingPage-inputGroup textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bookingPage-inputGroup select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  padding-right: 3rem;
+}
+
+.bookingPage-inputGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button */
+.bookingPage-submitBtn {
+  width: 100%;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+  margin-top: 2rem;
+}
+
+.bookingPage-submitBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.bookingPage-submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+.bookingPage-submitBtn:hover::before {
+  transform: translateX(100%);
+}
+
+.bookingPage-submitBtn:active {
+  transform: translateY(-1px);
+}
+
+/* Background Decoration */
+.bookingPage-bgDecoration {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bookingPage-bgDecoration::before,
+.bookingPage-bgDecoration::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.1;
+}
+
+.bookingPage-bgDecoration::before {
+  top: 10%;
+  left: -200px;
+  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  animation: float 25s ease-in-out infinite;
+}
+
+.bookingPage-bgDecoration::after {
+  bottom: 10%;
+  right: -200px;
+  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite reverse;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .bookingPage-wrapper {
+    padding: 5rem 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookingPage-wrapper {
+    padding: 5rem 3%;
+  }
+
+  .bookingPage-form {
+    padding: 2rem;
+  }
+
+  .bookingPage-formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bookingPage-wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .bookingPage-form {
+    padding: 1.5rem;
+  }
+
+  .bookingPage-header {
+    margin-bottom: 3rem;
+  }
+}
+
