@@ -2,109 +2,46 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./GalleryPage.css";
 
+import Gallery1 from "../../assets/images/gallery/gallery1.webp";
+import Gallery2 from "../../assets/images/gallery/gallery2.webp";
+import Gallery3 from "../../assets/images/gallery/gallery3.webp";
+import Gallery4 from "../../assets/images/gallery/gallery4.webp";
+import Gallery5 from "../../assets/images/gallery/gallery5.webp";
+import Gallery6 from "../../assets/images/gallery/gallery6.webp";
+import Gallery7 from "../../assets/images/gallery/gallery7.webp";
+import Gallery8 from "../../assets/images/gallery/gallery8.webp";
+import Gallery9 from "../../assets/images/gallery/gallery9.webp";
+import Gallery10 from "../../assets/images/gallery/gallery10.webp";
+import Gallery11 from "../../assets/images/gallery/gallery11.webp";
+import Gallery12 from "../../assets/images/gallery/gallery12.webp";
+import Gallery13 from "../../assets/images/gallery/gallery13.webp";
+import Gallery14 from "../../assets/images/gallery/gallery14.webp";
+import Gallery15 from "../../assets/images/gallery/gallery15.webp";
+import Gallery16 from "../../assets/images/gallery/gallery16.webp";
+import Gallery17 from "../../assets/images/gallery/gallery17.webp";
+
 const GalleryPage = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const categories = [
-    { id: "all", label: "All", icon: "✨" },
-    { id: "suites", label: "Suites", icon: "🏛️" },
-    { id: "dining", label: "Dining", icon: "🍽️" },
-    { id: "amenities", label: "Amenities", icon: "🌊" },
-    { id: "views", label: "Views", icon: "🌄" },
-  ];
-
   const galleryImages = [
-    {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80",
-      category: "suites",
-      title: "Luxury Suite",
-      description: "Elegantly designed with premium furnishings",
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
-      category: "amenities",
-      title: "Infinity Pool",
-      description: "Overlooking breathtaking landscapes",
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
-      category: "suites",
-      title: "Premium Interior",
-      description: "Modern comfort meets traditional aesthetics",
-    },
-    {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-      category: "views",
-      title: "Mountain View",
-      description: "Panoramic vistas of majestic peaks",
-    },
-    {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-      category: "dining",
-      title: "Fine Dining",
-      description: "Culinary excellence in every dish",
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
-      category: "amenities",
-      title: "Spa & Wellness",
-      description: "Rejuvenate your mind and body",
-    },
-    {
-      id: 7,
-      url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80",
-      category: "suites",
-      title: "Ocean View Suite",
-      description: "Wake up to stunning seascapes",
-    },
-    {
-      id: 8,
-      url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
-      category: "views",
-      title: "Sunset Terrace",
-      description: "Golden hour at its finest",
-    },
-    {
-      id: 9,
-      url: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80",
-      category: "dining",
-      title: "Rooftop Restaurant",
-      description: "Dining under the stars",
-    },
-    {
-      id: 10,
-      url: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80",
-      category: "amenities",
-      title: "Outdoor Lounge",
-      description: "Perfect spot for relaxation",
-    },
-    {
-      id: 11,
-      url: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80",
-      category: "suites",
-      title: "Master Bedroom",
-      description: "Spacious and serene sanctuary",
-    },
-    {
-      id: 12,
-      url: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
-      category: "views",
-      title: "Garden View",
-      description: "Lush greenery all around",
-    },
+    { id: 1, src: Gallery1, alt: "Gallery 1" },
+    { id: 2, src: Gallery2, alt: "Gallery 2" },
+    { id: 3, src: Gallery3, alt: "Gallery 3" },
+    { id: 4, src: Gallery4, alt: "Gallery 4" },
+    { id: 5, src: Gallery5, alt: "Gallery 5" },
+    { id: 6, src: Gallery6, alt: "Gallery 6" },
+    { id: 7, src: Gallery7, alt: "Gallery 7" },
+    { id: 8, src: Gallery8, alt: "Gallery 8" },
+    { id: 9, src: Gallery9, alt: "Gallery 9" },
+    { id: 10, src: Gallery10, alt: "Gallery 10" },
+    { id: 11, src: Gallery11, alt: "Gallery 11" },
+    { id: 12, src: Gallery12, alt: "Gallery 12" },
+    { id: 13, src: Gallery13, alt: "Gallery 13" },
+    { id: 14, src: Gallery14, alt: "Gallery 14" },
+    { id: 15, src: Gallery15, alt: "Gallery 15" },
+    { id: 16, src: Gallery16, alt: "Gallery 16" },
+    { id: 17, src: Gallery17, alt: "Gallery 17" },
   ];
-
-  const filteredImages =
-    activeFilter === "all"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeFilter);
 
   // Animation variants
   const fadeInUp = {
@@ -182,7 +119,7 @@ const GalleryPage = () => {
       animate="visible"
       variants={staggerContainer}
     >
-      {/* Header */}
+      {/* (Optional) Keep a small header — remove this block if you want nothing at top */}
       <motion.div className="galleryPage-header" variants={staggerContainer}>
         <motion.span className="galleryPage-badge" variants={fadeInUp}>
           Explore
@@ -196,29 +133,10 @@ const GalleryPage = () => {
         </motion.p>
       </motion.div>
 
-      {/* Filter Tabs */}
-      <motion.div className="galleryPage-filters" variants={staggerContainer}>
-        {categories.map((cat) => (
-          <motion.button
-            key={cat.id}
-            className={`galleryPage-filterBtn ${
-              activeFilter === cat.id ? "active" : ""
-            }`}
-            onClick={() => setActiveFilter(cat.id)}
-            variants={fadeInUp}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="galleryPage-filterIcon">{cat.icon}</span>
-            {cat.label}
-          </motion.button>
-        ))}
-      </motion.div>
-
       {/* Gallery Grid */}
       <motion.div className="galleryPage-grid" layout>
         <AnimatePresence mode="popLayout">
-          {filteredImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
               className={`galleryPage-item ${index % 7 === 0 ? "large" : ""}`}
@@ -235,8 +153,8 @@ const GalleryPage = () => {
               }}
             >
               <motion.img
-                src={image.url}
-                alt={image.title}
+                src={image.src}
+                alt={image.alt}
                 layoutId={`gallery-img-${image.id}`}
               />
               <motion.div
@@ -245,10 +163,6 @@ const GalleryPage = () => {
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="galleryPage-overlayContent">
-                  <h3>{image.title}</h3>
-                  <p>{image.description}</p>
-                </div>
                 <motion.div
                   className="galleryPage-expandIcon"
                   whileHover={{ scale: 1.2, rotate: 90 }}
@@ -319,26 +233,12 @@ const GalleryPage = () => {
               exit="exit"
             >
               <motion.img
-                src={selectedImage.url}
-                alt={selectedImage.title}
+                src={selectedImage.src}
+                alt={selectedImage.alt}
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               />
-              <motion.div
-                className="galleryPage-lightboxInfo"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                <div className="galleryPage-lightboxText">
-                  <h3>{selectedImage.title}</h3>
-                  <p>{selectedImage.description}</p>
-                </div>
-                <span className="galleryPage-category">
-                  {selectedImage.category}
-                </span>
-              </motion.div>
             </motion.div>
           </motion.div>
         )}
