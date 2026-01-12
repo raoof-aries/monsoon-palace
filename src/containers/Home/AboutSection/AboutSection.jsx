@@ -3,7 +3,7 @@ import "./AboutSection.css";
 
 import Image2 from "../../../assets/images/home/image2.webp";
 import Image5 from "../../../assets/images/home/image5.webp";
-import Image6 from "../../../assets/images/home/image6.webp";
+import Image6 from "../../../assets/images/gallery/gallery16.webp";
 
 const containerVariants = {
   hidden: {},

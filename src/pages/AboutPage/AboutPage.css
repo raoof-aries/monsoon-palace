@@ -10,6 +10,8 @@
   background: #000;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  /* Ensure wrapper doesn't interfere with sticky positioning */
+  overflow-y: visible;
 }
 
 /* ===== HERO SECTION ===== */
@@ -96,11 +98,68 @@
   );
 }
 
+/* ===== QUICK FACTS ===== */
+.aboutPage-quickFacts {
+  position: relative;
+  padding: 4rem 5%;
+  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aboutPage-factsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutPage-factCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.aboutPage-factCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 107, 107, 0.3);
+  transform: translateY(-5px);
+}
+
+.aboutPage-factIcon {
+  font-size: 2.5rem;
+  min-width: 50px;
+}
+
+.aboutPage-factContent h4 {
+  font-family: "Sora", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.aboutPage-factContent p {
+  font-family: "Sora", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
 /* ===== SECTIONS ===== */
 .aboutPage-section {
   position: relative;
   padding: 6rem 5%;
   background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  /* IMPORTANT: allow sticky to work nicely and avoid weird clipping */
   overflow: visible;
 }
 
@@ -119,7 +178,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
+  /* Let the sticky element pin near the top, not vertically centered */
   align-items: flex-start;
+  /* Ensure grid doesn't interfere with sticky */
+  position: relative;
 }
 
 .aboutPage-contentReverse {
@@ -130,6 +192,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  /* Text content scrolls normally - not sticky */
+  position: relative;
+  align-self: flex-start;
 }
 
 .aboutPage-sectionBadge {
@@ -170,12 +235,15 @@
 }
 
 .aboutPage-imageContent {
+  /* KEY PART: sticky behavior - images stay fixed while text scrolls */
+  position: -webkit-sticky; /* Safari support */
   position: sticky;
   top: calc(var(--navbar-height) + 1.5rem);
   align-self: flex-start;
   border-radius: 24px;
   overflow: hidden;
   height: 500px;
+  /* Ensure sticky works - remove will-change as it can interfere */
 }
 
 .aboutPage-imageContent img {
@@ -232,10 +300,52 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* ===== RIVER FEATURES ===== */
+.aboutPage-riverFeatures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.aboutPage-riverFeature {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.aboutPage-riverFeature:hover {
+  background: rgba(78, 205, 196, 0.1);
+  border-color: rgba(78, 205, 196, 0.3);
+  transform: translateY(-3px);
+}
+
+.aboutPage-featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.aboutPage-riverFeature h4 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.aboutPage-riverFeature p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
 /* ===== HIGHLIGHTS ===== */
 .aboutPage-highlights {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -271,6 +381,49 @@
 .aboutPage-highlight p {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* ===== FILMS GRID ===== */
+.aboutPage-filmsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.aboutPage-filmCard {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.aboutPage-filmCard:hover {
+  background: rgba(255, 230, 109, 0.1);
+  border-color: rgba(255, 230, 109, 0.3);
+  transform: translateY(-3px);
+}
+
+.aboutPage-filmIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.aboutPage-filmCard h4 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.aboutPage-filmCard p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
 }
 
 /* ===== ART FORMS ===== */
@@ -311,6 +464,66 @@
   font-weight: 600;
   color: #fff;
   text-align: center;
+}
+
+/* ===== INSTITUTIONS SECTION ===== */
+.aboutPage-institutionsHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.aboutPage-institutionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.aboutPage-institutionCard {
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aboutPage-institutionCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(78, 205, 196, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(78, 205, 196, 0.15);
+}
+
+.aboutPage-institutionIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.aboutPage-institutionCard h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.aboutPage-institutionYear {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(78, 205, 196, 0.9);
+  background: rgba(78, 205, 196, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.aboutPage-institutionCard p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
 }
 
 /* ===== PLACES TO VISIT ===== */
@@ -410,6 +623,49 @@
   }
 }
 
+/* ===== DESKTOP STICKY BEHAVIOR ===== */
+@media (min-width: 1025px) {
+  /* Ensure all sections with images have sticky behavior */
+  .aboutPage-section {
+    /* Ensure sections work as sticky containers on desktop */
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .aboutPage-container {
+    /* Container should not interfere with sticky */
+    position: relative;
+    overflow: visible;
+  }
+
+  /* All content grids with side-by-side layout */
+  .aboutPage-content,
+  .aboutPage-contentReverse {
+    /* Ensure grid supports sticky positioning */
+    align-items: flex-start !important;
+    position: relative !important;
+    display: grid !important;
+    /* Prevent transforms from breaking sticky */
+    transform: none !important;
+  }
+
+  /* ALL image content in sections should be sticky */
+  .aboutPage-section .aboutPage-imageContent {
+    /* Force sticky on desktop - images stay fixed while text scrolls */
+    position: -webkit-sticky !important; /* Safari support */
+    position: sticky !important;
+    top: calc(var(--navbar-height) + 1.5rem) !important;
+    align-self: flex-start !important;
+    height: 500px;
+  }
+
+  /* Text content should scroll normally */
+  .aboutPage-section .aboutPage-textContent {
+    position: relative !important;
+    align-self: flex-start;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .aboutPage-content,
@@ -419,6 +675,7 @@
   }
 
   .aboutPage-imageContent {
+    /* On smaller screens, disable sticky behavior */
     position: relative;
     top: 0;
     height: 400px;
@@ -427,13 +684,19 @@
 
   .aboutPage-textContent {
     order: 2;
+    position: relative;
   }
 
-  .aboutPage-stats {
+  .aboutPage-stats,
+  .aboutPage-riverFeatures {
     grid-template-columns: 1fr;
   }
 
   .aboutPage-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutPage-filmsGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -442,6 +705,15 @@
   .aboutPage-hero {
     min-height: 70vh;
     padding: 6rem 3% 4rem;
+  }
+
+  .aboutPage-quickFacts {
+    padding: 3rem 3%;
+  }
+
+  .aboutPage-factsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .aboutPage-section,
@@ -461,11 +733,19 @@
     flex: none;
     width: 100%;
   }
+
+  .aboutPage-institutionsGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
   .aboutPage-hero {
     padding: 5rem 1.5rem 3rem;
+  }
+
+  .aboutPage-quickFacts {
+    padding: 2rem 1.5rem;
   }
 
   .aboutPage-section,
@@ -481,7 +761,13 @@
     height: 300px;
   }
 
-  .aboutPage-placesHeader {
+  .aboutPage-placesHeader,
+  .aboutPage-institutionsHeader {
     margin-bottom: 2rem;
+  }
+
+  .aboutPage-factCard {
+    flex-direction: column;
+    text-align: center;
   }
 }
