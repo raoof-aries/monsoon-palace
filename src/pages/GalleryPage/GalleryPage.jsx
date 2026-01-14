@@ -11,21 +11,23 @@ import Gallery6 from "../../assets/images/gallery/gallery6.webp";
 import Gallery7 from "../../assets/images/gallery/gallery7.webp";
 import Gallery8 from "../../assets/images/gallery/gallery8.webp";
 import Gallery9 from "../../assets/images/gallery/gallery9.webp";
-import Gallery10 from "../../assets/images/gallery/gallery10.webp";
+// import Gallery10 from "../../assets/images/gallery/gallery10.webp";
 import Gallery11 from "../../assets/images/gallery/gallery11.webp";
 import Gallery12 from "../../assets/images/gallery/gallery12.webp";
 import Gallery13 from "../../assets/images/gallery/gallery13.webp";
-import Gallery14 from "../../assets/images/gallery/gallery14.webp";
-import Gallery15 from "../../assets/images/gallery/gallery15.webp";
+// import Gallery14 from "../../assets/images/gallery/gallery14.webp";
+// import Gallery15 from "../../assets/images/gallery/gallery15.webp";
 import Gallery16 from "../../assets/images/gallery/gallery16.webp";
 import Gallery17 from "../../assets/images/gallery/gallery17.webp";
+import Gallery18 from "../../assets/images/gallery/gallery18.webp";
+import Gallery19 from "../../assets/images/gallery/gallery19.webp";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryImages = [
     { id: 1, src: Gallery1, alt: "Gallery 1" },
-    { id: 2, src: Gallery2, alt: "Gallery 2" },
+    // { id: 2, src: Gallery2, alt: "Gallery 2" },
     { id: 3, src: Gallery3, alt: "Gallery 3" },
     { id: 4, src: Gallery4, alt: "Gallery 4" },
     { id: 5, src: Gallery5, alt: "Gallery 5" },
@@ -33,12 +35,11 @@ const GalleryPage = () => {
     { id: 7, src: Gallery7, alt: "Gallery 7" },
     { id: 8, src: Gallery8, alt: "Gallery 8" },
     { id: 9, src: Gallery9, alt: "Gallery 9" },
-    { id: 10, src: Gallery10, alt: "Gallery 10" },
     { id: 11, src: Gallery11, alt: "Gallery 11" },
     { id: 12, src: Gallery12, alt: "Gallery 12" },
     { id: 13, src: Gallery13, alt: "Gallery 13" },
-    { id: 14, src: Gallery14, alt: "Gallery 14" },
-    { id: 15, src: Gallery15, alt: "Gallery 15" },
+    { id: 14, src: Gallery18, alt: "Gallery 18" },
+    { id: 15, src: Gallery19, alt: "Gallery 19" },
     { id: 16, src: Gallery16, alt: "Gallery 16" },
     { id: 17, src: Gallery17, alt: "Gallery 17" },
   ];

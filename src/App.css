@@ -21,3 +21,7 @@ html {
 .mt1 {
   margin-top: 1.5rem;
 }
+
+a {
+  all: unset;
+}

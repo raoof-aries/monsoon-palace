@@ -138,7 +138,8 @@ const AboutSection = () => {
             elegance.
           </motion.p>
 
-          <motion.button
+          <motion.a
+            href="/about"
             className="btn btn-primary"
             variants={{
               hidden: { opacity: 0, y: 12, scale: 0.995 },
@@ -154,7 +155,7 @@ const AboutSection = () => {
             // keep button behavior same otherwise
           >
             Discover More
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
 

@@ -6,6 +6,8 @@ import About1 from "../../assets/images/about/about1.jpg";
 import About2 from "../../assets/images/about/about2.jpg";
 import About3 from "../../assets/images/about/about3.jpg";
 import AboutMain from "../../assets/images/about/about4.jpg";
+import About5 from "../../assets/images/about/about5.webp";
+import About6 from "../../assets/images/about/about6.jpg";
 // Add these new images to your assets folder:
 // about5.jpg - Bharathapuzha river view
 // about6.jpg - Malayalam cinema/cultural scene
@@ -137,7 +139,7 @@ const AboutPage = () => {
       </section>
 
       {/* Quick Facts */}
-      <section className="aboutPage-quickFacts">
+      {/* <section className="aboutPage-quickFacts">
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-factsGrid"
@@ -161,7 +163,7 @@ const AboutPage = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Geography Section */}
       <section className="aboutPage-section">
@@ -230,7 +232,7 @@ const AboutPage = () => {
             variants={staggerContainer}
           >
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
-              <img src={About1} alt="Bharathapuzha River" />
+              <img src={About6} alt="Bharathapuzha River" />
               <div className="aboutPage-imageOverlay"></div>
             </motion.div>
             <div className="aboutPage-textContent">
@@ -368,7 +370,7 @@ const AboutPage = () => {
             variants={staggerContainer}
           >
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
-              <img src={About3} alt="Cinema Heritage" />
+              <img src={About5} alt="Cinema Heritage" />
               <div className="aboutPage-imageOverlay"></div>
             </motion.div>
             <div className="aboutPage-textContent">

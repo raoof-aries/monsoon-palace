@@ -62,8 +62,12 @@ const HeroSection = () => {
               role="group"
               aria-label="hero actions"
             >
-              <button className="btn btn-primary">Book your suite</button>
-              <button className="btn btn-secondary">Explore gallery</button>
+              <button className="btn btn-primary">
+                <a href="/booking">Book your suite</a>
+              </button>
+              <button className="btn btn-secondary">
+                <a href="/gallery">Explore gallery</a>
+              </button>
             </div>
           </div>
 
