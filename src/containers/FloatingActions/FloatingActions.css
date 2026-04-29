@@ -17,6 +17,7 @@
   justify-content: center;
   color: #fff;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
   transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
@@ -39,7 +40,10 @@
 }
 
 .floatingActions-button--call {
-  background: linear-gradient(135deg, #ff7f66 0%, #d94c37 100%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 54%),
+    linear-gradient(135deg, var(--cta-deep) 0%, var(--cta-main) 55%, var(--cta-light) 100%);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28), 0 8px 22px var(--cta-shadow);
 }
 
 .floatingActions-button--whatsapp {

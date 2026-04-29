@@ -44,8 +44,6 @@ const HeroSection = () => {
         <div className="hero-inner">
           {/* LEFT SIDE — MAIN TEXT (full content area) */}
           <div className="hero-left">
-            <span className="hero-subtitle">Boutique Hilltop Retreat</span>
-
             <h1 className="hero-title" data-text="Monsoon Palace">
               Monsoon Palace
             </h1>

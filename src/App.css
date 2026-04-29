@@ -25,6 +25,11 @@
   --secondary: #e5ad74;
   --accent: #f0d2a0;
   --accent-text: #e5ad74;
+  --cta-deep: #b66f49;
+  --cta-main: #d9895f;
+  --cta-light: #e5ad74;
+  --cta-border: rgba(240, 210, 160, 0.36);
+  --cta-shadow: rgba(217, 137, 95, 0.24);
   --section-separator: linear-gradient(
     90deg,
     transparent 0%,
