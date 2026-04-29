@@ -155,6 +155,17 @@
   color: rgba(255, 255, 255, 0.65);
 }
 
+.contactSection-detail p a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.contactSection-detail p a:hover,
+.contactSection-detail p a:focus-visible {
+  color: #ff7f66;
+}
+
 /* Social Links */
 .contactSection-social {
   display: flex;

@@ -65,8 +65,14 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4>Phone</h4>
-                  <p>+91 8714 804 320</p>
+                  <h4>Contact</h4>
+                  <p>
+                    Basil Jose -{" "}
+                    <a href="tel:+919747690291">+91 97476 90291</a>
+                    <br />
+                    Akhil (UAE) -{" "}
+                    <a href="tel:+971569357865">+971 56 935 7865</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -88,7 +94,15 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>keralamonsoonpalace@gmail.com</p>
+                <p>
+                  <a href="mailto:contact@keralamonsoonpalace.com">
+                    contact@keralamonsoonpalace.com
+                  </a>
+                  <br />
+                  <a href="mailto:int.projects2020@gmail.com">
+                    int.projects2020@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
 

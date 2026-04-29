@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navbar, Footer } from "./containers";
+import { Navbar, Footer, FloatingActions } from "./containers";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <>
       <Navbar />
       <AppRoutes />
+      <FloatingActions />
       <Footer />
     </>
   );
