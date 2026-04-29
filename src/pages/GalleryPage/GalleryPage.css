@@ -4,10 +4,10 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, #000 0%, #0a0e27 50%, #000 100%);
+  background: transparent;
   padding: 8rem 5% 6rem;
   overflow: visible;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
 }
 
 /* ===== HEADER ===== */
@@ -30,8 +30,8 @@
   color: #fff;
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.15),
-    rgba(78, 205, 196, 0.15)
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.04)
   );
   backdrop-filter: blur(10px);
   border-radius: 100px;
@@ -41,20 +41,17 @@
 }
 
 .galleryPage-title {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(48px, 7vw, 84px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
   color: #fff;
   margin-bottom: 1.5rem;
 }
 
 .galleryPage-titleGradient {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-text);
   display: inline-block;
 }
 
@@ -93,7 +90,7 @@
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
   position: relative;
   overflow: hidden;
 }
@@ -104,8 +101,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.1),
-    rgba(78, 205, 196, 0.1)
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
   );
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -136,7 +133,7 @@
   background: linear-gradient(
     135deg,
     rgba(255, 107, 107, 0.25),
-    rgba(78, 205, 196, 0.15)
+    rgba(217, 137, 95, 0.16)
   );
   border-color: rgba(255, 107, 107, 0.4);
   color: #fff;
@@ -184,7 +181,7 @@
     135deg,
     rgba(255, 107, 107, 0.1) 0%,
     transparent 50%,
-    rgba(78, 205, 196, 0.1) 100%
+    rgba(255, 255, 255, 0.06) 100%
   );
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -261,7 +258,7 @@
 }
 
 .galleryPage-overlay h3 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
@@ -388,7 +385,7 @@
 }
 
 .galleryPage-lightboxText h3 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 700;
   color: #fff;
@@ -412,7 +409,7 @@
   );
   border: 1px solid rgba(255, 107, 107, 0.4);
   border-radius: 100px;
-  color: #ff8e53;
+  color: #e5ad74;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -438,20 +435,20 @@
   height: 900px;
   border-radius: 50%;
   filter: blur(150px);
-  opacity: 0.1;
+  opacity: 0.035;
 }
 
 .galleryPage-bgDecoration::before {
   top: -200px;
   right: -300px;
-  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.09) 0%, transparent 70%);
   animation: float 25s ease-in-out infinite;
 }
 
 .galleryPage-bgDecoration::after {
   bottom: -200px;
   left: -300px;
-  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
   animation: float 30s ease-in-out infinite reverse;
 }
 

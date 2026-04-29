@@ -7,8 +7,8 @@
 .aboutPage-wrapper {
   position: relative;
   width: 100%;
-  background: #000;
-  font-family: "Inter", sans-serif;
+  background: transparent;
+  font-family: var(--font-main);
   overflow-x: hidden;
   /* Ensure wrapper doesn't interfere with sticky positioning */
   overflow-y: visible;
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   padding: 8rem 5% 4rem;
-  background: linear-gradient(180deg, #000 0%, #0a0e27 100%);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -50,20 +50,17 @@
 }
 
 .aboutPage-title {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(48px, 7vw, 96px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
   color: #fff;
   margin-bottom: 1.5rem;
 }
 
 .aboutPage-gradient {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-text);
   display: inline-block;
 }
 
@@ -102,7 +99,7 @@
 .aboutPage-quickFacts {
   position: relative;
   padding: 4rem 5%;
-  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -138,7 +135,7 @@
 }
 
 .aboutPage-factContent h4 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
@@ -148,7 +145,7 @@
 }
 
 .aboutPage-factContent p {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
@@ -158,13 +155,13 @@
 .aboutPage-section {
   position: relative;
   padding: 6rem 5%;
-  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  background: transparent;
   /* IMPORTANT: allow sticky to work nicely and avoid weird clipping */
   overflow: visible;
 }
 
 .aboutPage-sectionAlt {
-  background: linear-gradient(180deg, #000 0%, #0a0e27 100%);
+  background: transparent;
 }
 
 .aboutPage-container {
@@ -214,11 +211,11 @@
 }
 
 .aboutPage-sectionTitle {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
   color: #fff;
 }
 
@@ -288,7 +285,7 @@
 }
 
 .aboutPage-stat h4 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
@@ -319,8 +316,8 @@
 }
 
 .aboutPage-riverFeature:hover {
-  background: rgba(78, 205, 196, 0.1);
-  border-color: rgba(78, 205, 196, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-3px);
 }
 
@@ -330,7 +327,7 @@
 }
 
 .aboutPage-riverFeature h4 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
@@ -371,7 +368,7 @@
 }
 
 .aboutPage-highlight h4 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
@@ -413,7 +410,7 @@
 }
 
 .aboutPage-filmCard h4 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
@@ -490,9 +487,9 @@
 
 .aboutPage-institutionCard:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(78, 205, 196, 0.3);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(78, 205, 196, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 .aboutPage-institutionIcon {
@@ -501,7 +498,7 @@
 }
 
 .aboutPage-institutionCard h3 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
@@ -513,8 +510,8 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(78, 205, 196, 0.9);
-  background: rgba(78, 205, 196, 0.1);
+  color: var(--accent-text);
+  background: rgba(255, 255, 255, 0.06);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   margin-bottom: 1rem;
@@ -530,7 +527,7 @@
 .aboutPage-places {
   position: relative;
   padding: 6rem 5%;
-  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  background: transparent;
   overflow: visible;
 }
 
@@ -569,7 +566,7 @@
 }
 
 .aboutPage-placeCard h3 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
@@ -593,20 +590,20 @@
   height: 800px;
   border-radius: 50%;
   filter: blur(150px);
-  opacity: 0.08;
+  opacity: 0.035;
 }
 
 .aboutPage-bgDecoration::before {
   top: 20%;
   right: -300px;
-  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.09) 0%, transparent 70%);
   animation: float 25s ease-in-out infinite;
 }
 
 .aboutPage-bgDecoration::after {
   bottom: 20%;
   left: -300px;
-  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
   animation: float 30s ease-in-out infinite reverse;
 }
 

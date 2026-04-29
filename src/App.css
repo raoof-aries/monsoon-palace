@@ -1,21 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-main);
 }
 
 :root {
-  --surface: #0b1021;
+  --surface: #080808;
+  --surface-deep: #020202;
+  --surface-soft: #111111;
+  --page-gradient-down:
+    linear-gradient(180deg, transparent 0%, rgba(18, 18, 18, 0.74) 48%, transparent 100%);
+  --page-gradient-up:
+    linear-gradient(180deg, transparent 0%, rgba(17, 17, 17, 0.68) 52%, transparent 100%);
+  --page-gradient-center:
+    linear-gradient(180deg, transparent 0%, rgba(19, 19, 19, 0.72) 46%, transparent 100%);
   --muted: #cbd5e1;
-  --font-desc: "Montserrat", sans-serif;
+  --font-main: "Outfit", sans-serif;
+  --font-heading: "Marcellus", serif;
+  --font-desc: "Outfit", sans-serif;
+  --primary: #d9895f;
+  --secondary: #e5ad74;
+  --accent: #f0d2a0;
+  --accent-text: #e5ad74;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #030303;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(255, 255, 255, 0.018) 0%, transparent 30%),
+    radial-gradient(circle at 86% 46%, rgba(255, 255, 255, 0.014) 0%, transparent 32%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.01) 0%, transparent 36%),
+    linear-gradient(180deg, #010101 0%, #0a0a0a 36%, #030303 68%, #0d0d0d 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 .mt1 {

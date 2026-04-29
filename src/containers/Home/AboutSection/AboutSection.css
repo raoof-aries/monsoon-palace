@@ -8,7 +8,7 @@
 .about-section {
   position: relative;
   width: 100%;
-  background: linear-gradient(180deg, #000 0%, #0a0e27 100%);
+  background: transparent;
   padding: 8rem 5%;
   /* IMPORTANT: allow sticky to work nicely and avoid weird clipping */
   overflow: visible; /* was: hidden */
@@ -124,19 +124,16 @@
 }
 
 .about-title {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
   color: #fff;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-text);
   display: inline-block;
 }
 
@@ -183,14 +180,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  background: linear-gradient(135deg, #c97551, #e5ad74);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 10px 30px rgba(217, 137, 95, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+  box-shadow: 0 15px 40px rgba(217, 137, 95, 0.45);
 }
 
 /* ===== BACKGROUND DECORATION ===== */
@@ -210,20 +207,20 @@
   height: 600px;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.12;
+  opacity: 0.04;
 }
 
 .about-bg-decoration::before {
   top: 20%;
   right: -200px;
-  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
   animation: float 20s ease-in-out infinite;
 }
 
 .about-bg-decoration::after {
   bottom: 20%;
   left: -200px;
-  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
   animation: float 25s ease-in-out infinite reverse;
 }
 

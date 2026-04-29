@@ -8,10 +8,10 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0e27 0%, #000 100%);
+  background: transparent;
   padding: 8rem 5%;
   overflow: visible;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
 }
 
 .bookingPage-container {
@@ -56,20 +56,17 @@
 }
 
 .bookingPage-title {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
   color: #fff;
   margin-bottom: 1rem;
 }
 
 .bookingPage-gradient {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #ffe66d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-text);
   display: inline-block;
 }
 
@@ -128,7 +125,7 @@
   border-radius: 12px;
   color: #fff;
   font-size: 0.95rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-main);
   transition: all 0.3s ease;
 }
 
@@ -164,7 +161,7 @@
 .bookingPage-submitBtn {
   width: 100%;
   padding: 1.125rem 2rem;
-  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  background: linear-gradient(135deg, #c97551, #e5ad74);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 600;
@@ -228,20 +225,20 @@
   height: 600px;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.1;
+  opacity: 0.035;
 }
 
 .bookingPage-bgDecoration::before {
   top: 10%;
   left: -200px;
-  background: radial-gradient(circle, #4ecdc4 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
   animation: float 25s ease-in-out infinite;
 }
 
 .bookingPage-bgDecoration::after {
   bottom: 10%;
   right: -200px;
-  background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.09) 0%, transparent 70%);
   animation: float 20s ease-in-out infinite reverse;
 }
 
