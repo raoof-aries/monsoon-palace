@@ -25,6 +25,14 @@
   --secondary: #e5ad74;
   --accent: #f0d2a0;
   --accent-text: #e5ad74;
+  --section-separator: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(229, 173, 116, 0.05) 14%,
+    rgba(240, 210, 160, 0.28) 50%,
+    rgba(229, 173, 116, 0.05) 86%,
+    transparent 100%
+  );
 }
 
 html {
@@ -44,6 +52,51 @@ body {
 
 #root {
   min-height: 100vh;
+}
+
+.about-section,
+.video-section,
+.contactSection-wrapper,
+.footer-container,
+.galleryPage-wrapper,
+.bookingPage-wrapper,
+.aboutPage-quickFacts,
+.aboutPage-section,
+.aboutPage-places {
+  position: relative;
+}
+
+.video-section::before,
+.contactSection-wrapper::before,
+.footer-container::before,
+.galleryPage-wrapper::before,
+.bookingPage-wrapper::before,
+.aboutPage-quickFacts::before,
+.aboutPage-section::before,
+.aboutPage-places::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: var(--section-separator);
+  box-shadow: 0 0 14px rgba(229, 173, 116, 0.08);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--section-separator);
+  box-shadow: 0 0 14px rgba(229, 173, 116, 0.08);
+  pointer-events: none;
+  z-index: 3;
 }
 
 .mt1 {
