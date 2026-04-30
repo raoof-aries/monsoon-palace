@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap");
 
 :root {
   font-synthesis: none;
@@ -8,9 +8,9 @@
 
   /* Fonts */
   --font-main: "Outfit", sans-serif;
-  --font-hero: "Marcellus", serif;
-  --font-type: "Marcellus", serif;
-  --font-heading: "Marcellus", serif;
+  --font-hero: "Libre Baskerville", serif;
+  --font-type: "Libre Baskerville", serif;
+  --font-heading: "Libre Baskerville", serif;
 
   /* Colors */
   --color-heading-main: #000;
