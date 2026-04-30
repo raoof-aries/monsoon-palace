@@ -185,11 +185,31 @@
   animation: heroRise 0.9s ease-out 0.2s both;
 }
 
+.hero-contact-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border: 1px solid rgba(255, 248, 238, 0.16);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 248, 238, 0.08), rgba(255, 248, 238, 0.02)), rgba(9, 23, 16, 0.2);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  animation: heroRise 0.9s ease-out 0.25s both;
+}
+
+.hero-contact-label {
+  color: rgba(255, 248, 238, 0.85);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .hero-contact-icons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  animation: heroRise 0.9s ease-out 0.25s both;
+  gap: 0.75rem;
 }
 
 .hero-icon-link {

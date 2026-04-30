@@ -56,25 +56,28 @@ const HeroSection = () => {
               shaped for slow, sunlit stays in the hills.
             </p>
 
-            <div className="hero-contact-icons">
-              <a
-                className="hero-icon-link hero-icon-link--call"
-                href={`tel:${PHONE_NUMBER}`}
-                aria-label="Call Monsoon Palace"
-                title="Call"
-              >
-                <FaPhoneAlt aria-hidden="true" />
-              </a>
-              <a
-                className="hero-icon-link hero-icon-link--whatsapp"
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp Monsoon Palace"
-                title="WhatsApp"
-              >
-                <FaWhatsapp aria-hidden="true" />
-              </a>
+            <div className="hero-contact-wrapper">
+              <span className="hero-contact-label">Contact us</span>
+              <div className="hero-contact-icons">
+                <a
+                  className="hero-icon-link hero-icon-link--call"
+                  href={`tel:${PHONE_NUMBER}`}
+                  aria-label="Call Monsoon Palace"
+                  title="Call"
+                >
+                  <FaPhoneAlt aria-hidden="true" />
+                </a>
+                <a
+                  className="hero-icon-link hero-icon-link--whatsapp"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp Monsoon Palace"
+                  title="WhatsApp"
+                >
+                  <FaWhatsapp aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
 
