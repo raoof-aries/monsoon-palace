@@ -99,8 +99,8 @@ const HeroSection = () => {
               <a className="btn btn-primary" href="/booking">
                 Book Now
               </a>
-              <a className="btn btn-secondary" href="/gallery">
-                Gallery
+              <a className="btn btn-secondary" href="">
+                Brochure 
               </a>
             </div>
           </div>
