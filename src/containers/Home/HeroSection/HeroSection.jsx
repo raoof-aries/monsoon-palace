@@ -15,15 +15,12 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 3500);
     return () => clearInterval(timer);
-  }, []);
-
-  const goToSlide = (index) => setCurrentSlide(index);
+  }, [images.length]);
 
   return (
     <section className="hero-section">
-      {/* Background Slider */}
       <div className="hero-slider" aria-hidden>
         {images.map((img, index) => (
           <div
@@ -36,63 +33,58 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Overlay */}
       <div className="hero-overlay" />
 
-      {/* Content */}
       <div className="hero-content">
         <div className="hero-inner">
-          {/* LEFT SIDE — MAIN TEXT (full content area) */}
           <div className="hero-left">
+            <div className="hero-kicker">Deshamangalam</div>
+
             <h1 className="hero-title" data-text="Monsoon Palace">
               Monsoon Palace
             </h1>
 
             <p className="hero-desc">
-              Elevated design, ethereal views, and curated calm. Immerse in a
-              private sanctuary that pairs sculpted architecture with slow
-              living.
+              Wake to emerald views, private poolside calm, and architecture
+              shaped for slow, sunlit stays in the hills.
             </p>
+          </div>
 
-            {/* Two buttons only — they will fill the text area's width per your CSS */}
+          <div className="hero-aside">
+            <div className="hero-aside-copy">
+              <span>Private resort stays</span>
+              <strong>
+                Poolside mornings, forest air, and quiet evenings.
+              </strong>
+            </div>
+
+            <div className="hero-highlights" aria-label="resort highlights">
+              <span>Private pool</span>
+              <span>Forest views</span>
+              <span>Boutique stays</span>
+            </div>
+
             <div
               className="hero-actions"
               role="group"
               aria-label="hero actions"
             >
-              <button className="btn btn-primary">
-                <a href="/booking">Book your suite</a>
-              </button>
-              <button className="btn btn-secondary">
-                <a href="/gallery">Explore gallery</a>
-              </button>
+              <a className="btn btn-primary" href="/booking">
+                Book Now
+              </a>
+              <a className="btn btn-secondary" href="/gallery">
+                Gallery
+              </a>
             </div>
           </div>
-
-          {/* (Optional right column kept as empty element so grid layout stays stable on wide screens)
-              Remove the empty div below if you prefer a single-column layout on desktop. */}
-          <div aria-hidden="true" />
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="hero-scroll" aria-hidden>
         <div className="bar">
           <div className="dot" />
         </div>
         Scroll
-      </div>
-
-      {/* Slider Dots */}
-      <div className="hero-dots" aria-hidden>
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`dot-btn ${index === currentSlide ? "active" : ""}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`go to slide ${index + 1}`}
-          />
-        ))}
       </div>
     </section>
   );
