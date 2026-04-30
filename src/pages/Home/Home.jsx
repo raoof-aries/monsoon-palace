@@ -4,6 +4,7 @@ import {
   HeroSection,
   AboutSection,
   VideoSection,
+  FaqSection,
   ContactSection,
 } from "../../containers";
 
@@ -27,6 +28,7 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <VideoSection />
+      <FaqSection />
       <ContactSection />
     </div>
   );
