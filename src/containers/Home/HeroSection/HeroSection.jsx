@@ -58,11 +58,7 @@ const HeroSection = () => {
               </strong>
             </div>
 
-            <div className="hero-highlights" aria-label="resort highlights">
-              <span>Private pool</span>
-              <span>Forest views</span>
-              <span>Boutique stays</span>
-            </div>
+           
 
             <div
               className="hero-actions"
