@@ -35,9 +35,9 @@
   );
   backdrop-filter: blur(10px);
   border-radius: 100px;
-  border: 1px solid rgba(255, 107, 107, 0.2);
+  border: 1px solid rgba(229, 173, 116, 0.2);
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
+  box-shadow: 0 4px 20px rgba(229, 173, 116, 0.1);
 }
 
 .galleryPage-title {
@@ -120,9 +120,9 @@
 
 .galleryPage-filterBtn:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.15);
+  box-shadow: 0 4px 20px rgba(229, 173, 116, 0.15);
 }
 
 .galleryPage-filterBtn:hover .galleryPage-filterIcon {
@@ -132,12 +132,12 @@
 .galleryPage-filterBtn.active {
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.25),
+    rgba(229, 173, 116, 0.25),
     rgba(217, 137, 95, 0.16)
   );
-  border-color: rgba(255, 107, 107, 0.4);
+  border-color: rgba(229, 173, 116, 0.4);
   color: #fff;
-  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.25),
+  box-shadow: 0 8px 30px rgba(229, 173, 116, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -179,7 +179,7 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.1) 0%,
+    rgba(229, 173, 116, 0.1) 0%,
     transparent 50%,
     rgba(255, 255, 255, 0.06) 100%
   );
@@ -244,9 +244,9 @@
 }
 
 .galleryPage-item:hover {
-  border-color: rgba(255, 107, 107, 0.3);
-  box-shadow: 0 20px 60px rgba(255, 107, 107, 0.2),
-    0 0 0 1px rgba(255, 107, 107, 0.1);
+  border-color: rgba(229, 173, 116, 0.3);
+  box-shadow: 0 20px 60px rgba(229, 173, 116, 0.2),
+    0 0 0 1px rgba(229, 173, 116, 0.1);
 }
 
 .galleryPage-item:hover img {
@@ -293,11 +293,11 @@
 .galleryPage-item:hover .galleryPage-expandIcon {
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.9),
+    rgba(229, 173, 116, 0.9),
     rgba(255, 142, 83, 0.9)
   );
   border-color: transparent;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 4px 20px rgba(229, 173, 116, 0.4);
 }
 
 /* ===== LIGHTBOX ===== */
@@ -335,11 +335,11 @@
 .galleryPage-closeBtn:hover {
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.9),
+    rgba(229, 173, 116, 0.9),
     rgba(255, 142, 83, 0.9)
   );
   border-color: transparent;
-  box-shadow: 0 4px 30px rgba(255, 107, 107, 0.5);
+  box-shadow: 0 4px 30px rgba(229, 173, 116, 0.5);
 }
 
 .galleryPage-lightboxContent {
@@ -404,10 +404,10 @@
   padding: 0.625rem 1.25rem;
   background: linear-gradient(
     135deg,
-    rgba(255, 107, 107, 0.25),
+    rgba(229, 173, 116, 0.25),
     rgba(255, 142, 83, 0.25)
   );
-  border: 1px solid rgba(255, 107, 107, 0.4);
+  border: 1px solid rgba(229, 173, 116, 0.4);
   border-radius: 100px;
   color: #e5ad74;
   font-size: 0.875rem;
@@ -415,7 +415,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+  box-shadow: 0 4px 15px rgba(229, 173, 116, 0.2);
 }
 
 /* ===== BACKGROUND DECORATION ===== */

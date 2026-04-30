@@ -125,7 +125,7 @@
 
 .aboutPage-factCard:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-5px);
 }
 
@@ -276,7 +276,7 @@
 
 .aboutPage-stat:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-3px);
 }
 
@@ -358,7 +358,7 @@
 
 .aboutPage-highlight:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-3px);
 }
 
@@ -447,8 +447,8 @@
 }
 
 .aboutPage-artForm:hover {
-  background: rgba(255, 107, 107, 0.1);
-  border-color: rgba(255, 107, 107, 0.3);
+  background: rgba(229, 173, 116, 0.1);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-3px);
 }
 
@@ -555,9 +555,9 @@
 
 .aboutPage-placeCard:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2);
+  box-shadow: 0 20px 40px rgba(229, 173, 116, 0.2);
 }
 
 .aboutPage-placeIcon {

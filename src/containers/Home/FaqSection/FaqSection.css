@@ -86,7 +86,7 @@
 
 .faqSection-item.active {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 107, 107, 0.3);
+  border-color: rgba(229, 173, 116, 0.3);
 }
 
 .faqSection-question {
@@ -115,12 +115,12 @@
 }
 
 .faqSection-item:hover .faqSection-icon {
-  color: #d9895f;
+  color: var(--accent-text);
 }
 
 .faqSection-item.active .faqSection-icon {
   transform: rotate(180deg);
-  color: #ff7f66;
+  color: var(--accent-text);
 }
 
 .faqSection-answer {

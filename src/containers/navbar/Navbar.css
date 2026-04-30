@@ -101,12 +101,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #ff7f66;
+  background: var(--accent-text);
   transition: width 0.3s ease;
 }
 
 .navbar-menu a:hover {
-  color: #ff7f66;
+  color: var(--accent-text);
 }
 
 .navbar-menu a:hover::after {

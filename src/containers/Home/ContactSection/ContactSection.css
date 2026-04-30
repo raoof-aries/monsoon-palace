@@ -127,13 +127,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #d9895f;
+  color: var(--accent-text);
   transition: all 0.3s ease;
 }
 
 .contactSection-detail:hover .contactSection-icon {
-  background: rgba(255, 107, 107, 0.1);
-  border-color: rgba(255, 107, 107, 0.3);
+  background: rgba(229, 173, 116, 0.1);
+  border-color: rgba(229, 173, 116, 0.3);
   transform: translateY(-2px);
 }
 
@@ -160,7 +160,7 @@
 
 .contactSection-detail p a:hover,
 .contactSection-detail p a:focus-visible {
-  color: #ff7f66;
+  color: var(--accent-text);
 }
 
 /* Social Links */
@@ -185,9 +185,9 @@
 }
 
 .contactSection-socialLink:hover {
-  background: rgba(255, 107, 107, 0.1);
-  border-color: rgba(255, 107, 107, 0.3);
-  color: #d9895f;
+  background: rgba(229, 173, 116, 0.1);
+  border-color: rgba(229, 173, 116, 0.3);
+  color: var(--accent-text);
   transform: translateY(-3px);
 }
 

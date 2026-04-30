@@ -134,8 +134,8 @@
 .bookingPage-inputGroup textarea:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 107, 107, 0.4);
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  border-color: rgba(229, 173, 116, 0.4);
+  box-shadow: 0 0 0 3px rgba(229, 173, 116, 0.1);
 }
 
 .bookingPage-inputGroup input::placeholder,

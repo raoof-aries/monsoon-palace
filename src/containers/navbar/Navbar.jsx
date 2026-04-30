@@ -76,6 +76,9 @@ const Navbar = () => {
 
         <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
           <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
             <a href="/gallery">Gallery</a>
           </li>
           <li>
