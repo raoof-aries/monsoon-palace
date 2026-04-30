@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import "./HeroSection.css";
 import Image1 from "../../../assets/images/home/image1.webp";
 import Image4 from "../../../assets/images/home/image4.webp";
@@ -6,6 +7,12 @@ import Image8 from "../../../assets/images/home/image8.webp";
 import Image7 from "../../../assets/images/home/image7.webp";
 import Image9 from "../../../assets/images/home/image9.webp";
 import Image3 from "../../../assets/images/home/image3.webp";
+
+const PHONE_NUMBER = "+918714804320";
+const WHATSAPP_NUMBER = "918714804320";
+const WHATSAPP_MESSAGE = encodeURIComponent(
+  "Hello Monsoon Palace, I would like to know more about booking a stay."
+);
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,6 +55,27 @@ const HeroSection = () => {
               Wake to emerald views, private poolside calm, and architecture
               shaped for slow, sunlit stays in the hills.
             </p>
+
+            <div className="hero-contact-icons">
+              <a
+                className="hero-icon-link hero-icon-link--call"
+                href={`tel:${PHONE_NUMBER}`}
+                aria-label="Call Monsoon Palace"
+                title="Call"
+              >
+                <FaPhoneAlt aria-hidden="true" />
+              </a>
+              <a
+                className="hero-icon-link hero-icon-link--whatsapp"
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp Monsoon Palace"
+                title="WhatsApp"
+              >
+                <FaWhatsapp aria-hidden="true" />
+              </a>
+            </div>
           </div>
 
           <div className="hero-aside">

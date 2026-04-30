@@ -185,6 +185,49 @@
   animation: heroRise 0.9s ease-out 0.2s both;
 }
 
+.hero-contact-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  animation: heroRise 0.9s ease-out 0.25s both;
+}
+
+.hero-icon-link {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 248, 238, 0.18);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.hero-icon-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hero-icon-link:hover,
+.hero-icon-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+  filter: saturate(1.08);
+}
+
+.hero-icon-link--call {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 54%),
+    linear-gradient(135deg, var(--cta-deep) 0%, var(--cta-main) 55%, var(--cta-light) 100%);
+}
+
+.hero-icon-link--whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+}
+
 .hero-aside {
   display: flex;
   flex-direction: column;
