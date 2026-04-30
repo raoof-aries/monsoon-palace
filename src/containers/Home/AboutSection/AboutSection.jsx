@@ -17,14 +17,18 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="collage-item collage-top-left">
-            <img src={Image6} alt="Courtyard" />
+          <div className="collage-top-row">
+            <div className="collage-item collage-top-left">
+              <img src={Image2} alt="Dining Area" />
+            </div>
+            <div className="collage-item collage-top-right">
+              <img src={Image5} alt="Pool View" />
+            </div>
           </div>
-          <div className="collage-item collage-top-right">
-            <img src={Image2} alt="Dining Area" />
-          </div>
-          <div className="collage-item collage-bottom">
-            <img src={Image5} alt="Pool View" />
+          <div className="collage-bottom-row">
+            <div className="collage-item collage-bottom">
+              <img src={Image6} alt="Courtyard" />
+            </div>
           </div>
         </motion.div>
 
