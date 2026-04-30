@@ -1,22 +1,31 @@
 import { motion } from "framer-motion";
 import "./AboutSection.css";
 
+import Image2 from "../../../assets/images/home/image2.webp";
+import Image5 from "../../../assets/images/home/image5.webp";
 import Image6 from "../../../assets/images/gallery/gallery16.webp";
 
 const AboutSection = () => {
   return (
     <section className="about-section">
       <div className="about-container">
-        {/* Left Column - Image */}
+        {/* Left Column - Image Collage */}
         <motion.div
-          className="about-image-wrapper"
+          className="about-image-collage"
           initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
           whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <img src={Image6} alt="Monsoon Palace Resort" />
-          <div className="image-overlay"></div>
+          <div className="collage-item collage-top-left">
+            <img src={Image6} alt="Courtyard" />
+          </div>
+          <div className="collage-item collage-top-right">
+            <img src={Image2} alt="Dining Area" />
+          </div>
+          <div className="collage-item collage-bottom">
+            <img src={Image5} alt="Pool View" />
+          </div>
         </motion.div>
 
         {/* Right Column - Content */}
