@@ -58,7 +58,7 @@ const HeroSection = () => {
               </strong>
             </div>
 
-           
+
 
             <div
               className="hero-actions"
