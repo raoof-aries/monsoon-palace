@@ -1,48 +1,33 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./GalleryPage.css";
 
-import Gallery1 from "../../assets/images/gallery/gallery1.webp";
-import Gallery2 from "../../assets/images/gallery/gallery2.webp";
-import Gallery3 from "../../assets/images/gallery/gallery3.webp";
-import Gallery4 from "../../assets/images/gallery/gallery4.webp";
-import Gallery5 from "../../assets/images/gallery/gallery5.webp";
-import Gallery6 from "../../assets/images/gallery/gallery6.webp";
-import Gallery7 from "../../assets/images/gallery/gallery7.webp";
-import Gallery8 from "../../assets/images/gallery/gallery8.webp";
-import Gallery9 from "../../assets/images/gallery/gallery9.webp";
-// import Gallery10 from "../../assets/images/gallery/gallery10.webp";
-import Gallery11 from "../../assets/images/gallery/gallery11.webp";
-import Gallery12 from "../../assets/images/gallery/gallery12.webp";
-import Gallery13 from "../../assets/images/gallery/gallery13.webp";
-// import Gallery14 from "../../assets/images/gallery/gallery14.webp";
-// import Gallery15 from "../../assets/images/gallery/gallery15.webp";
-import Gallery16 from "../../assets/images/gallery/gallery16.webp";
-import Gallery17 from "../../assets/images/gallery/gallery17.webp";
-import Gallery18 from "../../assets/images/gallery/gallery18.webp";
-import Gallery19 from "../../assets/images/gallery/gallery19.webp";
+// Import all images from the gallery-new directory
+const rawImages = import.meta.glob("../../assets/images/gallery-new/**/*.{jpg,JPG,png,PNG,jpeg,JPEG,webp,WEBP}", { eager: true, import: "default" });
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [activeTab, setActiveTab] = useState("ALL");
 
-  const galleryImages = [
-    { id: 1, src: Gallery1, alt: "Gallery 1" },
-    // { id: 2, src: Gallery2, alt: "Gallery 2" },
-    { id: 3, src: Gallery3, alt: "Gallery 3" },
-    { id: 4, src: Gallery4, alt: "Gallery 4" },
-    { id: 5, src: Gallery5, alt: "Gallery 5" },
-    { id: 6, src: Gallery6, alt: "Gallery 6" },
-    { id: 7, src: Gallery7, alt: "Gallery 7" },
-    { id: 8, src: Gallery8, alt: "Gallery 8" },
-    { id: 9, src: Gallery9, alt: "Gallery 9" },
-    { id: 11, src: Gallery11, alt: "Gallery 11" },
-    { id: 12, src: Gallery12, alt: "Gallery 12" },
-    { id: 13, src: Gallery13, alt: "Gallery 13" },
-    { id: 14, src: Gallery18, alt: "Gallery 18" },
-    { id: 15, src: Gallery19, alt: "Gallery 19" },
-    { id: 16, src: Gallery16, alt: "Gallery 16" },
-    { id: 17, src: Gallery17, alt: "Gallery 17" },
-  ];
+  const categories = ["ALL", "Rooms", "Indoor Dining", "Outdoor Dining", "Amenities", "Landscape"];
+
+  const allImages = useMemo(() => {
+    return Object.keys(rawImages).map((path, index) => {
+      const parts = path.split("/");
+      const category = parts[parts.length - 2];
+      return {
+        id: index,
+        src: rawImages[path],
+        alt: `${category} ${index + 1}`,
+        category: category,
+      };
+    });
+  }, []);
+
+  const filteredImages = useMemo(() => {
+    if (activeTab === "ALL") return allImages;
+    return allImages.filter((img) => img.category === activeTab);
+  }, [activeTab, allImages]);
 
   // Animation variants
   const fadeInUp = {
@@ -113,6 +98,18 @@ const GalleryPage = () => {
     },
   };
 
+  // Prevent scrolling when lightbox is open
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
+
   return (
     <motion.section
       className="galleryPage-wrapper"
@@ -120,7 +117,6 @@ const GalleryPage = () => {
       animate="visible"
       variants={staggerContainer}
     >
-      {/* (Optional) Keep a small header — remove this block if you want nothing at top */}
       <motion.div className="galleryPage-header" variants={staggerContainer}>
         <motion.span className="galleryPage-badge" variants={fadeInUp}>
           Explore
@@ -134,10 +130,26 @@ const GalleryPage = () => {
         </motion.p>
       </motion.div>
 
+      {/* Filters */}
+      <motion.div className="galleryPage-filters" variants={staggerContainer}>
+        {categories.map((cat) => (
+          <motion.button
+            key={cat}
+            className={`galleryPage-filterBtn ${activeTab === cat ? "active" : ""}`}
+            onClick={() => setActiveTab(cat)}
+            variants={fadeInUp}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {cat}
+          </motion.button>
+        ))}
+      </motion.div>
+
       {/* Gallery Grid */}
       <motion.div className="galleryPage-grid" layout>
         <AnimatePresence mode="popLayout">
-          {galleryImages.map((image, index) => (
+          {filteredImages.map((image, index) => (
             <motion.div
               key={image.id}
               className={`galleryPage-item ${index % 7 === 0 ? "large" : ""}`}
@@ -164,6 +176,9 @@ const GalleryPage = () => {
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
+                <div className="galleryPage-overlayContent">
+                  <span className="galleryPage-category">{image.category}</span>
+                </div>
                 <motion.div
                   className="galleryPage-expandIcon"
                   whileHover={{ scale: 1.2, rotate: 90 }}
