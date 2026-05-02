@@ -154,19 +154,33 @@
 
 /* ===== MAP ===== */
 .contactPage-map {
-  width: 100%;
-  height: 100%;
-  min-height: 450px;
-  border-radius: 24px;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  min-height: 450px;
+  display: flex;
+  transition: all 0.4s ease;
+}
+
+.contactPage-map:hover {
+  border-color: rgba(229, 173, 116, 0.3);
+  box-shadow: 0 10px 40px rgba(229, 173, 116, 0.1);
 }
 
 .contactPage-map iframe {
   width: 100%;
   height: 100%;
+  min-height: 400px;
+  border-radius: 16px;
   border: 0;
+  filter: grayscale(0.7) opacity(0.85) contrast(1.1);
+  transition: all 0.5s ease;
+}
+
+.contactPage-map iframe:hover {
+  filter: grayscale(0) opacity(1) contrast(1);
 }
 
 /* ===== BACKGROUND DECORATION ===== */
