@@ -5,23 +5,10 @@ import {
   AboutSection,
   VideoSection,
   FaqSection,
-  ContactSection,
 } from "../../containers";
 
 const Home = () => {
   const location = useLocation();
-
-  useEffect(() => {
-    // Handle hash navigation when component mounts or hash changes
-    if (location.hash === "#contact") {
-      setTimeout(() => {
-        const contactElement = document.getElementById("contact");
-        if (contactElement) {
-          contactElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, [location.hash]);
 
   return (
     <div>
@@ -29,7 +16,6 @@ const Home = () => {
       <AboutSection />
       <VideoSection />
       <FaqSection />
-      <ContactSection />
     </div>
   );
 };
