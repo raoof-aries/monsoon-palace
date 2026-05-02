@@ -124,10 +124,7 @@ const GalleryPage = () => {
         <motion.h1 className="galleryPage-title" variants={fadeInUp}>
           Visual <span className="galleryPage-titleGradient">Journey</span>
         </motion.h1>
-        <motion.p className="galleryPage-description" variants={fadeInUp}>
-          Immerse yourself in the captivating beauty and timeless elegance of
-          Desamangalam
-        </motion.p>
+    
       </motion.div>
 
       {/* Filters */}
