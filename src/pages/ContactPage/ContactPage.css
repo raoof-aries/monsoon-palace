@@ -102,28 +102,34 @@
 .contactPage-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, rgba(229, 173, 116, 0.2), rgba(255, 142, 83, 0.1));
-  border: 1px solid rgba(229, 173, 116, 0.3);
+  background: rgba(229, 173, 116, 0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #e5ad74;
   flex-shrink: 0;
+  box-shadow: inset 0 0 10px rgba(229, 173, 116, 0.1);
+}
+
+.contactPage-text {
+  padding-top: 0.2rem;
 }
 
 .contactPage-text h4 {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #e5ad74;
+  margin-bottom: 0.5rem;
 }
 
 .contactPage-text p, .contactPage-text a {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
   text-decoration: none;
   transition: color 0.3s ease;
 }
