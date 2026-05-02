@@ -61,6 +61,7 @@ body {
 
 .about-section,
 .video-section,
+.faqSection-wrapper,
 .contactSection-wrapper,
 .footer-container,
 .galleryPage-wrapper,
@@ -72,6 +73,7 @@ body {
 }
 
 .video-section::before,
+.faqSection-wrapper::before,
 .contactSection-wrapper::before,
 .footer-container::before,
 .galleryPage-wrapper::before,

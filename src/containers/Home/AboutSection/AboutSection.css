@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   background: transparent;
-  padding: 4rem 5%;
+  padding: 4rem 5% 8rem 5%;
   overflow: hidden;
 }
 
@@ -227,7 +227,7 @@
 
 @media (max-width: 968px) {
   .about-section {
-    padding: 6rem 5%;
+    padding: 6rem 5% 8rem 5%;
   }
 
   .about-container {
@@ -257,7 +257,7 @@
 
 @media (max-width: 640px) {
   .about-section {
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.5rem 8rem 1.5rem;
   }
 
   .about-image-collage {
