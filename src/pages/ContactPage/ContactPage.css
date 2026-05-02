@@ -165,11 +165,19 @@
 }
 
 /* ===== MAP ===== */
+.contactPage-mapLink {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+}
+
 .contactPage-map {
   display: flex;
   position: relative;
   min-height: 350px;
+  height: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .contactPage-map iframe {

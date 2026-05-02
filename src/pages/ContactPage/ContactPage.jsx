@@ -109,15 +109,23 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className="contactPage-map">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6028948973817!2d76.233147!3d10.770014999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c5950b8fb7db%3A0x86c4d3af0cce5b21!2sMonsoon%20Palace%2C%20Kondayur!5e1!3m2!1sen!2sin!4v1777697513708!5m2!1sen!2sin" 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map Location of Monsoon Palace"
-          ></iframe>
-        </div>
+        <a 
+          href="https://www.google.com/maps/place/Monsoon+Palace,+Kondayur/@10.770015,76.233147,16z/data=!4m6!3m5!1s0x3ba7c5950b8fb7db:0x86c4d3af0cce5b21!8m2!3d10.770015!4d76.233147!16s%2Fg%2F11wpy6ntls?hl=en" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="contactPage-mapLink"
+        >
+          <div className="contactPage-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6028948973817!2d76.233147!3d10.770014999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c5950b8fb7db%3A0x86c4d3af0cce5b21!2sMonsoon%20Palace%2C%20Kondayur!5e1!3m2!1sen!2sin!4v1777697513708!5m2!1sen!2sin" 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Map Location of Monsoon Palace"
+              style={{ pointerEvents: "none" }}
+            ></iframe>
+          </div>
+        </a>
       </motion.div>
 
       {/* Background Decoration */}
