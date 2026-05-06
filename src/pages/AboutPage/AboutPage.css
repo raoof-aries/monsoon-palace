@@ -589,17 +589,10 @@
 .aboutPage-placeGroupIntro {
   position: sticky;
   top: calc(var(--navbar-height) + 1.5rem);
-  padding: 2rem;
-  background:
-    linear-gradient(145deg, rgba(217, 137, 95, 0.12), transparent 48%),
-    rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(240, 210, 160, 0.16);
-  border-radius: 8px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  padding: 0.35rem 0 0;
 }
 
-.aboutPage-placeGroupKicker,
-.aboutPage-placeMeta {
+.aboutPage-placeGroupKicker {
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -653,7 +646,7 @@
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
-.aboutPage-placeNumber {
+.aboutPage-placeIconMark {
   display: grid;
   place-items: center;
   width: 44px;
@@ -665,6 +658,11 @@
   font-size: 1.05rem;
   font-weight: 700;
   box-shadow: 0 10px 28px rgba(217, 137, 95, 0.24);
+}
+
+.aboutPage-placeIconMark svg {
+  width: 18px;
+  height: 18px;
 }
 
 .aboutPage-placeDetailCard h4 {
@@ -899,8 +897,13 @@
     padding: 1.1rem;
   }
 
-  .aboutPage-placeNumber {
+  .aboutPage-placeIconMark {
     width: 38px;
     height: 38px;
+  }
+
+  .aboutPage-placeIconMark svg {
+    width: 16px;
+    height: 16px;
   }
 }
