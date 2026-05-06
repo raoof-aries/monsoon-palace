@@ -573,6 +573,115 @@
   line-height: 1.4;
 }
 
+.aboutPage-placeGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.aboutPage-placeGroup {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.38fr) 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.aboutPage-placeGroupIntro {
+  position: sticky;
+  top: calc(var(--navbar-height) + 1.5rem);
+  padding: 2rem;
+  background:
+    linear-gradient(145deg, rgba(217, 137, 95, 0.12), transparent 48%),
+    rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(240, 210, 160, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.aboutPage-placeGroupKicker,
+.aboutPage-placeMeta {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: var(--accent-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.aboutPage-placeGroupTitle {
+  margin: 1rem 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.14;
+}
+
+.aboutPage-placeGroupText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.aboutPage-placesTimeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.aboutPage-placeDetailCard {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.4rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aboutPage-placeDetailCard:hover {
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(229, 173, 116, 0.34);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.aboutPage-placeNumber {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: #120c08;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 10px 28px rgba(217, 137, 95, 0.24);
+}
+
+.aboutPage-placeDetailCard h4 {
+  margin: 0.35rem 0 0.7rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(19px, 1.5vw, 24px);
+  font-weight: 400;
+  line-height: 1.24;
+}
+
+.aboutPage-placeDetailCard p:last-child {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
 /* ===== BACKGROUND DECORATION ===== */
 .aboutPage-bgDecoration {
   position: fixed;
@@ -696,6 +805,19 @@
   .aboutPage-filmsGrid {
     grid-template-columns: 1fr;
   }
+
+  .aboutPage-placeGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutPage-placeGroupIntro {
+    position: relative;
+    top: 0;
+  }
+
+  .aboutPage-placesTimeline {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -720,6 +842,10 @@
 
   .aboutPage-placesGrid {
     grid-template-columns: 1fr;
+  }
+
+  .aboutPage-placeGroups {
+    gap: 3rem;
   }
 
   .aboutPage-artForms {
@@ -766,5 +892,15 @@
   .aboutPage-factCard {
     flex-direction: column;
     text-align: center;
+  }
+
+  .aboutPage-placeDetailCard {
+    grid-template-columns: 38px 1fr;
+    padding: 1.1rem;
+  }
+
+  .aboutPage-placeNumber {
+    width: 38px;
+    height: 38px;
   }
 }

@@ -15,15 +15,117 @@ import About6 from "../../assets/images/about/about6.jpg";
 // about8.jpg - Community life
 
 const AboutPage = () => {
-  const places = [
-    { name: "Mulla Kadavu Pallam View Point", icon: "🏞️" },
-    { name: "Thekkenchery Temple", icon: "🛕" },
-    { name: "Manakkutti Anchumoorthy Temple", icon: "🕉️" },
-    { name: "Desamangalam Mana", icon: "🏛️" },
-    { name: "Mayiladum Para", icon: "⛰️" },
-    { name: "Kottipara Bhagavathi Temple", icon: "🛕" },
-    { name: "Sree Maha Vishnu Temple", icon: "🕉️" },
-    { name: "Kattuvattur Shiva Temple", icon: "🛕" },
+  const dayPicnicLocations = [
+    {
+      name: "Nelliyampathy Hills",
+      detail:
+        "These misty mountains are famous for lush orange plantations, tea gardens, and winding roads that offer incredible views of the valley below. Historically, it was a favorite getaway for British planters looking for a cool climate and fertile land.",
+    },
+    {
+      name: "Malampuzha Dam & Garden",
+      detail:
+        'Often called the "Vrindavan of Kerala," this site features a massive dam and a beautifully landscaped garden with the famous giant sculpture of "Yakshi." It has been a major tourist hub since the 1950s and is well-known for its scenic ropeway.',
+    },
+    {
+      name: "Kollengode Village",
+      detail:
+        "Renowned for its rural beauty, this village is home to the historic Kollengode Palace, which showcases traditional Kerala architecture. It offers a peaceful atmosphere with vast paddy fields set against the backdrop of the majestic Western Ghats.",
+    },
+    {
+      name: "Poomala Dam",
+      detail:
+        "This quiet man-made dam located on a hilltop offers a serene environment and panoramic views of the surrounding greenery. Originally built for irrigation, it has now become a popular eco-tourism spot for those seeking a calm escape.",
+    },
+    {
+      name: "Kannadi Lake",
+      detail:
+        'This calm water body is a hidden gem known for its crystal-clear, mirror-like surface, which is exactly what "Kannadi" means. It is a perfect, quiet spot for nature photography and enjoying the local landscape.',
+    },
+    {
+      name: "Cheruchakkichola Waterfalls",
+      detail:
+        "Tucked away in the forest near the hills, this seasonal waterfall is a local favorite for its refreshing, untouched beauty. It is an ideal spot for trekking enthusiasts who want to experience the raw natural side of the Palakkad region.",
+    },
+    {
+      name: "Palakkad Fort (Tipu Sultan Fort)",
+      detail:
+        "Built by Hyder Ali in 1766 and later used by his son Tipu Sultan, this is one of the most well-preserved forts in Kerala. It stands in the heart of the city as a symbol of historic battles between local rulers and the British.",
+    },
+    {
+      name: "Peechi Dam",
+      detail:
+        "This dam is the main water source for Thrissur and is famous for the vast wildlife sanctuary that surrounds its reservoir. Completed in the 1950s, it remains a landmark engineering project that also offers beautiful boating and picnic spots.",
+    },
+  ];
+
+  const withinFiftyLocations = [
+    {
+      name: "Vamala View Point",
+      detail:
+        "Vamala is a scenic hilltop that offers a breathtaking panoramic view of lush green plains and the distant coastline. It is a peaceful spot where visitors go to enjoy the cool breeze and the sunset near its small ancient hilltop temple.",
+    },
+    {
+      name: "Guruvayoor Temple",
+      detail:
+        'Known as the "Dwarka of the South," this 5,000-year-old temple is dedicated to Lord Krishna and is one of India\'s most sacred pilgrimage sites. Its history is deeply rooted in legend, and it remains a major center for Hindu culture, weddings, and traditional arts.',
+    },
+    {
+      name: "Guruvayoor Elephant Sanctuary",
+      detail:
+        "Located at the historic Punnathur Kotta, an old palace, this is the world's largest sanctuary for captive elephants, housing over 50 animals. These elephants are groomed and trained here to participate in temple festivals and ritual processions.",
+    },
+    {
+      name: "Chavakkad Beach",
+      detail:
+        'This popular beach is famous for its golden sands and the "Azhimukham," the unique spot where a river meets the Arabian Sea. It also features a tall lighthouse that has guided sailors for decades and offers great views of the coast.',
+    },
+    {
+      name: "Marine World Public Aquarium",
+      detail:
+        "This is India's largest public aquarium, featuring a massive collection of exotic fish and underwater life in state-of-the-art tanks. It serves as an educational hub where people of all ages can learn about the wonders of the ocean.",
+    },
+    {
+      name: "Manathala Mosque",
+      detail:
+        "An ancient and culturally rich mosque, it is a landmark of Islamic heritage in the Chavakkad region. It is best known for the annual Chandanakudam festival, which attracts people from all faiths and symbolizes communal harmony.",
+    },
+    {
+      name: "Sree Vishwanatha Temple, Chavakkad",
+      detail:
+        "Dedicated to Lord Shiva, this temple is a serene spiritual center known for its traditional Kerala-style architecture. It plays a vital role in local history, preserving Vedic rituals and providing a peaceful space for daily worship.",
+    },
+    {
+      name: "Palayoor St. Thomas Church",
+      detail:
+        "Established in 52 AD by St. Thomas the Apostle, this is widely considered the oldest church in India. It marks the very beginning of Christianity in the country and still houses historical artifacts from the apostolic era.",
+    },
+    {
+      name: "St. Joseph's Shrine, Pavaratty",
+      detail:
+        'This beautiful shrine is a major Christian pilgrimage center famous for the grand "Pavaratty Nercha" festival. It is celebrated for its stunning white facade and its long-standing reputation as a place of spiritual healing.',
+    },
+    {
+      name: "Cheraman Juma Mosque",
+      detail:
+        "Built in 629 AD, this is the first mosque ever built in India and is one of the oldest in the world. It was constructed by an Arab merchant and features a unique design that blends ancient Kerala architecture with Islamic tradition.",
+    },
+  ];
+
+  const placeGroups = [
+    {
+      kicker: "One day picnic locations",
+      title: "Places Near to Visit",
+      intro:
+        "Easy day trips through misty hills, dams, waterfalls, forts, gardens, and quiet nature pockets around the resort.",
+      places: dayPicnicLocations,
+    },
+    {
+      kicker: "Within 50km best locations",
+      title: "One Day Picnic Locations",
+      intro:
+        "A close-range mix of viewpoints, beaches, heritage landmarks, sanctuaries, and cultural destinations for a full-day plan.",
+      places: withinFiftyLocations,
+    },
   ];
 
   const demographics = [
@@ -547,29 +649,69 @@ const AboutPage = () => {
               className="aboutPage-text aboutPage-centered"
               variants={fadeInUp}
             >
-              Discover the spiritual and natural beauty surrounding Desamangalam
+              Discover natural, historic, and cultural getaways surrounding
+              Desamangalam
             </motion.p>
           </motion.div>
-          <motion.div
-            className="aboutPage-placesGrid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {places.map((place, index) => (
+          <div className="aboutPage-placeGroups">
+            {placeGroups.map((group, groupIndex) => (
               <motion.div
-                key={index}
-                className="aboutPage-placeCard"
-                variants={scaleIn}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
+                key={group.title}
+                className="aboutPage-placeGroup"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerContainer}
               >
-                <div className="aboutPage-placeIcon">{place.icon}</div>
-                <h3>{place.name}</h3>
+                <div className="aboutPage-placeGroupIntro">
+                  <motion.span
+                    className="aboutPage-placeGroupKicker"
+                    variants={fadeIn}
+                  >
+                    {group.kicker}
+                  </motion.span>
+                  <motion.h3
+                    className="aboutPage-placeGroupTitle"
+                    variants={fadeInUp}
+                  >
+                    {group.title}
+                  </motion.h3>
+                  <motion.p
+                    className="aboutPage-placeGroupText"
+                    variants={fadeInUp}
+                  >
+                    {group.intro}
+                  </motion.p>
+                </div>
+                <motion.div
+                  className="aboutPage-placesTimeline"
+                  variants={staggerContainer}
+                >
+                  {group.places.map((place, index) => (
+                    <motion.article
+                      key={place.name}
+                      className="aboutPage-placeDetailCard"
+                      variants={scaleIn}
+                      whileHover={{ y: -6 }}
+                    >
+                      <span className="aboutPage-placeNumber">
+                        {String.fromCharCode(65 + index)}
+                      </span>
+                      <div>
+                        <p className="aboutPage-placeMeta">
+                          {groupIndex === 0
+                            ? "Day picnic"
+                            : "Within 50 km"}
+                        </p>
+                        <h4>{place.name}</h4>
+                        <p>{place.detail}</p>
+                      </div>
+                    </motion.article>
+                  ))}
+                </motion.div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
