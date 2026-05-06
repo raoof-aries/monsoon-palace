@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./BookingPage.css";
+import ResortViewImage from "../../assets/images/home/top.webp";
 
 const bookingPackages = [
   {
@@ -65,6 +66,14 @@ const BookingPage = () => {
     });
   };
 
+  const handlePackageSelect = (roomType, packageOption = formData.packageOption) => {
+    setFormData({
+      ...formData,
+      roomType,
+      packageOption,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -74,26 +83,55 @@ const BookingPage = () => {
   return (
     <section className="bookingPage-wrapper">
       <div className="bookingPage-container">
-        <div className="bookingPage-header">
-          <span className="bookingPage-badge">Reserve Your Stay</span>
-          <h1 className="bookingPage-title">
-            Book Your
-            <br />
-            <span className="bookingPage-gradient">Perfect Escape</span>
-          </h1>
-          <p className="bookingPage-description">
-            Review our accommodation options below and fill out the reservation
-            form. Our team will help you plan your unforgettable stay at Monsoon Palace.
-          </p>
+        <div className="bookingPage-hero">
+          <div className="bookingPage-header">
+            <span className="bookingPage-badge">Reserve Your Stay</span>
+            <h1 className="bookingPage-title">
+              Book Your
+              <br />
+              <span className="bookingPage-gradient">Perfect Escape</span>
+            </h1>
+            <p className="bookingPage-description">
+              Review our accommodation options below and fill out the reservation
+              form. Our team will help you plan your unforgettable stay at Monsoon Palace.
+            </p>
+          </div>
+
+          <div className="bookingPage-heroCard" aria-hidden="true">
+            <img src={ResortViewImage} alt="" />
+            <div className="bookingPage-heroShade"></div>
+          </div>
         </div>
 
         <div className="bookingPage-content">
           {/* Packages Info */}
           <div className="bookingPage-info">
-            <h2 className="bookingPage-sectionTitle">Accommodation Packages</h2>
+            <div className="bookingPage-sectionHeader">
+              <h2 className="bookingPage-sectionTitle">Accommodation Packages</h2>
+            </div>
             <div className="bookingPage-packagesGrid">
               {bookingPackages.map((pkg) => (
-                <div key={pkg.id} className="bookingPackage-card">
+                <div
+                  key={pkg.id}
+                  role="button"
+                  tabIndex={0}
+                  className={`bookingPackage-card ${
+                    formData.roomType === pkg.id ? "selected" : ""
+                  }`}
+                  onClick={() => handlePackageSelect(pkg.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handlePackageSelect(pkg.id);
+                    }
+                  }}
+                  aria-pressed={formData.roomType === pkg.id}
+                >
+                  {formData.roomType === pkg.id && (
+                    <span className="bookingPackage-selectedBadge">
+                      Selected
+                    </span>
+                  )}
                   <h3 className="bookingPackage-title">{pkg.title}</h3>
                   <div className="bookingPackage-pax">
                     <span className="bookingPackage-paxMax">Max: {pkg.maxPax}</span>
@@ -103,7 +141,32 @@ const BookingPage = () => {
                   </div>
                   <div className="bookingPackage-options">
                     {pkg.options.map((opt, index) => (
-                      <div key={index} className="bookingPackage-option">
+                      <span
+                        key={index}
+                        role="button"
+                        tabIndex={0}
+                        className={`bookingPackage-option ${
+                          formData.roomType === pkg.id &&
+                          formData.packageOption === `option-${index + 1}`
+                            ? "selected"
+                            : ""
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePackageSelect(pkg.id, `option-${index + 1}`);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handlePackageSelect(pkg.id, `option-${index + 1}`);
+                          }
+                        }}
+                        aria-pressed={
+                          formData.roomType === pkg.id &&
+                          formData.packageOption === `option-${index + 1}`
+                        }
+                      >
                         <div className="bookingPackage-optionHeader">
                           <span className="bookingPackage-optionName">
                             {opt.name}
@@ -115,7 +178,7 @@ const BookingPage = () => {
                         <span className="bookingPackage-optionDesc">
                           {opt.desc}
                         </span>
-                      </div>
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -125,7 +188,9 @@ const BookingPage = () => {
 
           {/* Booking Form */}
           <div className="bookingPage-formWrapper">
-            <h2 className="bookingPage-sectionTitle">Reservation Form</h2>
+            <div className="bookingPage-sectionHeader">
+              <h2 className="bookingPage-sectionTitle">Reservation Form</h2>
+            </div>
             <div className="bookingPage-form">
               <form onSubmit={handleSubmit}>
                 <div className="bookingPage-formGrid">
