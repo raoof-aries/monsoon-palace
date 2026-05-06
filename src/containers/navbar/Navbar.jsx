@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import LogoFull from "../../assets/images/logo/logo2.png";
 import LogoWhite from "../../assets/images/logo/logo-white.png";
@@ -7,8 +6,6 @@ import LogoWhite from "../../assets/images/logo/logo-white.png";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +40,9 @@ const Navbar = () => {
         <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
           <li>
             <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/our-facility">Our Facility</a>
           </li>
           <li>
             <a href="/gallery">Gallery</a>
