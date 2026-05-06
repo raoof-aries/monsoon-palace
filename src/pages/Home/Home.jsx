@@ -5,6 +5,8 @@ import {
   AboutSection,
   VideoSection,
   FaqSection,
+  PartnersSection,
+  ReviewsSection,
 } from "../../containers";
 
 const Home = () => {
@@ -16,6 +18,8 @@ const Home = () => {
       <AboutSection />
       <VideoSection />
       <FaqSection />
+      <PartnersSection />
+      <ReviewsSection />
     </div>
   );
 };
