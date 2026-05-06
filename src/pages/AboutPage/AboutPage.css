@@ -623,13 +623,13 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  align-items: start;
 }
 
 .aboutPage-placeDetailCard {
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 1rem;
-  min-height: 100%;
   padding: 1.4rem;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -678,6 +678,32 @@
   color: rgba(255, 255, 255, 0.68);
   font-size: 0.98rem;
   line-height: 1.72;
+}
+
+.aboutPage-loadMore {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.45rem;
+  color: #120c08;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border: 1px solid rgba(240, 210, 160, 0.2);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 16px 36px rgba(217, 137, 95, 0.2);
+  transition:
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aboutPage-loadMore:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 20px 48px rgba(217, 137, 95, 0.28);
 }
 
 /* ===== BACKGROUND DECORATION ===== */

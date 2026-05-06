@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaBinoculars,
@@ -28,6 +28,8 @@ import About6 from "../../assets/images/about/about6.jpg";
 // about8.jpg - Community life
 
 const AboutPage = () => {
+  const [expandedPlaceGroups, setExpandedPlaceGroups] = useState({});
+
   const dayPicnicLocations = [
     {
       name: "Nelliyampathy Hills",
@@ -158,6 +160,15 @@ const AboutPage = () => {
       places: withinFiftyLocations,
     },
   ];
+
+  const initialPlacesCount = 6;
+
+  const togglePlaceGroup = (groupTitle) => {
+    setExpandedPlaceGroups((current) => ({
+      ...current,
+      [groupTitle]: !current[groupTitle],
+    }));
+  };
 
   const demographics = [
     { label: "Population", value: "8,446", icon: "👥" },
@@ -718,11 +729,17 @@ const AboutPage = () => {
                   className="aboutPage-placesTimeline"
                   variants={staggerContainer}
                 >
-                  {group.places.map((place) => (
+                  {(expandedPlaceGroups[group.title]
+                    ? group.places
+                    : group.places.slice(0, initialPlacesCount)
+                  ).map((place) => (
                     <motion.article
                       key={place.name}
                       className="aboutPage-placeDetailCard"
-                      variants={scaleIn}
+                      layout
+                      initial={{ opacity: 0, y: 18 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       whileHover={{ y: -6 }}
                     >
                       <span className="aboutPage-placeIconMark" aria-hidden="true">
@@ -734,6 +751,21 @@ const AboutPage = () => {
                       </div>
                     </motion.article>
                   ))}
+                  {group.places.length > initialPlacesCount && (
+                    <motion.button
+                      type="button"
+                      className="aboutPage-loadMore"
+                      onClick={() => togglePlaceGroup(group.title)}
+                      layout
+                      initial={false}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {expandedPlaceGroups[group.title]
+                        ? "Show Less"
+                        : "Load More"}
+                    </motion.button>
+                  )}
                 </motion.div>
               </motion.div>
             ))}
