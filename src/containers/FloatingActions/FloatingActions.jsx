@@ -3,10 +3,10 @@ import { useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import "./FloatingActions.css";
 
-const PHONE_NUMBER = "+918714804320";
-const WHATSAPP_NUMBER = "918714804320";
+const PHONE_NUMBER = "+919747690291";
+const WHATSAPP_NUMBER = "919747690291";
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hello Monsoon Palace, I would like to know more about booking a stay."
+  "Hello Monsoon Palace, I would like to know more about booking a stay.",
 );
 
 const FloatingActions = () => {
@@ -16,7 +16,10 @@ const FloatingActions = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Hide if on homepage and scroll is less than viewport height
-      if (location.pathname === "/" && window.scrollY < window.innerHeight * 0.8) {
+      if (
+        location.pathname === "/" &&
+        window.scrollY < window.innerHeight * 0.8
+      ) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
@@ -31,8 +34,8 @@ const FloatingActions = () => {
   }, [location.pathname]);
 
   return (
-    <div 
-      className={`floatingActions ${isHidden ? "floatingActions--hidden" : ""}`} 
+    <div
+      className={`floatingActions ${isHidden ? "floatingActions--hidden" : ""}`}
       aria-label="Quick contact actions"
     >
       <a
