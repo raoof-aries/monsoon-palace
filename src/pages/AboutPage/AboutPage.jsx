@@ -146,15 +146,15 @@ const AboutPage = () => {
 
   const placeGroups = [
     {
-      kicker: "One day picnic locations",
-      title: "Places Near to Visit",
+      kicker: "Nearest places to visit",
+      title: "Nearest One Day Picnic Locations",
       intro:
         "Easy day trips through misty hills, dams, waterfalls, forts, gardens, and quiet nature pockets around the resort.",
       places: dayPicnicLocations,
     },
     {
-      kicker: "Within 50km best locations",
-      title: "One Day Picnic Locations",
+      kicker: "Within 50 km",
+      title: "Within 50 km One Day Picnic Locations",
       intro:
         "A close-range mix of viewpoints, beaches, heritage landmarks, sanctuaries, and cultural destinations for a full-day plan.",
       places: withinFiftyLocations,
