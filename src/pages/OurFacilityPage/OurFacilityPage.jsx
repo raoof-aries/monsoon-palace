@@ -20,7 +20,7 @@ import "./OurFacilityPage.css";
 
 import HeroImage from "../../assets/images/gallery-new/Landscape/landscape1.JPG";
 import RoomImage from "../../assets/images/gallery-new/Rooms/rooms3.JPG";
-import PoolImage from "../../assets/images/gallery-new/Amenities/amenities2.JPG";
+import PoolImage from "../../assets/images/gallery-new/Landscape/landscape5.JPG";
 import DiningImage from "../../assets/images/gallery-new/Indoor Dining/indoorDining1.JPG";
 import OutdoorDiningImage from "../../assets/images/gallery-new/Outdoor Dining/outdoorDining1.png";
 import LoungeImage from "../../assets/images/gallery-new/Amenities/amenities6.JPG";

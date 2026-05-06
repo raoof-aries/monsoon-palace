@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import "./HeroSection.css";
+import Top from "../../../assets/images/home/top.webp";
 import Image1 from "../../../assets/images/home/image1.webp";
 import Image4 from "../../../assets/images/home/image4.webp";
 import Image8 from "../../../assets/images/home/image8.webp";
@@ -17,7 +18,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const images = [Image1, Image4, Image8, Image7, Image9, Image3];
+  const images = [Image1, Top, Image4, Image8, Image7, Image9, Image3];
 
   useEffect(() => {
     const timer = setInterval(() => {
