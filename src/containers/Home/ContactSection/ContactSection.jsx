@@ -66,13 +66,20 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4>Contact</h4>
-                  <p>
-                    Basil Jose -{" "}
-                    <a href="tel:+919747690291">+91 97476 90291</a>
-                    <br />
-                    Akhil (UAE) -{" "}
-                    <a href="tel:+971569357865">+971 56 935 7865</a>
-                  </p>
+                  <div className="contactSection-phone-list">
+                    <div className="contactSection-phone-item">
+                      <span className="contactSection-phone-label">Office</span>
+                      <a href="tel:+918714804320" className="contactSection-phone-number">+91 87148 04320</a>
+                    </div>
+                    <div className="contactSection-phone-item">
+                      <span className="contactSection-phone-label">Basil Jose</span>
+                      <a href="tel:+919747690291" className="contactSection-phone-number">+91 97476 90291</a>
+                    </div>
+                    <div className="contactSection-phone-item">
+                      <span className="contactSection-phone-label">Akhil (UAE)</span>
+                      <a href="tel:+971569357865" className="contactSection-phone-number">+971 56 935 7865</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

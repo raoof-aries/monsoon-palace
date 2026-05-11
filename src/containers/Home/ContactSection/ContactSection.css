@@ -163,6 +163,39 @@
   color: var(--accent-text);
 }
 
+.contactSection-phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.contactSection-phone-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.15rem;
+}
+
+.contactSection-phone-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: 90px;
+}
+
+.contactSection-phone-number {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactSection-phone-number:hover {
+  color: var(--accent-text);
+}
+
 /* Social Links */
 .contactSection-social {
   display: flex;

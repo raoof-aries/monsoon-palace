@@ -67,10 +67,20 @@ const ContactPage = () => {
             </div>
             <div className="contactPage-text">
               <h4>Contact</h4>
-              <p>
-                Basil Jose - <a href="tel:+919747690291">+91 97476 90291</a><br />
-                Akhil (UAE) - <a href="tel:+971569357865">+971 56 935 7865</a>
-              </p>
+              <div className="contactPage-phone-list">
+                <div className="contactPage-phone-item">
+                  <span className="contactPage-phone-label">Office</span>
+                  <a href="tel:+918714804320" className="contactPage-phone-number">+91 87148 04320</a>
+                </div>
+                <div className="contactPage-phone-item">
+                  <span className="contactPage-phone-label">Basil Jose</span>
+                  <a href="tel:+919747690291" className="contactPage-phone-number">+91 97476 90291</a>
+                </div>
+                <div className="contactPage-phone-item">
+                  <span className="contactPage-phone-label">Akhil (UAE)</span>
+                  <a href="tel:+971569357865" className="contactPage-phone-number">+971 56 935 7865</a>
+                </div>
+              </div>
             </div>
           </div>
 
