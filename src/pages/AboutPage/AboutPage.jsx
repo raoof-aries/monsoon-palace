@@ -327,12 +327,7 @@ const AboutPage = () => {
                 <span className="aboutPage-gradient">Geography</span>
               </motion.h2>
               <motion.p className="aboutPage-text" variants={fadeInUp}>
-                Desamangalam is a small village surrounded by Shoranur in the
-                east, Kunnamkulam in the west, Pattambi in the north and
-                Wadakkanchery in the south. It is 12 km from Shoranur via the
-                Shoranur–Guruvayur road, Shoranur being one of the important
-                junctions of Southern Railway, situated on the banks of
-                Bharathapuzha.
+                Desamangalam is a serene village located near the banks of the Bharathapuzha River. The village is surrounded by Shoranur, Kunnamkulam, Pattambi and Wadakkanchery. The area is well known for its lush greenery, peaceful atmosphere, and scenic natural beauty surrounded by forest landscapes.
               </motion.p>
               <motion.div
                 className="aboutPage-stats"

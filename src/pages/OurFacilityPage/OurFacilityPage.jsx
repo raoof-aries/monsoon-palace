@@ -15,6 +15,7 @@ import {
   FaWheelchair,
   FaWifi,
   FaWind,
+  FaWater,
 } from "react-icons/fa";
 import "./OurFacilityPage.css";
 
@@ -24,6 +25,7 @@ import PoolImage from "../../assets/images/gallery-new/Landscape/landscape5.JPG"
 import DiningImage from "../../assets/images/gallery-new/Indoor Dining/indoorDining1.JPG";
 import OutdoorDiningImage from "../../assets/images/gallery-new/Outdoor Dining/outdoorDining1.png";
 import LoungeImage from "../../assets/images/gallery-new/Amenities/amenities6.JPG";
+import EntertainmentImage from "../../assets/images/gallery-new/Amenities/amenities12.JPG";
 
 const facilityHighlights = [
   {
@@ -46,6 +48,11 @@ const facilityHighlights = [
     label: "Evenings under the sky",
     image: OutdoorDiningImage,
   },
+  {
+    title: "Entertainment",
+    label: "Fun for everyone",
+    image: EntertainmentImage,
+  },
 ];
 
 const amenities = [
@@ -66,6 +73,7 @@ const amenities = [
   { name: "Telephone with Direct Dial", icon: FaPhoneAlt },
   { name: "Adapters and Extension Cable (On Request)", icon: FaPlug },
   { name: "Hair Dryer", icon: FaWind },
+  { name: "Riverside Leisure Activities", icon: FaWater },
 ];
 
 const fadeInUp = {

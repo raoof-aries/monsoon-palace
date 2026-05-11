@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "What amenities are available at Monsoon Palace?",
     answer:
-      "Monsoon Palace offers luxury accommodations, fine dining areas, a beautiful courtyard, and a stunning pool view, all nestled in nature's embrace.",
+      "Monsoon Palace offers luxury accommodations, fine dining areas, a beautiful courtyard, a stunning pool view, and riverside leisure activities along the Bharathapuzha river.",
   },
   {
     question: "Is Monsoon Palace suitable for events or retreats?",
