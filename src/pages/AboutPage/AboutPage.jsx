@@ -613,7 +613,7 @@ const AboutPage = () => {
       </section>
 
       {/* Education & Institutions Section */}
-      <section className="aboutPage-section aboutPage-sectionAlt">
+      {/* <section className="aboutPage-section aboutPage-sectionAlt">
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-institutionsHeader"
@@ -664,7 +664,7 @@ const AboutPage = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Places to Visit Section */}
       <section className="aboutPage-places">
