@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Where is Monsoon Palace located?",
     answer:
-      "We are nestled in nature's embrace, offering a peaceful escape from the ordinary where natural beauty meets refined comfort.",
+      "Desamangalam is a serene village located near the banks of the Bharathapuzha River. The village is surrounded by Shoranur, Kunnamkulam, Pattambi and Wadakkanchery. The area is well known for its lush greenery, peaceful atmosphere, and scenic natural beauty surrounded by forest landscapes.",
   },
 ];
 
@@ -53,7 +53,8 @@ const FaqSection = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Frequently Asked <span className="faqSection-gradient">Questions</span>
+            Frequently Asked{" "}
+            <span className="faqSection-gradient">Questions</span>
           </motion.h2>
           <motion.p
             className="faqSection-description"
@@ -62,7 +63,8 @@ const FaqSection = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Find answers to some of the most common questions about your stay at Monsoon Palace.
+            Find answers to some of the most common questions about your stay at
+            Monsoon Palace.
           </motion.p>
         </div>
 
@@ -100,7 +102,7 @@ const FaqSection = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Background Decoration */}
       <div className="faqSection-bgDecoration"></div>
     </section>
