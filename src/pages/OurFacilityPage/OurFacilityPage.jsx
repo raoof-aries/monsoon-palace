@@ -20,7 +20,7 @@ import {
 import "./OurFacilityPage.css";
 
 import HeroImage from "../../assets/images/gallery-new/Landscape/landscape1.JPG";
-import RoomImage from "../../assets/images/gallery-new/Rooms/rooms3.JPG";
+import RoomImage from "../../assets/images/gallery-new/Rooms/rooms1.JPG";
 import PoolImage from "../../assets/images/gallery-new/Landscape/landscape5.JPG";
 import DiningImage from "../../assets/images/gallery-new/Indoor Dining/indoorDining1.JPG";
 import OutdoorDiningImage from "../../assets/images/gallery-new/Outdoor Dining/outdoorDining1.png";
