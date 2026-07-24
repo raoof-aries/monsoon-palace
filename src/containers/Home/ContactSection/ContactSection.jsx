@@ -13,7 +13,7 @@ const ContactSection = () => {
             <span className="contactSection-gradient">Escape</span>
           </h2>
           <p className="contactSection-description">
-            Ready to experience luxury redefined? Our team is here to help you
+            Ready to experience comfort redefined? Our team is here to help you
             plan your unforgettable stay at Monsoon Palace.
           </p>
         </div>

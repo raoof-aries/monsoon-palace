@@ -51,7 +51,7 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            Experience Luxury <br />
+            Experience Comfort <br />
             <span className="gradient-text">Beyond Imagination</span>
           </motion.h2>
 
@@ -62,9 +62,9 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            Nestled in nature's embrace, Monsoon Palace redefines luxury hospitality. 
-            Every detail is crafted to create unforgettable moments of tranquility and elegance.
-            Escape the ordinary and discover a haven where natural beauty meets refined comfort.
+            Nestled in nature's embrace, Monsoon Palace redefines comfort and hospitality. 
+            Every detail is thoughtfully designed to create memorable moments of peace and relaxation. 
+            Escape the ordinary and discover a destination where natural beauty meets modern comfort.
           </motion.p>
           
           <motion.p 
@@ -74,9 +74,9 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
-            Whether you seek a peaceful retreat or an adventurous getaway, our exquisite 
-            accommodations and world-class amenities offer the perfect setting to rejuvenate 
-            your spirit and create lasting memories.
+            Whether you seek a peaceful retreat or an adventurous getaway, our comfortable 
+            accommodations and thoughtfully curated amenities provide the perfect setting to 
+            relax, recharge, and create lasting memories.
           </motion.p>
 
           <motion.div

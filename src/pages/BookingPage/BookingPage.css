@@ -573,6 +573,74 @@
   }
 }
 
+.bookingPage-discountContainer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(229, 173, 116, 0.22);
+  background: linear-gradient(90deg, rgba(229, 173, 116, 0.08) 0%, rgba(229, 173, 116, 0.01) 100%);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: bookingPage-rise 0.8s ease-out 0.24s both;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookingPage-discountContainer:hover {
+  border-color: rgba(229, 173, 116, 0.45);
+  box-shadow: 0 12px 35px rgba(229, 173, 116, 0.08), 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bookingPage-discountIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(229, 173, 116, 0.12);
+  color: var(--accent-text);
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(229, 173, 116, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.bookingPage-discountContainer:hover .bookingPage-discountIconWrapper {
+  transform: rotate(-10deg) scale(1.05);
+  background: rgba(229, 173, 116, 0.2);
+}
+
+.bookingPage-discountIcon {
+  stroke-width: 2.2px;
+}
+
+.bookingPage-discountContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bookingPage-discountLabel {
+  color: var(--accent-text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.bookingPage-discountValue {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 1180px) {
   .bookingPage-content {
     grid-template-columns: 1fr;
