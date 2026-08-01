@@ -148,21 +148,24 @@ const BookingPage = () => {
     setSubmitStatus(null);
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("phone", formData.phone);
-      formDataToSend.append("roomType", formData.roomType);
-      formDataToSend.append("packageOption", formData.packageOption);
-      formDataToSend.append("extraPerson", formData.extraPerson);
-      formDataToSend.append("checkIn", formData.checkIn);
-      formDataToSend.append("checkOut", formData.checkOut);
-      formDataToSend.append("guests", formData.guests);
-      formDataToSend.append("message", formData.message);
+      const params = new URLSearchParams();
+      params.append("name", formData.name);
+      params.append("email", formData.email);
+      params.append("phone", formData.phone);
+      params.append("roomType", formData.roomType);
+      params.append("packageOption", formData.packageOption);
+      params.append("extraPerson", formData.extraPerson);
+      params.append("checkIn", formData.checkIn);
+      params.append("checkOut", formData.checkOut);
+      params.append("guests", formData.guests);
+      params.append("message", formData.message);
 
       const response = await fetch("/enquiry-action.php", {
         method: "POST",
-        body: formDataToSend,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params.toString(),
       });
 
       if (!response.ok) {
