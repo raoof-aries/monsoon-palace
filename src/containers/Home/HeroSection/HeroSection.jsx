@@ -8,9 +8,10 @@ import Image8 from "../../../assets/images/home/image8.webp";
 import Image7 from "../../../assets/images/home/image7.webp";
 import Image9 from "../../../assets/images/home/image9.webp";
 import Image3 from "../../../assets/images/home/image3.webp";
+import BrochureImg from "../../../assets/images/Brochure.jpeg";
 
-const PHONE_NUMBER = "+919747690291";
-const WHATSAPP_NUMBER = "919747690291";
+const PHONE_NUMBER = "+918714804320";
+const WHATSAPP_NUMBER = "918714804320";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello Monsoon Palace, I would like to know more about booking a stay.",
 );
@@ -98,7 +99,11 @@ const HeroSection = () => {
               <a className="btn btn-primary" href="/booking">
                 Book Now
               </a>
-              <a className="btn btn-secondary" href="">
+              <a
+                className="btn btn-secondary"
+                href={BrochureImg}
+                download="Monsoon_Palace_Brochure.jpeg"
+              >
                 Brochure
               </a>
             </div>

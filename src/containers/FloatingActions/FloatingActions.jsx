@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import "./FloatingActions.css";
 
-const PHONE_NUMBER = "+919747690291";
-const WHATSAPP_NUMBER = "919747690291";
+const PHONE_NUMBER = "+918714804320";
+const WHATSAPP_NUMBER = "918714804320";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello Monsoon Palace, I would like to know more about booking a stay.",
 );
