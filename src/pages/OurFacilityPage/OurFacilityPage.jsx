@@ -125,7 +125,7 @@ const OurFacilityPage = () => {
             className="facilityShowcase-header"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
@@ -140,7 +140,7 @@ const OurFacilityPage = () => {
             className="facilityPhoto-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {facilityHighlights.map((item, index) => (
@@ -169,7 +169,7 @@ const OurFacilityPage = () => {
             className="facilityAmenities-intro"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
@@ -191,7 +191,7 @@ const OurFacilityPage = () => {
             className="facilityAmenities-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {amenities.map((amenity) => {

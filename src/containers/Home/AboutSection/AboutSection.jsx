@@ -14,7 +14,7 @@ const AboutSection = () => {
           className="about-image-collage"
           initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
           whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="collage-top-row">
@@ -38,7 +38,7 @@ const AboutSection = () => {
             className="about-badge"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             About Us
@@ -48,7 +48,7 @@ const AboutSection = () => {
             className="about-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             Experience Comfort <br />
@@ -59,7 +59,7 @@ const AboutSection = () => {
             className="about-text"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             Nestled in nature's embrace, Monsoon Palace redefines comfort and hospitality. 
@@ -71,7 +71,7 @@ const AboutSection = () => {
             className="about-text"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             Whether you seek a peaceful retreat or an adventurous getaway, our comfortable 
@@ -82,7 +82,7 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <motion.a

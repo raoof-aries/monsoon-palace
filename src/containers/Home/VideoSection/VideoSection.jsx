@@ -45,7 +45,7 @@ const VideoSection = () => {
         whileInView="visible"
         viewport={{
           once: false, // 🔑 replay every time
-          margin: "-120px", // trigger slightly earlier
+          margin: "-20px", // trigger slightly earlier
         }}
       >
         {/* Header */}

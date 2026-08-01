@@ -289,7 +289,7 @@ const AboutPage = () => {
             className="aboutPage-factsGrid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {demographics.map((item, index) => (
@@ -316,7 +316,7 @@ const AboutPage = () => {
             className="aboutPage-content"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
@@ -367,7 +367,7 @@ const AboutPage = () => {
             className="aboutPage-content aboutPage-contentReverse"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
@@ -432,7 +432,7 @@ const AboutPage = () => {
             className="aboutPage-content"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
@@ -505,7 +505,7 @@ const AboutPage = () => {
             className="aboutPage-content aboutPage-contentReverse"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <motion.div className="aboutPage-imageContent" variants={scaleIn}>
@@ -561,7 +561,7 @@ const AboutPage = () => {
             className="aboutPage-content"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
@@ -619,7 +619,7 @@ const AboutPage = () => {
             className="aboutPage-institutionsHeader"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
@@ -642,7 +642,7 @@ const AboutPage = () => {
             className="aboutPage-institutionsGrid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {institutions.map((institution, index) => (
@@ -673,7 +673,7 @@ const AboutPage = () => {
             className="aboutPage-placesHeader"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
@@ -697,7 +697,7 @@ const AboutPage = () => {
                 className="aboutPage-placeGroup"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-20px" }}
                 variants={staggerContainer}
               >
                 <div className="aboutPage-placeGroupIntro">

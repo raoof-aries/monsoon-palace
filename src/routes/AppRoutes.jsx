@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router";
 
 // Main Pages
@@ -14,26 +14,20 @@ const ContactPage = lazy(() => import("../pages/ContactPage/ContactPage.jsx"));
 
 const AppRoutes = () => {
   return (
-    // <React.Suspense
-    //   fallback={
-    //     <Modal>
-    //       <Loader />
-    //     </Modal>
-    //   }
-    // >
-    <Routes>
-      <Route path="/" element={<HomePage />} exact />
-      <Route path="/our-facility" element={<OurFacilityPage />} exact />
-      <Route path="/gallery" element={<GalleryPage />} exact />
-      <Route path="/about" element={<AboutPage />} exact />
-      <Route path="/booking" element={<BookingPage />} exact />
-      <Route path="/contact" element={<ContactPage />} exact />
+    <Suspense fallback={<div className="route-loading">Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} exact />
+        <Route path="/our-facility" element={<OurFacilityPage />} exact />
+        <Route path="/gallery" element={<GalleryPage />} exact />
+        <Route path="/about" element={<AboutPage />} exact />
+        <Route path="/booking" element={<BookingPage />} exact />
+        <Route path="/contact" element={<ContactPage />} exact />
 
-      {/* Unknown Routes */}
+        {/* Unknown Routes */}
 
-      {/* <Route path="*" element={<PageNotFoundEl />} /> */}
-    </Routes>
-    // </React.Suspense>
+        {/* <Route path="*" element={<PageNotFoundEl />} /> */}
+      </Routes>
+    </Suspense>
   );
 };
 

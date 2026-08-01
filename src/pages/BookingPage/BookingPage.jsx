@@ -172,7 +172,19 @@ const BookingPage = () => {
       const resultText = await response.text();
       const result = resultText.trim();
 
-      if (result === "1") {
+      let isSuccess = false;
+      try {
+        const data = JSON.parse(result);
+        if (data && (data.status === "1" || data.status === 1 || data.status === "success")) {
+          isSuccess = true;
+        }
+      } catch (e) {
+        if (result === "1" || result === "success") {
+          isSuccess = true;
+        }
+      }
+
+      if (isSuccess) {
         setSubmitStatus("success");
         setFormData({
           name: "",

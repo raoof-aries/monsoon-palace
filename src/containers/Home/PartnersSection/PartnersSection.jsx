@@ -26,7 +26,7 @@ const PartnersSection = () => {
           className="partnersSection-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
           <span className="partnersSection-badge">Our Partners</span>
@@ -49,7 +49,7 @@ const PartnersSection = () => {
                 key={partner.name}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >
                 <PartnerIcon aria-hidden="true" />

@@ -9,7 +9,8 @@
   width: 100%;
   min-height: 100vh;
   padding: 8.5rem 5% 6rem;
-  overflow: hidden;
+  overflow-y: visible;
+  overflow-x: hidden;
   color: #fff;
   background:
     linear-gradient(120deg, rgba(229, 173, 116, 0.032) 0%, transparent 42%),
@@ -1022,7 +1023,7 @@
 
 @media (max-width: 760px) {
   .bookingPage-wrapper {
-    padding: 5.5rem 1.5rem 4rem;
+    padding: 9.5rem 1.5rem 4rem;
   }
 
   .bookingPage-packagesGrid,

@@ -31,7 +31,7 @@ const ReviewsSection = () => {
           className="reviewsSection-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
           <span className="reviewsSection-badge">Customer Reviews</span>
@@ -47,7 +47,7 @@ const ReviewsSection = () => {
               key={review.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
             >
               <FaQuoteLeft className="reviewsSection-quote" aria-hidden="true" />
