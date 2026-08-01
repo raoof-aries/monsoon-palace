@@ -573,132 +573,117 @@
   }
 }
 
-.bookingPage-promoRow {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-
-.bookingPage-discountContainer {
+.bookingPage-paymentPromoBox {
+  margin-top: 2.2rem;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.2rem 1.6rem;
-  border-radius: 8px;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 1.8rem;
+  border-radius: 12px;
   border: 1px solid rgba(229, 173, 116, 0.22);
-  background: linear-gradient(90deg, rgba(229, 173, 116, 0.08) 0%, rgba(229, 173, 116, 0.01) 100%);
+  background: linear-gradient(135deg, rgba(229, 173, 116, 0.08) 0%, rgba(229, 173, 116, 0.02) 100%);
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: bookingPage-rise 0.8s ease-out 0.24s both;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bookingPage-discountContainer:hover {
+.bookingPage-paymentPromoBox:hover {
   border-color: rgba(229, 173, 116, 0.45);
   box-shadow: 0 12px 35px rgba(229, 173, 116, 0.08), 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.bookingPage-discountIconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(229, 173, 116, 0.12);
-  color: var(--accent-text);
-  flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(229, 173, 116, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.bookingPage-discountContainer:hover .bookingPage-discountIconWrapper {
-  transform: rotate(-10deg) scale(1.05);
-  background: rgba(229, 173, 116, 0.2);
-}
-
-.bookingPage-discountIcon {
-  stroke-width: 2.2px;
-}
-
-.bookingPage-discountContent {
+.bookingPage-paymentPromoInfo {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.6rem;
 }
 
-.bookingPage-discountLabel {
+.bookingPage-specialOfferBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 50px;
+  background: rgba(229, 173, 116, 0.11);
   color: var(--accent-text);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
-  line-height: 1;
-  opacity: 0.95;
+  letter-spacing: 0.12em;
+  width: fit-content;
+  border: 1px solid rgba(229, 173, 116, 0.15);
 }
 
-.bookingPage-discountValue {
+.bookingPage-badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-text);
+  box-shadow: 0 0 8px var(--accent-text);
+  animation: bookingPage-pulse 2s infinite ease-in-out;
+}
+
+.bookingPage-promoHeading {
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 500;
   line-height: 1.25;
-  letter-spacing: 0.02em;
+  margin: 0;
+  letter-spacing: 0.01em;
 }
 
-.bookingPage-gpayContainer {
+.bookingPage-promoDescription {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0 0 0.2rem 0;
+}
+
+.bookingPage-gpayDetails {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.2rem 1.6rem;
-  border-radius: 8px;
-  border: 1px solid rgba(229, 173, 116, 0.22);
-  background: linear-gradient(90deg, rgba(229, 173, 116, 0.08) 0%, rgba(229, 173, 116, 0.01) 100%);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  animation: bookingPage-rise 0.8s ease-out 0.3s both;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bookingPage-gpayContainer:hover {
-  border-color: rgba(229, 173, 116, 0.45);
-  box-shadow: 0 12px 35px rgba(229, 173, 116, 0.08), 0 10px 30px rgba(0, 0, 0, 0.2);
+  gap: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .bookingPage-gpayIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(229, 173, 116, 0.12);
+  background: rgba(229, 173, 116, 0.1);
   color: var(--accent-text);
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(229, 173, 116, 0.1);
+  box-shadow: 0 0 10px rgba(229, 173, 116, 0.05);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.bookingPage-gpayContainer:hover .bookingPage-gpayIconWrapper {
+.bookingPage-paymentPromoBox:hover .bookingPage-gpayIconWrapper {
   transform: scale(1.05);
-  background: rgba(229, 173, 116, 0.2);
+  background: rgba(229, 173, 116, 0.18);
 }
 
 .bookingPage-gpayIcon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .bookingPage-gpayContent {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .bookingPage-gpayLabel {
   color: var(--accent-text);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -709,10 +694,297 @@
 .bookingPage-gpayValue {
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.bookingPage-paymentPromoQr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.bookingPage-qrFrame {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(229, 173, 116, 0.25);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookingPage-qrImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+
+.bookingPage-qrOverlay {
+  position: absolute;
+  inset: 6px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+.bookingPage-qrFrame:hover .bookingPage-qrOverlay {
+  opacity: 1;
+}
+
+.bookingPage-zoomIcon {
+  color: var(--accent-text);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.bookingPage-qrOverlay span {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bookingPage-qrGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(229, 173, 116, 0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.bookingPage-qrFrame:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: var(--accent-text);
+  box-shadow: 0 12px 30px rgba(229, 173, 116, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.bookingPage-qrFrame:hover .bookingPage-qrImage {
+  transform: scale(1.02);
+}
+
+.bookingPage-qrFrame:hover .bookingPage-qrGlow {
+  box-shadow: inset 0 0 15px rgba(229, 173, 116, 0.3);
+}
+
+.bookingPage-qrLabel {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.bookingPage-paymentPromoBox:hover .bookingPage-qrLabel {
+  color: var(--accent-text);
+}
+
+/* Modal Overlay & Backdrop */
+.bookingPage-modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: bookingPage-fadeIn 0.3s ease-out;
+}
+
+/* Modal Content Card */
+.bookingPage-modalContent {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 24, 18, 0.96) 0%, rgba(15, 12, 9, 0.99) 100%);
+  border: 1px solid rgba(229, 173, 116, 0.25);
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2.2rem;
+  width: min(400px, 100%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(229, 173, 116, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: bookingPage-modalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Modal Close Button */
+.bookingPage-modalClose {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.bookingPage-modalClose:hover {
+  background: rgba(229, 173, 116, 0.12);
+  color: var(--accent-text);
+  border-color: rgba(229, 173, 116, 0.35);
+  transform: rotate(90deg);
+}
+
+.bookingPage-modalTitle {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem 0;
+  letter-spacing: 0.02em;
+}
+
+.bookingPage-modalSubtitle {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 0 0 1.6rem 0;
+  max-width: 92%;
+}
+
+/* Modal QR Frame */
+.bookingPage-modalQrFrame {
+  width: 250px;
+  height: 250px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.6rem;
+  border: 2px solid rgba(229, 173, 116, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bookingPage-modalQrFrame:hover {
+  transform: scale(1.02);
+}
+
+.bookingPage-modalQrImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Modal Details box */
+.bookingPage-modalDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(229, 173, 116, 0.12);
+}
+
+.bookingPage-modalGpayLabel {
+  color: var(--accent-text);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.bookingPage-modalGpayValue {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Download Button inside modal */
+.bookingPage-downloadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--accent-text) 0%, #c48f57 100%);
+  border: none;
+  color: #1a140e;
+  padding: 0.85rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 8px 22px rgba(229, 173, 116, 0.22);
+  width: 100%;
+}
+
+.bookingPage-downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(229, 173, 116, 0.35);
+  background: linear-gradient(135deg, #f0d2a0 0%, var(--accent-text) 100%);
+}
+
+.bookingPage-downloadBtn:active {
+  transform: translateY(0);
+}
+
+@keyframes bookingPage-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bookingPage-modalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bookingPage-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.6;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -754,9 +1026,23 @@
   }
 
   .bookingPage-packagesGrid,
-  .bookingPage-formGrid,
-  .bookingPage-promoRow {
+  .bookingPage-formGrid {
     grid-template-columns: 1fr;
+  }
+
+  .bookingPage-paymentPromoBox {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.4rem;
+    padding: 1.5rem;
+  }
+
+  .bookingPage-specialOfferBadge {
+    margin: 0 auto;
+  }
+
+  .bookingPage-gpayDetails {
+    justify-content: center;
   }
 
   .bookingPage-title {
