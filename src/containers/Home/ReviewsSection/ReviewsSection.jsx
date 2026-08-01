@@ -37,21 +37,29 @@ const ReviewsSection = () => {
   return (
     <section className="reviewsSection-wrapper">
       <div className="reviewsSection-container">
-        <div
+        <motion.div
           className="reviewsSection-header"
+          variants={headerVariants}
+          initial="visible"
+          animate="visible"
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
           <span className="reviewsSection-badge">Customer Reviews</span>
           <h2 className="reviewsSection-title">
             Guest Stories <span>& Stays</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="reviewsSection-grid">
           {reviews.map((review, index) => (
-            <article
+            <motion.article
               className="reviewsSection-card"
               key={review.name}
+              variants={cardVariants}
+              initial="visible"
+              animate="visible"
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
             >
               <FaQuoteLeft className="reviewsSection-quote" aria-hidden="true" />
@@ -65,7 +73,7 @@ const ReviewsSection = () => {
                 <span>{review.name}</span>
                 <small>{review.place}</small>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

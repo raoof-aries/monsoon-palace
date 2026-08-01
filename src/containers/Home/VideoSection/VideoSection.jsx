@@ -8,7 +8,7 @@ const VideoSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -40,24 +40,33 @@ const VideoSection = () => {
 
   return (
     <section className="video-section">
-      <div
+      <motion.div
         className="video-container"
+        variants={container}
+        initial="visible"
+        animate="visible"
+        viewport={{
+          once: false, // 🔑 replay every time
+          margin: "-20px", // trigger slightly earlier
+        }}
       >
         {/* Header */}
-        <div className="video-header">
-          <span className="video-badge">
+        <motion.div className="video-header" variants={container}>
+          <motion.span className="video-badge" variants={item}>
             Property Video
-          </span>
+          </motion.span>
 
-          <h2 className="video-title">
+          <motion.h2 className="video-title" variants={item}>
             Experience Monsoon Palace{" "}
             <span className="gradient-text"> In Motion</span>
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Video */}
-        <div
+        <motion.div
           className="video-wrapper"
+          variants={video}
+          whileHover={{ y: -6, scale: 1.01 }}
           transition={{ type: "spring", stiffness: 300, damping: 26 }}
         >
           <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
@@ -74,13 +83,14 @@ const VideoSection = () => {
               title="MANSOON PALACE"
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Background decoration — continuous, independent */}
-      <div
+      <motion.div
         className="video-bg-decoration"
         aria-hidden
+        animate={{ y: [0, -14, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
     </section>

@@ -89,7 +89,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0 },
+    transition: { staggerChildren: 0.09 },
   },
 };
 
@@ -102,14 +102,17 @@ const OurFacilityPage = () => {
         </div>
         <Motion.div
           className="facilityHero-content"
+          initial="visible"
+          animate="visible"
+          variants={staggerContainer}
         >
-          <Motion.span className="facilityPage-kicker">
+          <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
             Our Facility
           </Motion.span>
-          <Motion.h1 className="facilityHero-title">
+          <Motion.h1 className="facilityHero-title" variants={fadeInUp}>
             Spaces made for slow resort living.
           </Motion.h1>
-          <Motion.p className="facilityHero-copy">
+          <Motion.p className="facilityHero-copy" variants={fadeInUp}>
             Comfortable rooms, inviting dining spaces, and thoughtful guest
             amenities come together for a calm stay at Monsoon Palace.
           </Motion.p>
@@ -120,17 +123,25 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container">
           <Motion.div
             className="facilityShowcase-header"
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, margin: "-20px" }}
+            variants={staggerContainer}
           >
-            <Motion.span className="facilityPage-kicker">
+            <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
               Property Photos
             </Motion.span>
-            <Motion.h2 className="facilityPage-title">
+            <Motion.h2 className="facilityPage-title" variants={fadeInUp}>
               Resort corners worth lingering in
             </Motion.h2>
           </Motion.div>
 
           <Motion.div
             className="facilityPhoto-grid"
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, margin: "-20px" }}
+            variants={staggerContainer}
           >
             {facilityHighlights.map((item, index) => (
               <Motion.article
@@ -138,6 +149,7 @@ const OurFacilityPage = () => {
                   index === 0 ? "facilityPhoto-card--large" : ""
                 }`}
                 key={item.title}
+                variants={fadeInUp}
               >
                 <img src={item.image} alt={item.title} />
                 <div className="facilityPhoto-shade" />
@@ -155,24 +167,32 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container facilityAmenities-layout">
           <Motion.div
             className="facilityAmenities-intro"
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, margin: "-20px" }}
+            variants={staggerContainer}
           >
-            <Motion.span className="facilityPage-kicker">
+            <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
               Amenities
             </Motion.span>
-            <Motion.h2 className="facilityPage-title">
+            <Motion.h2 className="facilityPage-title" variants={fadeInUp}>
               Everything close at hand
             </Motion.h2>
-            <Motion.p className="facilityPage-text">
+            <Motion.p className="facilityPage-text" variants={fadeInUp}>
               From in-room comforts to practical support services, the details
               are arranged to make every stay easy from arrival to checkout.
             </Motion.p>
-            <Motion.div className="facilityAmenities-image">
+            <Motion.div className="facilityAmenities-image" variants={fadeInUp}>
               <img src={LoungeImage} alt="Monsoon Palace guest facility" />
             </Motion.div>
           </Motion.div>
 
           <Motion.div
             className="facilityAmenities-grid"
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, margin: "-20px" }}
+            variants={staggerContainer}
           >
             {amenities.map((amenity) => {
               const Icon = amenity.icon;
@@ -180,6 +200,7 @@ const OurFacilityPage = () => {
                 <Motion.div
                   className="facilityAmenity-item"
                   key={amenity.name}
+                  variants={fadeInUp}
                 >
                   <span className="facilityAmenity-icon">
                     <Icon aria-hidden="true" />

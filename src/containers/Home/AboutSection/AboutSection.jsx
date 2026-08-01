@@ -35,8 +35,12 @@ const AboutSection = () => {
     <section className="about-section">
       <div className="about-container">
         {/* Left Column - Image Collage */}
-        <div
+        <motion.div
           className="about-image-collage"
+          variants={collageVariants}
+          initial="visible"
+          animate="visible"
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="collage-top-row">
@@ -52,53 +56,75 @@ const AboutSection = () => {
               <img src={Image6} alt="Courtyard" />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column - Content */}
         <div className="about-content">
-          <span 
+          <motion.span 
             className="about-badge"
+            variants={badgeFadeInUp}
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             About Us
-          </span>
+          </motion.span>
 
-          <h2 
+          <motion.h2 
             className="about-title"
+            variants={fadeInUp}
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             Experience Comfort <br />
             <span className="gradient-text">Beyond Imagination</span>
-          </h2>
+          </motion.h2>
 
-          <p 
+          <motion.p 
             className="about-text"
+            variants={fadeInUp}
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             Nestled in nature's embrace, Monsoon Palace redefines comfort and hospitality. 
             Every detail is thoughtfully designed to create memorable moments of peace and relaxation. 
             Escape the ordinary and discover a destination where natural beauty meets modern comfort.
-          </p>
+          </motion.p>
           
-          <p 
+          <motion.p 
             className="about-text"
+            variants={fadeInUp}
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             Whether you seek a peaceful retreat or an adventurous getaway, our comfortable 
             accommodations and thoughtfully curated amenities provide the perfect setting to 
             relax, recharge, and create lasting memories.
-          </p>
+          </motion.p>
 
-          <div
+          <motion.div
+            variants={fadeInUp}
+            initial="visible"
+            animate="visible"
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            <a
+            <motion.a
               href="/about"
               className="btn btn-primary"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
               Discover More
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
 

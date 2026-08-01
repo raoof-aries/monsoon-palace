@@ -1,19 +1,45 @@
+import { motion } from "framer-motion";
 import "./ContactPage.css";
 
 const ContactPage = () => {
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
   return (
-    <section className="contactPage-wrapper">
-      <div className="contactPage-header">
-        <span className="contactPage-badge">
+    <motion.section
+      className="contactPage-wrapper"
+      initial="visible"
+      animate="visible"
+      variants={staggerContainer}
+    >
+      <motion.div className="contactPage-header" variants={staggerContainer}>
+        <motion.span className="contactPage-badge" variants={fadeInUp}>
           Get In Touch
-        </span>
-        <h1 className="contactPage-title">
+        </motion.span>
+        <motion.h1 className="contactPage-title" variants={fadeInUp}>
           Plan Your Perfect{" "}
           <span className="contactPage-titleGradient">Escape</span>
-        </h1>
-      </div>
+        </motion.h1>
+      </motion.div>
 
-      <div className="contactPage-content">
+      <motion.div className="contactPage-content" variants={fadeInUp}>
         <div className="contactPage-details">
           <div className="contactPage-detailRow">
             <div className="contactPage-icon">
@@ -160,11 +186,11 @@ const ContactPage = () => {
             ></iframe>
           </div>
         </a>
-      </div>
+      </motion.div>
 
       {/* Background Decoration */}
       <div className="contactPage-bgDecoration"></div>
-    </section>
+    </motion.section>
   );
 };
 
