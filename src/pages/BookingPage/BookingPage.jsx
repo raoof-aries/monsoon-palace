@@ -147,65 +147,44 @@ const BookingPage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const payloadObj = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      roomType: formData.roomType,
-      packageOption: formData.packageOption,
-      extraPerson: formData.extraPerson,
-      checkIn: formData.checkIn,
-      checkOut: formData.checkOut,
-      guests: formData.guests,
-      message: formData.message || "",
-    };
-
-    const tryFetch = async (url, options) => {
-      try {
-        const res = await fetch(url, options);
-        if (res.ok) {
-          const text = await res.text();
-          const trimmed = text.trim();
-          let isOk = false;
-          try {
-            const parsed = JSON.parse(trimmed);
-            if (parsed && (parsed.status === "1" || parsed.status === 1 || parsed.status === "success")) {
-              isOk = true;
-            }
-          } catch {
-            if (trimmed === "1" || trimmed === "success" || trimmed.includes("success")) {
-              isOk = true;
-            }
-          }
-          if (isOk) return true;
-        }
-      } catch (err) {
-        console.warn("Fetch attempt failed:", err);
-      }
-      return false;
-    };
-
     try {
-      // Attempt 1: FormData (populates $_POST for PHP's if(!empty($_POST)))
-      const fd = new FormData();
-      Object.keys(payloadObj).forEach((key) => fd.append(key, payloadObj[key]));
-      let success = await tryFetch("/enquiry-action.php", {
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("roomType", formData.roomType);
+      formDataToSend.append("packageOption", formData.packageOption);
+      formDataToSend.append("extraPerson", formData.extraPerson);
+      formDataToSend.append("checkIn", formData.checkIn);
+      formDataToSend.append("checkOut", formData.checkOut);
+      formDataToSend.append("guests", formData.guests);
+      formDataToSend.append("message", formData.message || "");
+
+      const response = await fetch("/enquiry-action.php", {
         method: "POST",
-        body: fd,
+        body: formDataToSend,
       });
 
-      // Attempt 2: URLSearchParams (x-www-form-urlencoded)
-      if (!success) {
-        const params = new URLSearchParams();
-        Object.keys(payloadObj).forEach((key) => params.append(key, payloadObj[key]));
-        success = await tryFetch("/enquiry-action.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: params.toString(),
-        });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
 
-      if (success) {
+      const resultText = await response.text();
+      const result = resultText.trim();
+
+      let isSuccess = false;
+      try {
+        const data = JSON.parse(result);
+        if (data && (data.status === "1" || data.status === 1 || data.status === "success")) {
+          isSuccess = true;
+        }
+      } catch (e) {
+        if (result === "1" || result === "success" || result.includes("success")) {
+          isSuccess = true;
+        }
+      }
+
+      if (isSuccess) {
         setSubmitStatus("success");
         setFormData({
           name: "",
