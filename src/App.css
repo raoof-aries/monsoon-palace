@@ -140,11 +140,27 @@ a {
   background: var(--surface-deep);
 }
 
-/* Mobile Performance & Animation Overrides */
-@media (max-width: 768px) {
+/* Mobile & Tablet GPU Performance Overrides (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Hide heavy 900px blur background decoration containers that lock up mobile GPUs */
+  .contactPage-bgDecoration,
+  .galleryPage-bgDecoration,
+  .aboutPage-bgDecoration,
+  .bookingPage-bgDecoration,
+  .video-section-bgDecoration,
+  .faqSection-bgDecoration,
+  .partnersSection-bgDecoration,
+  .reviewsSection-bgDecoration {
+    display: none !important;
+  }
+
+  /* Disable expensive GPU backdrop-filter and Gaussian blur calculations */
   *,
   *::before,
   *::after {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     animation-duration: 0.001s !important;
     animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
@@ -152,6 +168,7 @@ a {
     transition-delay: 0s !important;
   }
 
+  /* Replace backdrop blur with clean solid/opaque dark background for mobile rendering */
   .aboutPage-factCard,
   .aboutPage-stat,
   .aboutPage-featureCard,
@@ -170,11 +187,12 @@ a {
   .bookingPage-form,
   .faqSection-item,
   .partnersSection-logo,
-  .reviewsSection-card {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    /* Slightly increase opacity of background for mobile readability without blur */
-    background-color: rgba(18, 18, 18, 0.72) !important;
+  .reviewsSection-card,
+  .contactPage-badge,
+  .contactPage-content,
+  .galleryPage-badge,
+  .bookingPage-badge {
+    background-color: rgba(18, 18, 18, 0.88) !important;
   }
 }
 
