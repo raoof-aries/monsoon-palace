@@ -140,8 +140,18 @@ a {
   background: var(--surface-deep);
 }
 
-/* Mobile Performance Overrides */
+/* Mobile Performance & Animation Overrides */
 @media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    transition-delay: 0s !important;
+  }
+
   .aboutPage-factCard,
   .aboutPage-stat,
   .aboutPage-featureCard,
@@ -167,3 +177,4 @@ a {
     background-color: rgba(18, 18, 18, 0.72) !important;
   }
 }
+

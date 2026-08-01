@@ -40,7 +40,6 @@ const AboutSection = () => {
           variants={collageVariants}
           initial="visible"
           animate="visible"
-          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="collage-top-row">
@@ -65,7 +64,6 @@ const AboutSection = () => {
             variants={badgeFadeInUp}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             About Us
@@ -76,7 +74,6 @@ const AboutSection = () => {
             variants={fadeInUp}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             Experience Comfort <br />
@@ -88,7 +85,6 @@ const AboutSection = () => {
             variants={fadeInUp}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             Nestled in nature's embrace, Monsoon Palace redefines comfort and hospitality. 
@@ -101,7 +97,6 @@ const AboutSection = () => {
             variants={fadeInUp}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             Whether you seek a peaceful retreat or an adventurous getaway, our comfortable 
@@ -113,7 +108,6 @@ const AboutSection = () => {
             variants={fadeInUp}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <motion.a

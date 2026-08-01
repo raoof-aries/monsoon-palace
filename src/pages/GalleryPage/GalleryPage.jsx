@@ -44,7 +44,7 @@ const GalleryPage = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0,
       },
     },
   };
@@ -144,7 +144,7 @@ const GalleryPage = () => {
       </motion.div>
 
       {/* Gallery Grid */}
-      <motion.div className="galleryPage-grid" layout>
+      <motion.div className="galleryPage-grid">
         <AnimatePresence mode="popLayout">
           {filteredImages.map((image, index) => (
             <motion.div
@@ -155,17 +155,13 @@ const GalleryPage = () => {
               initial="visible"
               animate="visible"
               exit="exit"
-              layout
-              layoutId={`gallery-item-${image.id}`}
               whileHover={{ y: -8 }}
-              transition={{
-                layout: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
-              }}
             >
-              <motion.img
+              <img
                 src={image.src}
                 alt={image.alt}
-                layoutId={`gallery-img-${image.id}`}
+                loading="lazy"
+                decoding="async"
               />
               <motion.div
                 className="galleryPage-overlay"

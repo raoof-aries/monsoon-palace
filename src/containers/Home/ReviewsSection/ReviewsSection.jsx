@@ -42,7 +42,6 @@ const ReviewsSection = () => {
           variants={headerVariants}
           initial="visible"
           animate="visible"
-          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
           <span className="reviewsSection-badge">Customer Reviews</span>
@@ -59,7 +58,6 @@ const ReviewsSection = () => {
               variants={cardVariants}
               initial="visible"
               animate="visible"
-              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
             >
               <FaQuoteLeft className="reviewsSection-quote" aria-hidden="true" />

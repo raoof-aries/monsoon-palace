@@ -7,7 +7,9 @@ import { useState, useEffect } from "react";
  * that occurs when reading it synchronously during the first render.
  */
 const useIsMobile = (breakpoint = 768) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= breakpoint : false
+  );
 
   useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${breakpoint}px)`);

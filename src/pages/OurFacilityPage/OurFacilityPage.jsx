@@ -19,13 +19,13 @@ import {
 } from "react-icons/fa";
 import "./OurFacilityPage.css";
 
-import HeroImage from "../../assets/images/gallery-new/Landscape/landscape1.JPG";
-import RoomImage from "../../assets/images/gallery-new/Rooms/rooms1.JPG";
-import PoolImage from "../../assets/images/gallery-new/Landscape/landscape5.JPG";
-import DiningImage from "../../assets/images/gallery-new/Indoor Dining/indoorDining1.JPG";
-import OutdoorDiningImage from "../../assets/images/gallery-new/Outdoor Dining/outdoorDining1.png";
-import LoungeImage from "../../assets/images/gallery-new/Amenities/amenities6.JPG";
-import EntertainmentImage from "../../assets/images/gallery-new/Amenities/amenities12.JPG";
+import HeroImage from "../../assets/images/gallery-new/Landscape/landscape1.webp";
+import RoomImage from "../../assets/images/gallery-new/Rooms/rooms1.webp";
+import PoolImage from "../../assets/images/gallery-new/Landscape/landscape5.webp";
+import DiningImage from "../../assets/images/gallery-new/Indoor Dining/indoorDining1.webp";
+import OutdoorDiningImage from "../../assets/images/gallery-new/Outdoor Dining/outdoorDining1.webp";
+import LoungeImage from "../../assets/images/gallery-new/Amenities/amenities6.webp";
+import EntertainmentImage from "../../assets/images/gallery-new/Amenities/amenities12.webp";
 
 const facilityHighlights = [
   {
@@ -89,7 +89,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.09 },
+    transition: { staggerChildren: 0 },
   },
 };
 
@@ -125,7 +125,6 @@ const OurFacilityPage = () => {
             className="facilityShowcase-header"
             initial="visible"
             animate="visible"
-            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
@@ -140,7 +139,6 @@ const OurFacilityPage = () => {
             className="facilityPhoto-grid"
             initial="visible"
             animate="visible"
-            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {facilityHighlights.map((item, index) => (
@@ -169,7 +167,6 @@ const OurFacilityPage = () => {
             className="facilityAmenities-intro"
             initial="visible"
             animate="visible"
-            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
@@ -191,7 +188,6 @@ const OurFacilityPage = () => {
             className="facilityAmenities-grid"
             initial="visible"
             animate="visible"
-            viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
             {amenities.map((amenity) => {

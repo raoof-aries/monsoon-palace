@@ -41,13 +41,13 @@
   justify-content: center;
   align-items: flex-start;
   max-width: 760px;
-  animation: bookingPage-rise 0.8s ease-out both;
+  animation: bookingPage-rise 0.8s ease-out forwards;
 }
 
 @keyframes bookingPage-rise {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -115,7 +115,7 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.34);
-  animation: bookingPage-rise 0.8s ease-out 0.12s both;
+  animation: bookingPage-rise 0.8s ease-out 0.12s forwards;
 }
 
 .bookingPage-heroCard::before {
@@ -148,7 +148,7 @@
   grid-template-columns: minmax(0, 0.96fr) minmax(390px, 0.74fr);
   gap: clamp(2rem, 4.5vw, 4.5rem);
   align-items: start;
-  animation: bookingPage-rise 0.8s ease-out 0.18s both;
+  animation: bookingPage-rise 0.8s ease-out 0.18s forwards;
 }
 
 .bookingPage-info,
@@ -586,7 +586,7 @@
   background: linear-gradient(135deg, rgba(229, 173, 116, 0.08) 0%, rgba(229, 173, 116, 0.02) 100%);
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  animation: bookingPage-rise 0.8s ease-out 0.24s both;
+  animation: bookingPage-rise 0.8s ease-out 0.24s forwards;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 

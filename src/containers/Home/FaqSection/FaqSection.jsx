@@ -52,7 +52,6 @@ const FaqSection = () => {
             variants={badgeVariants}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6 }}
           >
             FAQs
@@ -62,7 +61,6 @@ const FaqSection = () => {
             variants={textVariants}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Frequently Asked{" "}
@@ -73,7 +71,6 @@ const FaqSection = () => {
             variants={textVariants}
             initial="visible"
             animate="visible"
-            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Find answers to some of the most common questions about your stay at
@@ -89,7 +86,6 @@ const FaqSection = () => {
               variants={textVariants}
               initial="visible"
               animate="visible"
-              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               onClick={() => toggleFaq(index)}
             >

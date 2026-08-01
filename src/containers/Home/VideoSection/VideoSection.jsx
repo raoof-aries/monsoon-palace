@@ -8,7 +8,7 @@ const VideoSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0,
       },
     },
   };
@@ -45,10 +45,6 @@ const VideoSection = () => {
         variants={container}
         initial="visible"
         animate="visible"
-        viewport={{
-          once: false, // 🔑 replay every time
-          margin: "-20px", // trigger slightly earlier
-        }}
       >
         {/* Header */}
         <motion.div className="video-header" variants={container}>

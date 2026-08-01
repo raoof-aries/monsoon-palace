@@ -37,7 +37,6 @@ const PartnersSection = () => {
           variants={headerVariants}
           initial="visible"
           animate="visible"
-          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
           <span className="partnersSection-badge">Our Partners</span>
@@ -61,7 +60,6 @@ const PartnersSection = () => {
                 variants={logoVariants}
                 initial="visible"
                 animate="visible"
-                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >
                 <PartnerIcon aria-hidden="true" />
