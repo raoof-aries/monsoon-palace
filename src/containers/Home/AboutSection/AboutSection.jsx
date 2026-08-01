@@ -6,14 +6,42 @@ import Image5 from "../../../assets/images/home/image5.webp";
 import Image6 from "../../../assets/images/gallery/gallery16.webp";
 
 const AboutSection = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+  const collageVariants = {
+    hidden: isMobile ? { opacity: 1, scale: 1, filter: "blur(0px)" } : { opacity: 0, scale: 0.95, filter: "blur(4px)" },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+    },
+  };
+
+  const fadeInUp = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const badgeFadeInUp = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
     <section className="about-section">
       <div className="about-container">
         {/* Left Column - Image Collage */}
         <motion.div
           className="about-image-collage"
-          initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          variants={collageVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
@@ -36,8 +64,9 @@ const AboutSection = () => {
         <div className="about-content">
           <motion.span 
             className="about-badge"
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={badgeFadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -46,8 +75,9 @@ const AboutSection = () => {
 
           <motion.h2 
             className="about-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -57,8 +87,9 @@ const AboutSection = () => {
 
           <motion.p 
             className="about-text"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
@@ -69,8 +100,9 @@ const AboutSection = () => {
           
           <motion.p 
             className="about-text"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
@@ -80,8 +112,9 @@ const AboutSection = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >

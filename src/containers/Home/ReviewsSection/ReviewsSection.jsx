@@ -24,13 +24,26 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+  const headerVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const cardVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="reviewsSection-wrapper">
       <div className="reviewsSection-container">
         <motion.div
           className="reviewsSection-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
@@ -45,8 +58,9 @@ const ReviewsSection = () => {
             <motion.article
               className="reviewsSection-card"
               key={review.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
             >

@@ -19,13 +19,26 @@ const partners = [
 ];
 
 const PartnersSection = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+  const headerVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const logoVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="partnersSection-wrapper">
       <div className="partnersSection-container">
         <motion.div
           className="partnersSection-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
@@ -47,8 +60,9 @@ const PartnersSection = () => {
               <motion.div
                 className="partnersSection-logo"
                 key={partner.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={logoVariants}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >

@@ -33,14 +33,27 @@ const FaqSection = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+  const badgeVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const textVariants = {
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="faqSection-wrapper">
       <div className="faqSection-container">
         <div className="faqSection-header">
           <motion.span
             className="faqSection-badge"
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={badgeVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6 }}
           >
@@ -48,8 +61,9 @@ const FaqSection = () => {
           </motion.span>
           <motion.h2
             className="faqSection-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={textVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -58,8 +72,9 @@ const FaqSection = () => {
           </motion.h2>
           <motion.p
             className="faqSection-description"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={textVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -73,8 +88,9 @@ const FaqSection = () => {
             <motion.div
               key={index}
               className={`faqSection-item ${activeIndex === index ? "active" : ""}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               onClick={() => toggleFaq(index)}

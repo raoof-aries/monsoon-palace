@@ -212,8 +212,10 @@ const AboutPage = () => {
   ];
 
   // Animation variants
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
@@ -222,7 +224,7 @@ const AboutPage = () => {
   };
 
   const fadeIn = {
-    hidden: { opacity: 0 },
+    hidden: isMobile ? { opacity: 1 } : { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { duration: 1, ease: "easeOut" },
@@ -230,7 +232,7 @@ const AboutPage = () => {
   };
 
   const scaleIn = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: isMobile ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -239,11 +241,11 @@ const AboutPage = () => {
   };
 
   const staggerContainer = {
-    hidden: { opacity: 0 },
+    hidden: isMobile ? { opacity: 1 } : { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: isMobile ? 0 : 0.15,
       },
     },
   };
