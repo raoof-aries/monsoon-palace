@@ -1077,3 +1077,93 @@
     gap: 0.35rem;
   }
 }
+
+/* reCAPTCHA & Form Submission Styles */
+.bookingPage-recaptchaGroup {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bookingPage-statusMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: left;
+  animation: bookingPage-fadeIn 0.25s ease-out;
+}
+
+.bookingPage-statusMessage.success {
+  background: rgba(46, 213, 115, 0.08);
+  border: 1px solid rgba(46, 213, 115, 0.25);
+  color: #2ed573;
+}
+
+.bookingPage-statusMessage.failed {
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.25);
+  color: #ff4757;
+}
+
+.bookingPage-statusMessage.warning {
+  background: rgba(255, 165, 2, 0.08);
+  border: 1px solid rgba(255, 165, 2, 0.25);
+  color: #ffa502;
+}
+
+.bookingPage-statusIcon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.bookingPage-submitBtn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.bookingPage-btnSpinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(26, 20, 14, 0.25);
+  border-top-color: #1a140e;
+  border-radius: 50%;
+  animation: bookingPage-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes bookingPage-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Input Validation Styles */
+.bookingPage-fieldError {
+  color: #ff4757;
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin-top: 0.35rem;
+  display: block;
+  text-align: left;
+  animation: bookingPage-fadeIn 0.2s ease-out;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: rgba(255, 71, 87, 0.45) !important;
+  background: rgba(255, 71, 87, 0.02) !important;
+}
+
+input.invalid:focus,
+select.invalid:focus,
+textarea.invalid:focus {
+  border-color: #ff4757 !important;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15) !important;
+}

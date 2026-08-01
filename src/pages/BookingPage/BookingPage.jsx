@@ -61,6 +61,9 @@ const BookingPage = () => {
   });
 
   const [isQrModalOpen, setIsQrModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'failed' | null
+  const [errors, setErrors] = useState({});
 
   const handleDownloadQR = (e) => {
     e.stopPropagation();
@@ -72,11 +75,58 @@ const BookingPage = () => {
     document.body.removeChild(link);
   };
 
+  const validateForm = () => {
+    const tempErrors = {};
+    if (!formData.name.trim()) tempErrors.name = "Full name is required";
+    
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email address is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      tempErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      tempErrors.phone = "Phone number is required";
+    } else if (formData.phone.replace(/[^0-9]/g, "").length < 10) {
+      tempErrors.phone = "Please enter a valid phone number (minimum 10 digits)";
+    }
+
+    if (!formData.checkIn) {
+      tempErrors.checkIn = "Check-in date is required";
+    } else {
+      const checkInDate = new Date(formData.checkIn);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (checkInDate < today) {
+        tempErrors.checkIn = "Check-in date cannot be in the past";
+      }
+    }
+
+    if (!formData.checkOut) {
+      tempErrors.checkOut = "Check-out date is required";
+    } else if (formData.checkIn) {
+      const checkInDate = new Date(formData.checkIn);
+      const checkOutDate = new Date(formData.checkOut);
+      if (checkOutDate <= checkInDate) {
+        tempErrors.checkOut = "Check-out date must be after check-in date";
+      }
+    }
+
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    if (errors[e.target.name]) {
+      setErrors({
+        ...errors,
+        [e.target.name]: "",
+      });
+    }
   };
 
   const handlePackageSelect = (roomType, packageOption = formData.packageOption) => {
@@ -87,10 +137,64 @@ const BookingPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("roomType", formData.roomType);
+      formDataToSend.append("packageOption", formData.packageOption);
+      formDataToSend.append("extraPerson", formData.extraPerson);
+      formDataToSend.append("checkIn", formData.checkIn);
+      formDataToSend.append("checkOut", formData.checkOut);
+      formDataToSend.append("guests", formData.guests);
+      formDataToSend.append("message", formData.message);
+
+      const response = await fetch("/enquiry-action.php", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const resultText = await response.text();
+      const result = resultText.trim();
+
+      if (result === "1") {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          roomType: "one-bed",
+          packageOption: "option-1",
+          extraPerson: "0",
+          checkIn: "",
+          checkOut: "",
+          guests: "1",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("failed");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitStatus("failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -264,7 +368,7 @@ const BookingPage = () => {
               <h2 className="bookingPage-sectionTitle">Reservation Form</h2>
             </div>
             <div className="bookingPage-form">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} noValidate>
                 <div className="bookingPage-formGrid">
                   <div className="bookingPage-inputGroup">
                     <label htmlFor="name">Full Name</label>
@@ -275,8 +379,10 @@ const BookingPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
+                      className={errors.name ? "invalid" : ""}
                       required
                     />
+                    {errors.name && <span className="bookingPage-fieldError">{errors.name}</span>}
                   </div>
 
                   <div className="bookingPage-inputGroup">
@@ -288,8 +394,10 @@ const BookingPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
+                      className={errors.email ? "invalid" : ""}
                       required
                     />
+                    {errors.email && <span className="bookingPage-fieldError">{errors.email}</span>}
                   </div>
 
                   <div className="bookingPage-inputGroup">
@@ -301,8 +409,10 @@ const BookingPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
+                      className={errors.phone ? "invalid" : ""}
                       required
                     />
+                    {errors.phone && <span className="bookingPage-fieldError">{errors.phone}</span>}
                   </div>
 
                   <div className="bookingPage-inputGroup">
@@ -357,8 +467,10 @@ const BookingPage = () => {
                       name="checkIn"
                       value={formData.checkIn}
                       onChange={handleChange}
+                      className={errors.checkIn ? "invalid" : ""}
                       required
                     />
+                    {errors.checkIn && <span className="bookingPage-fieldError">{errors.checkIn}</span>}
                   </div>
 
                   <div className="bookingPage-inputGroup">
@@ -369,8 +481,10 @@ const BookingPage = () => {
                       name="checkOut"
                       value={formData.checkOut}
                       onChange={handleChange}
+                      className={errors.checkOut ? "invalid" : ""}
                       required
                     />
+                    {errors.checkOut && <span className="bookingPage-fieldError">{errors.checkOut}</span>}
                   </div>
                   
                   <div className="bookingPage-inputGroup bookingPage-fullWidth">
@@ -386,7 +500,6 @@ const BookingPage = () => {
                       <option value="2">2 Guests</option>
                       <option value="3">3 Guests</option>
                       <option value="4">4 Guests</option>
-
                       <option value="5">5+ Guests</option>
                     </select>
                   </div>
@@ -404,19 +517,48 @@ const BookingPage = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="bookingPage-submitBtn">
-                  <span>Send Inquiry</span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
+                {/* Feedback Alerts */}
+                {submitStatus === "success" && (
+                  <div className="bookingPage-statusMessage success">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="bookingPage-statusIcon">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Your inquiry has been submitted successfully! We will contact you soon.</span>
+                  </div>
+                )}
+                {submitStatus === "failed" && (
+                  <div className="bookingPage-statusMessage failed">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="bookingPage-statusIcon">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>Submission failed. Please try again or call us.</span>
+                  </div>
+                )}
+
+                <button type="submit" className="bookingPage-submitBtn" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <div className="bookingPage-btnSpinner"></div>
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Inquiry</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
