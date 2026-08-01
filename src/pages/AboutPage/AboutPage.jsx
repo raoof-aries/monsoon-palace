@@ -254,7 +254,7 @@ const AboutPage = () => {
       <section className="aboutPage-hero">
         <motion.div
           className="aboutPage-heroContent"
-          initial="hidden"
+          initial="visible"
           animate="visible"
           variants={staggerContainer}
         >
@@ -287,8 +287,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-factsGrid"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -314,8 +314,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-content"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -365,8 +365,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-content aboutPage-contentReverse"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -430,8 +430,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-content"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -503,8 +503,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-content aboutPage-contentReverse"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -559,8 +559,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-content"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -617,8 +617,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-institutionsHeader"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -640,8 +640,8 @@ const AboutPage = () => {
           </motion.div>
           <motion.div
             className="aboutPage-institutionsGrid"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -671,8 +671,8 @@ const AboutPage = () => {
         <div className="aboutPage-container">
           <motion.div
             className="aboutPage-placesHeader"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -695,8 +695,8 @@ const AboutPage = () => {
               <motion.div
                 key={group.title}
                 className="aboutPage-placeGroup"
-                initial="hidden"
-                whileInView="visible"
+                initial="visible"
+                animate="visible"
                 viewport={{ once: true, margin: "-20px" }}
                 variants={staggerContainer}
               >

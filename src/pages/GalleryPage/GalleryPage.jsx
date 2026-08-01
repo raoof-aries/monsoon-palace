@@ -113,7 +113,7 @@ const GalleryPage = () => {
   return (
     <motion.section
       className="galleryPage-wrapper"
-      initial="hidden"
+      initial="visible"
       animate="visible"
       variants={staggerContainer}
     >
@@ -152,7 +152,7 @@ const GalleryPage = () => {
               className={`galleryPage-item ${index % 7 === 0 ? "large" : ""}`}
               onClick={() => setSelectedImage(image)}
               variants={gridItemVariants}
-              initial="hidden"
+              initial="visible"
               animate="visible"
               exit="exit"
               layout
@@ -211,7 +211,7 @@ const GalleryPage = () => {
             className="galleryPage-lightbox"
             onClick={() => setSelectedImage(null)}
             variants={lightboxVariants}
-            initial="hidden"
+            initial="visible"
             animate="visible"
             exit="exit"
           >
@@ -241,7 +241,7 @@ const GalleryPage = () => {
               className="galleryPage-lightboxContent"
               onClick={(e) => e.stopPropagation()}
               variants={lightboxContentVariants}
-              initial="hidden"
+              initial="visible"
               animate="visible"
               exit="exit"
             >

@@ -50,8 +50,8 @@ const FaqSection = () => {
           <motion.span
             className="faqSection-badge"
             variants={badgeVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6 }}
           >
@@ -60,8 +60,8 @@ const FaqSection = () => {
           <motion.h2
             className="faqSection-title"
             variants={textVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -71,8 +71,8 @@ const FaqSection = () => {
           <motion.p
             className="faqSection-description"
             variants={textVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -87,8 +87,8 @@ const FaqSection = () => {
               key={index}
               className={`faqSection-item ${activeIndex === index ? "active" : ""}`}
               variants={textVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               onClick={() => toggleFaq(index)}

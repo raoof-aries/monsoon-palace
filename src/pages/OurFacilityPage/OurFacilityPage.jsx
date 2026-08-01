@@ -102,7 +102,7 @@ const OurFacilityPage = () => {
         </div>
         <Motion.div
           className="facilityHero-content"
-          initial="hidden"
+          initial="visible"
           animate="visible"
           variants={staggerContainer}
         >
@@ -123,8 +123,8 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container">
           <Motion.div
             className="facilityShowcase-header"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -138,8 +138,8 @@ const OurFacilityPage = () => {
 
           <Motion.div
             className="facilityPhoto-grid"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -167,8 +167,8 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container facilityAmenities-layout">
           <Motion.div
             className="facilityAmenities-intro"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >
@@ -189,8 +189,8 @@ const OurFacilityPage = () => {
 
           <Motion.div
             className="facilityAmenities-grid"
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, margin: "-20px" }}
             variants={staggerContainer}
           >

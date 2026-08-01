@@ -25,7 +25,7 @@ const ContactPage = () => {
   return (
     <motion.section
       className="contactPage-wrapper"
-      initial="hidden"
+      initial="visible"
       animate="visible"
       variants={staggerContainer}
     >

@@ -40,8 +40,8 @@ const ReviewsSection = () => {
         <motion.div
           className="reviewsSection-header"
           variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial="visible"
+          animate="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
@@ -57,8 +57,8 @@ const ReviewsSection = () => {
               className="reviewsSection-card"
               key={review.name}
               variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
             >

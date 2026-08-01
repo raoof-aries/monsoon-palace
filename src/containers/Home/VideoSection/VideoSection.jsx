@@ -43,8 +43,8 @@ const VideoSection = () => {
       <motion.div
         className="video-container"
         variants={container}
-        initial="hidden"
-        whileInView="visible"
+        initial="visible"
+        animate="visible"
         viewport={{
           once: false, // 🔑 replay every time
           margin: "-20px", // trigger slightly earlier

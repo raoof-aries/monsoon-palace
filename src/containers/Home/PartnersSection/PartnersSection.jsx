@@ -35,8 +35,8 @@ const PartnersSection = () => {
         <motion.div
           className="partnersSection-header"
           variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial="visible"
+          animate="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
         >
@@ -59,8 +59,8 @@ const PartnersSection = () => {
                 className="partnersSection-logo"
                 key={partner.name}
                 variants={logoVariants}
-                initial="hidden"
-                whileInView="visible"
+                initial="visible"
+                animate="visible"
                 viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >

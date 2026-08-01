@@ -38,8 +38,8 @@ const AboutSection = () => {
         <motion.div
           className="about-image-collage"
           variants={collageVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial="visible"
+          animate="visible"
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
@@ -63,8 +63,8 @@ const AboutSection = () => {
           <motion.span 
             className="about-badge"
             variants={badgeFadeInUp}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -74,8 +74,8 @@ const AboutSection = () => {
           <motion.h2 
             className="about-title"
             variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -86,8 +86,8 @@ const AboutSection = () => {
           <motion.p 
             className="about-text"
             variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
@@ -99,8 +99,8 @@ const AboutSection = () => {
           <motion.p 
             className="about-text"
             variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
@@ -111,8 +111,8 @@ const AboutSection = () => {
 
           <motion.div
             variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
+            initial="visible"
+            animate="visible"
             viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
