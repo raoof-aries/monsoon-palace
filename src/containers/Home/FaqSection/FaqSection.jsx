@@ -33,15 +33,13 @@ const FaqSection = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const badgeVariants = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0 }
   };
 
   const textVariants = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
 

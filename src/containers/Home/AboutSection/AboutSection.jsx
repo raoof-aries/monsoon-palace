@@ -6,10 +6,8 @@ import Image5 from "../../../assets/images/home/image5.webp";
 import Image6 from "../../../assets/images/gallery/gallery16.webp";
 
 const AboutSection = () => {
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const collageVariants = {
-    hidden: isMobile ? { opacity: 1, scale: 1, filter: "blur(0px)" } : { opacity: 0, scale: 0.95, filter: "blur(4px)" },
+    hidden: { opacity: 0, scale: 0.95, filter: "blur(4px)" },
     visible: {
       opacity: 1,
       scale: 1,
@@ -18,7 +16,7 @@ const AboutSection = () => {
   };
 
   const fadeInUp = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -26,7 +24,7 @@ const AboutSection = () => {
   };
 
   const badgeFadeInUp = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,

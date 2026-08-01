@@ -3,10 +3,8 @@ import "./ContactPage.css";
 
 const ContactPage = () => {
   // Animation variants
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const fadeInUp = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
@@ -15,11 +13,11 @@ const ContactPage = () => {
   };
 
   const staggerContainer = {
-    hidden: isMobile ? { opacity: 1 } : { opacity: 0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: isMobile ? 0 : 0.08,
+        staggerChildren: 0.08,
       },
     },
   };

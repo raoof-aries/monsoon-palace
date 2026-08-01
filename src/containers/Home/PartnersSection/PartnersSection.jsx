@@ -19,15 +19,13 @@ const partners = [
 ];
 
 const PartnersSection = () => {
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const headerVariants = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
 
   const logoVariants = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 },
+    hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0 }
   };
 

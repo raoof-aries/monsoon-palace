@@ -3,20 +3,18 @@ import "./VideoSection.css";
 
 const VideoSection = () => {
   /* ---------- Variants ---------- */
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const container = {
-    hidden: isMobile ? { opacity: 1 } : { opacity: 0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: isMobile ? 0 : 0.15,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const item = {
-    hidden: isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 },
+    hidden: { opacity: 0, y: 35 },
     visible: {
       opacity: 1,
       y: 0,
@@ -28,7 +26,7 @@ const VideoSection = () => {
   };
 
   const video = {
-    hidden: isMobile ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 },
+    hidden: { opacity: 0, scale: 0.96 },
     visible: {
       opacity: 1,
       scale: 1,
