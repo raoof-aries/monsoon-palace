@@ -47,45 +47,33 @@ const FaqSection = () => {
     <section className="faqSection-wrapper">
       <div className="faqSection-container">
         <div className="faqSection-header">
-          <motion.span
+          <span
             className="faqSection-badge"
-            variants={badgeVariants}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.6 }}
           >
             FAQs
-          </motion.span>
-          <motion.h2
+          </span>
+          <h2
             className="faqSection-title"
-            variants={textVariants}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Frequently Asked{" "}
             <span className="faqSection-gradient">Questions</span>
-          </motion.h2>
-          <motion.p
+          </h2>
+          <p
             className="faqSection-description"
-            variants={textVariants}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Find answers to some of the most common questions about your stay at
             Monsoon Palace.
-          </motion.p>
+          </p>
         </div>
 
         <div className="faqSection-list">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
               className={`faqSection-item ${activeIndex === index ? "active" : ""}`}
-              variants={textVariants}
-              initial="visible"
-              animate="visible"
               transition={{ duration: 0.5, delay: 0.1 * index }}
               onClick={() => toggleFaq(index)}
             >
@@ -97,18 +85,16 @@ const FaqSection = () => {
               </div>
               <AnimatePresence>
                 {activeIndex === index && (
-                  <motion.div
+                  <div
                     className="faqSection-answer"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
                     <p>{faq.answer}</p>
-                  </motion.div>
+                  </div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

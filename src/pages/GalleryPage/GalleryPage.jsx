@@ -111,72 +111,51 @@ const GalleryPage = () => {
   }, [selectedImage]);
 
   return (
-    <motion.section
+    <section
       className="galleryPage-wrapper"
-      initial="visible"
-      animate="visible"
-      variants={staggerContainer}
     >
-      <motion.div className="galleryPage-header" variants={staggerContainer}>
-        <motion.span className="galleryPage-badge" variants={fadeInUp}>
+      <div className="galleryPage-header">
+        <span className="galleryPage-badge">
           Explore
-        </motion.span>
-        <motion.h1 className="galleryPage-title" variants={fadeInUp}>
+        </span>
+        <h1 className="galleryPage-title">
           Visual <span className="galleryPage-titleGradient">Journey</span>
-        </motion.h1>
+        </h1>
     
-      </motion.div>
+      </div>
 
       {/* Filters */}
-      <motion.div className="galleryPage-filters" variants={staggerContainer}>
+      <div className="galleryPage-filters">
         {categories.map((cat) => (
-          <motion.button
+          <button
             key={cat}
             className={`galleryPage-filterBtn ${activeTab === cat ? "active" : ""}`}
             onClick={() => setActiveTab(cat)}
-            variants={fadeInUp}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             {cat}
-          </motion.button>
+          </button>
         ))}
-      </motion.div>
+      </div>
 
       {/* Gallery Grid */}
-      <motion.div className="galleryPage-grid">
-        <AnimatePresence mode="popLayout">
-          {filteredImages.map((image, index) => (
-            <motion.div
-              key={image.id}
-              className={`galleryPage-item ${index % 7 === 0 ? "large" : ""}`}
-              onClick={() => setSelectedImage(image)}
-              variants={gridItemVariants}
-              initial="visible"
-              animate="visible"
-              exit="exit"
-              whileHover={{ y: -8 }}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                decoding="async"
-              />
-              <motion.div
-                className="galleryPage-overlay"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="galleryPage-overlayContent">
-                  <span className="galleryPage-category">{image.category}</span>
-                </div>
-                <motion.div
-                  className="galleryPage-expandIcon"
-                  whileHover={{ scale: 1.2, rotate: 90 }}
-                  transition={{ duration: 0.3 }}
-                >
+      <div className="galleryPage-grid">
+        {filteredImages.map((image, index) => (
+          <div
+            key={image.id}
+            className={`galleryPage-item ${index % 7 === 0 ? "large" : ""}`}
+            onClick={() => setSelectedImage(image)}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="galleryPage-overlay">
+              <div className="galleryPage-overlayContent">
+                <span className="galleryPage-category">{image.category}</span>
+              </div>
+              <div className="galleryPage-expandIcon">
                   <svg
                     width="20"
                     height="20"
@@ -192,32 +171,24 @@ const GalleryPage = () => {
                     <line x1="21" y1="3" x2="14" y2="10" />
                     <line x1="3" y1="21" x2="10" y2="14" />
                   </svg>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
               <div className="galleryPage-shimmer"></div>
-            </motion.div>
+            </div>
           ))}
-        </AnimatePresence>
-      </motion.div>
+      </div>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
-          <motion.div
+          <div
             className="galleryPage-lightbox"
             onClick={() => setSelectedImage(null)}
-            variants={lightboxVariants}
-            initial="visible"
-            animate="visible"
             exit="exit"
           >
-            <motion.button
+            <button
               className="galleryPage-closeBtn"
               onClick={() => setSelectedImage(null)}
-              whileHover={{ rotate: 90, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             >
               <svg
@@ -232,30 +203,25 @@ const GalleryPage = () => {
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
-            </motion.button>
-            <motion.div
+            </button>
+            <div
               className="galleryPage-lightboxContent"
               onClick={(e) => e.stopPropagation()}
-              variants={lightboxContentVariants}
-              initial="visible"
-              animate="visible"
               exit="exit"
             >
-              <motion.img
+              <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
       </AnimatePresence>
 
       {/* Background Decoration */}
       <div className="galleryPage-bgDecoration"></div>
-    </motion.section>
+    </section>
   );
 };
 

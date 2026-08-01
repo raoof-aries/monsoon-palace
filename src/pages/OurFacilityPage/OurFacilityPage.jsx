@@ -102,17 +102,14 @@ const OurFacilityPage = () => {
         </div>
         <Motion.div
           className="facilityHero-content"
-          initial="visible"
-          animate="visible"
-          variants={staggerContainer}
         >
-          <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
+          <Motion.span className="facilityPage-kicker">
             Our Facility
           </Motion.span>
-          <Motion.h1 className="facilityHero-title" variants={fadeInUp}>
+          <Motion.h1 className="facilityHero-title">
             Spaces made for slow resort living.
           </Motion.h1>
-          <Motion.p className="facilityHero-copy" variants={fadeInUp}>
+          <Motion.p className="facilityHero-copy">
             Comfortable rooms, inviting dining spaces, and thoughtful guest
             amenities come together for a calm stay at Monsoon Palace.
           </Motion.p>
@@ -123,23 +120,17 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container">
           <Motion.div
             className="facilityShowcase-header"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
+            <Motion.span className="facilityPage-kicker">
               Property Photos
             </Motion.span>
-            <Motion.h2 className="facilityPage-title" variants={fadeInUp}>
+            <Motion.h2 className="facilityPage-title">
               Resort corners worth lingering in
             </Motion.h2>
           </Motion.div>
 
           <Motion.div
             className="facilityPhoto-grid"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             {facilityHighlights.map((item, index) => (
               <Motion.article
@@ -147,7 +138,6 @@ const OurFacilityPage = () => {
                   index === 0 ? "facilityPhoto-card--large" : ""
                 }`}
                 key={item.title}
-                variants={fadeInUp}
               >
                 <img src={item.image} alt={item.title} />
                 <div className="facilityPhoto-shade" />
@@ -165,30 +155,24 @@ const OurFacilityPage = () => {
         <div className="facilityPage-container facilityAmenities-layout">
           <Motion.div
             className="facilityAmenities-intro"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <Motion.span className="facilityPage-kicker" variants={fadeInUp}>
+            <Motion.span className="facilityPage-kicker">
               Amenities
             </Motion.span>
-            <Motion.h2 className="facilityPage-title" variants={fadeInUp}>
+            <Motion.h2 className="facilityPage-title">
               Everything close at hand
             </Motion.h2>
-            <Motion.p className="facilityPage-text" variants={fadeInUp}>
+            <Motion.p className="facilityPage-text">
               From in-room comforts to practical support services, the details
               are arranged to make every stay easy from arrival to checkout.
             </Motion.p>
-            <Motion.div className="facilityAmenities-image" variants={fadeInUp}>
+            <Motion.div className="facilityAmenities-image">
               <img src={LoungeImage} alt="Monsoon Palace guest facility" />
             </Motion.div>
           </Motion.div>
 
           <Motion.div
             className="facilityAmenities-grid"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             {amenities.map((amenity) => {
               const Icon = amenity.icon;
@@ -196,7 +180,6 @@ const OurFacilityPage = () => {
                 <Motion.div
                   className="facilityAmenity-item"
                   key={amenity.name}
-                  variants={fadeInUp}
                 >
                   <span className="facilityAmenity-icon">
                     <Icon aria-hidden="true" />

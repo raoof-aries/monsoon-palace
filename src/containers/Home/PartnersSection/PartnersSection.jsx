@@ -32,11 +32,8 @@ const PartnersSection = () => {
   return (
     <section className="partnersSection-wrapper">
       <div className="partnersSection-container">
-        <motion.div
+        <div
           className="partnersSection-header"
-          variants={headerVariants}
-          initial="visible"
-          animate="visible"
           transition={{ duration: 0.7 }}
         >
           <span className="partnersSection-badge">Our Partners</span>
@@ -47,24 +44,21 @@ const PartnersSection = () => {
             Dummy partner listings for now, ready to be replaced with official
             booking and travel platform logos.
           </p>
-        </motion.div>
+        </div>
 
         <div className="partnersSection-strip" aria-label="Partner platforms">
           {partners.map((partner, index) => {
             const PartnerIcon = partner.icon;
 
             return (
-              <motion.div
+              <div
                 className="partnersSection-logo"
                 key={partner.name}
-                variants={logoVariants}
-                initial="visible"
-                animate="visible"
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >
                 <PartnerIcon aria-hidden="true" />
                 <span>{partner.name}</span>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -35,11 +35,8 @@ const AboutSection = () => {
     <section className="about-section">
       <div className="about-container">
         {/* Left Column - Image Collage */}
-        <motion.div
+        <div
           className="about-image-collage"
-          variants={collageVariants}
-          initial="visible"
-          animate="visible"
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="collage-top-row">
@@ -55,70 +52,53 @@ const AboutSection = () => {
               <img src={Image6} alt="Courtyard" />
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right Column - Content */}
         <div className="about-content">
-          <motion.span 
+          <span 
             className="about-badge"
-            variants={badgeFadeInUp}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             About Us
-          </motion.span>
+          </span>
 
-          <motion.h2 
+          <h2 
             className="about-title"
-            variants={fadeInUp}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             Experience Comfort <br />
             <span className="gradient-text">Beyond Imagination</span>
-          </motion.h2>
+          </h2>
 
-          <motion.p 
+          <p 
             className="about-text"
-            variants={fadeInUp}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             Nestled in nature's embrace, Monsoon Palace redefines comfort and hospitality. 
             Every detail is thoughtfully designed to create memorable moments of peace and relaxation. 
             Escape the ordinary and discover a destination where natural beauty meets modern comfort.
-          </motion.p>
+          </p>
           
-          <motion.p 
+          <p 
             className="about-text"
-            variants={fadeInUp}
-            initial="visible"
-            animate="visible"
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             Whether you seek a peaceful retreat or an adventurous getaway, our comfortable 
             accommodations and thoughtfully curated amenities provide the perfect setting to 
             relax, recharge, and create lasting memories.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={fadeInUp}
-            initial="visible"
-            animate="visible"
+          <div
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            <motion.a
+            <a
               href="/about"
               className="btn btn-primary"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
             >
               Discover More
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
       </div>
 

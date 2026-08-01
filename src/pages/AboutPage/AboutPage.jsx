@@ -252,146 +252,128 @@ const AboutPage = () => {
     <div className="aboutPage-wrapper">
       {/* Hero Section */}
       <section className="aboutPage-hero">
-        <motion.div
+        <div
           className="aboutPage-heroContent"
-          initial="visible"
-          animate="visible"
-          variants={staggerContainer}
         >
-          <motion.span className="aboutPage-badge" variants={fadeIn}>
+          <span className="aboutPage-badge">
             Discover
-          </motion.span>
-          <motion.h1 className="aboutPage-title" variants={fadeInUp}>
+          </span>
+          <h1 className="aboutPage-title">
             Welcome to
             <br />
             <span className="aboutPage-gradient">Desamangalam</span>
-          </motion.h1>
-          <motion.p className="aboutPage-heroText" variants={fadeInUp}>
+          </h1>
+          <p className="aboutPage-heroText">
             A serene village steeped in rich heritage, vibrant culture, and
             timeless traditions
-          </motion.p>
-        </motion.div>
-        <motion.div
+          </p>
+        </div>
+        <div
           className="aboutPage-heroImage"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.35 }}
           transition={{ duration: 1.5 }}
         >
           <img src={AboutMain} alt="Desamangalam Village" />
           <div className="aboutPage-imageOverlay"></div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Quick Facts */}
       {/* <section className="aboutPage-quickFacts">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-factsGrid"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             {demographics.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="aboutPage-factCard"
-                variants={scaleIn}
               >
                 <div className="aboutPage-factIcon">{item.icon}</div>
                 <div className="aboutPage-factContent">
                   <h4>{item.label}</h4>
                   <p>{item.value}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section> */}
 
       {/* Geography Section */}
       <section className="aboutPage-section">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-content"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
-              <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+              <span className="aboutPage-sectionBadge">
                 Location
-              </motion.span>
-              <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+              </span>
+              <h2 className="aboutPage-sectionTitle">
                 <span className="aboutPage-gradient">Geography</span>
-              </motion.h2>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </h2>
+              <p className="aboutPage-text">
                 Desamangalam is a serene village located near the banks of the Bharathapuzha River. The village is surrounded by Shoranur, Kunnamkulam, Pattambi and Wadakkanchery. The area is well known for its lush greenery, peaceful atmosphere, and scenic natural beauty surrounded by forest landscapes.
-              </motion.p>
-              <motion.div
+              </p>
+              <div
                 className="aboutPage-stats"
-                variants={staggerContainer}
               >
                 {[
                   { icon: "📍", title: "12 km", desc: "From Shoranur" },
                   { icon: "🚂", title: "Connected", desc: "Southern Railway" },
                   { icon: "🌊", title: "Riverside", desc: "Bharathapuzha" },
                 ].map((stat, i) => (
-                  <motion.div
+                  <div
                     key={i}
                     className="aboutPage-stat"
-                    variants={scaleIn}
                   >
                     <div className="aboutPage-statIcon">{stat.icon}</div>
                     <div>
                       <h4>{stat.title}</h4>
                       <p>{stat.desc}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-            <motion.div className="aboutPage-imageContent" variants={scaleIn}>
+            <div className="aboutPage-imageContent">
               <img src={About3} alt="Geography" />
               <div className="aboutPage-imageOverlay"></div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Bharathapuzha River Section */}
       <section className="aboutPage-section aboutPage-sectionAlt">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-content aboutPage-contentReverse"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <motion.div className="aboutPage-imageContent" variants={scaleIn}>
+            <div className="aboutPage-imageContent">
               <img src={About6} alt="Bharathapuzha River" />
               <div className="aboutPage-imageOverlay"></div>
-            </motion.div>
+            </div>
             <div className="aboutPage-textContent">
-              <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+              <span className="aboutPage-sectionBadge">
                 Lifeline
-              </motion.span>
-              <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+              </span>
+              <h2 className="aboutPage-sectionTitle">
                 <span className="aboutPage-gradient">Bharathapuzha River</span>
-              </motion.h2>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </h2>
+              <p className="aboutPage-text">
                 The Bharathapuzha, locally known as Nila, is the second-longest
                 river in Kerala and flows majestically through Desamangalam.
                 This sacred river, often called the "Nile of Kerala," has been
                 the lifeline of Kerala's cultural heritage for centuries.
-              </motion.p>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </p>
+              <p className="aboutPage-text">
                 The river originates from the Anaimalai Hills and flows through
                 the Palakkad Gap, nurturing the land and inspiring countless
                 artists, writers, and poets who have grown up along its banks.
-              </motion.p>
-              <motion.div
+              </p>
+              <div
                 className="aboutPage-riverFeatures"
-                variants={staggerContainer}
               >
                 {[
                   { icon: "📏", title: "209 km", desc: "Total Length" },
@@ -406,54 +388,49 @@ const AboutPage = () => {
                     desc: "Art & Literature",
                   },
                 ].map((feature, i) => (
-                  <motion.div
+                  <div
                     key={i}
                     className="aboutPage-riverFeature"
-                    variants={scaleIn}
                   >
                     <div className="aboutPage-featureIcon">{feature.icon}</div>
                     <h4>{feature.title}</h4>
                     <p>{feature.desc}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* History Section */}
       <section className="aboutPage-section">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-content"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
-              <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+              <span className="aboutPage-sectionBadge">
                 Heritage
-              </motion.span>
-              <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+              </span>
+              <h2 className="aboutPage-sectionTitle">
                 <span className="aboutPage-gradient">History</span>
-              </motion.h2>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </h2>
+              <p className="aboutPage-text">
                 Desamangalam is known for "Mana", the residence of Nambuthiries,
                 the Brahmin community of Kerala, who were temple priests but
                 were the landlords and local rulers. These historic houses are
                 significant specimens of traditional Kerala architecture.
-              </motion.p>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </p>
+              <p className="aboutPage-text">
                 Desamangalam was part of the Cochin region in Central Kerala,
                 under the direct rule of the Cochin Royals. Nairs form the
                 majority community, and all faiths coexist harmoniously,
                 creating an inclusive environment that has been the village's
                 hallmark for generations.
-              </motion.p>
-              <motion.div
+              </p>
+              <div
                 className="aboutPage-highlights"
-                variants={staggerContainer}
               >
                 {[
                   {
@@ -472,177 +449,157 @@ const AboutPage = () => {
                     desc: "Royal heritage of Central Kerala",
                   },
                 ].map((highlight, i) => (
-                  <motion.div
+                  <div
                     key={i}
                     className="aboutPage-highlight"
-                    variants={scaleIn}
                   >
                     <div className="aboutPage-highlightIcon">
                       {highlight.icon}
                     </div>
                     <h4>{highlight.title}</h4>
                     <p>{highlight.desc}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-            <motion.div className="aboutPage-imageContent" variants={scaleIn}>
+            <div className="aboutPage-imageContent">
               <img src={About2} alt="History" />
               <div className="aboutPage-imageOverlay"></div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Cinema Heritage Section */}
       <section className="aboutPage-section aboutPage-sectionAlt">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-content aboutPage-contentReverse"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <motion.div className="aboutPage-imageContent" variants={scaleIn}>
+            <div className="aboutPage-imageContent">
               <img src={About5} alt="Cinema Heritage" />
               <div className="aboutPage-imageOverlay"></div>
-            </motion.div>
+            </div>
             <div className="aboutPage-textContent">
-              <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+              <span className="aboutPage-sectionBadge">
                 Cinema
-              </motion.span>
-              <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+              </span>
+              <h2 className="aboutPage-sectionTitle">
                 <span className="aboutPage-gradient">
                   Malayalam Film Heritage
                 </span>
-              </motion.h2>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </h2>
+              <p className="aboutPage-text">
                 Desamangalam's scenic beauty has made it a favored location for
                 Malayalam cinema. Legendary directors like Padmarajan,
                 Bharathan, Dennis Joseph, and Suhasini Maniratnam have filmed
                 iconic movies here, capturing the village's natural charm and
                 cultural essence.
-              </motion.p>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </p>
+              <p className="aboutPage-text">
                 Renowned actors including Prem Nazir, Sheela, Mammootty, and
                 Mohanlal have graced this village during film shoots, making
                 Desamangalam an integral part of Malayalam cinema history.
-              </motion.p>
-              <motion.div
+              </p>
+              <div
                 className="aboutPage-filmsGrid"
-                variants={staggerContainer}
               >
                 {films.map((film, i) => (
-                  <motion.div
+                  <div
                     key={i}
                     className="aboutPage-filmCard"
-                    variants={scaleIn}
                   >
                     <div className="aboutPage-filmIcon">🎬</div>
                     <h4>{film.name}</h4>
                     <p>{film.director}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Art & Culture Section */}
       <section className="aboutPage-section">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-content"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             <div className="aboutPage-textContent">
-              <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+              <span className="aboutPage-sectionBadge">
                 Traditions
-              </motion.span>
-              <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+              </span>
+              <h2 className="aboutPage-sectionTitle">
                 <span className="aboutPage-gradient">Art & Culture</span>
-              </motion.h2>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </h2>
+              <p className="aboutPage-text">
                 Desamangalam is known for various art forms. Taipooyam and
                 Desamangalam Pooram are well-known festivals that bring the
                 community together in vibrant celebrations, showcasing the
                 village's rich cultural traditions.
-              </motion.p>
-              <motion.p className="aboutPage-text" variants={fadeInUp}>
+              </p>
+              <p className="aboutPage-text">
                 "Chozhi Kettu" is another art form unique to Desamangalam and
                 surrounding places like Arangottukara, Pallam, Kondayur, and
                 Pallur. This distinctive cultural expression reflects the
                 region's artistic heritage and continues to be celebrated by the
                 community.
-              </motion.p>
-              <motion.div
+              </p>
+              <div
                 className="aboutPage-artForms"
-                variants={staggerContainer}
               >
                 {[
                   { icon: "🎭", name: "Taipooyam" },
                   { icon: "🎪", name: "Desamangalam Pooram" },
                   { icon: "🎨", name: "Chozhi Kettu" },
                 ].map((art, i) => (
-                  <motion.div
+                  <div
                     key={i}
                     className="aboutPage-artForm"
-                    variants={scaleIn}
                   >
                     <span>{art.icon}</span>
                     <p>{art.name}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-            <motion.div className="aboutPage-imageContent" variants={scaleIn}>
+            <div className="aboutPage-imageContent">
               <img src={About1} alt="Art and Culture" />
               <div className="aboutPage-imageOverlay"></div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Education & Institutions Section */}
       {/* <section className="aboutPage-section aboutPage-sectionAlt">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-institutionsHeader"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+            <span className="aboutPage-sectionBadge">
               Community
-            </motion.span>
-            <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+            </span>
+            <h2 className="aboutPage-sectionTitle">
               <span className="aboutPage-gradient">
                 Education & Institutions
               </span>
-            </motion.h2>
-            <motion.p
+            </h2>
+            <p
               className="aboutPage-text aboutPage-centered"
-              variants={fadeInUp}
             >
               Desamangalam takes pride in its educational and social
               institutions that have been serving the community for generations
-            </motion.p>
-          </motion.div>
-          <motion.div
+            </p>
+          </div>
+          <div
             className="aboutPage-institutionsGrid"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
             {institutions.map((institution, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="aboutPage-institutionCard"
-                variants={scaleIn}
-                whileHover={{ scale: 1.03 }}
               >
                 <div className="aboutPage-institutionIcon">
                   {institution.icon}
@@ -652,80 +609,65 @@ const AboutPage = () => {
                   {institution.year}
                 </span>
                 <p>{institution.desc}</p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section> */}
 
       {/* Places to Visit Section */}
       <section className="aboutPage-places">
         <div className="aboutPage-container">
-          <motion.div
+          <div
             className="aboutPage-placesHeader"
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
           >
-            <motion.span className="aboutPage-sectionBadge" variants={fadeIn}>
+            <span className="aboutPage-sectionBadge">
               Explore
-            </motion.span>
-            <motion.h2 className="aboutPage-sectionTitle" variants={fadeInUp}>
+            </span>
+            <h2 className="aboutPage-sectionTitle">
               Places Near to <span className="aboutPage-gradient">Visit</span>
-            </motion.h2>
-            <motion.p
+            </h2>
+            <p
               className="aboutPage-text aboutPage-centered"
-              variants={fadeInUp}
             >
               Discover natural, historic, and cultural getaways surrounding
               Desamangalam
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
           <div className="aboutPage-placeGroups">
             {placeGroups.map((group) => (
-              <motion.div
+              <div
                 key={group.title}
                 className="aboutPage-placeGroup"
-                initial="visible"
-                animate="visible"
-                variants={staggerContainer}
               >
                 <div className="aboutPage-placeGroupIntro">
-                  <motion.span
+                  <span
                     className="aboutPage-placeGroupKicker"
-                    variants={fadeIn}
                   >
                     {group.kicker}
-                  </motion.span>
-                  <motion.h3
+                  </span>
+                  <h3
                     className="aboutPage-placeGroupTitle"
-                    variants={fadeInUp}
                   >
                     {group.title}
-                  </motion.h3>
-                  <motion.p
+                  </h3>
+                  <p
                     className="aboutPage-placeGroupText"
-                    variants={fadeInUp}
                   >
                     {group.intro}
-                  </motion.p>
+                  </p>
                 </div>
-                <motion.div
+                <div
                   className="aboutPage-placesTimeline"
-                  variants={staggerContainer}
                 >
                   {(expandedPlaceGroups[group.title]
                     ? group.places
                     : group.places.slice(0, initialPlacesCount)
                   ).map((place) => (
-                    <motion.article
+                    <article
                       key={place.name}
                       className="aboutPage-placeDetailCard"
-                      layout
-                      initial={{ opacity: 0, y: 18 }}
-                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                      whileHover={{ y: -6 }}
                     >
                       <span className="aboutPage-placeIconMark" aria-hidden="true">
                         <place.icon />
@@ -734,25 +676,21 @@ const AboutPage = () => {
                         <h4>{place.name}</h4>
                         <p>{place.detail}</p>
                       </div>
-                    </motion.article>
+                    </article>
                   ))}
                   {group.places.length > initialPlacesCount && (
-                    <motion.button
+                    <button
                       type="button"
                       className="aboutPage-loadMore"
                       onClick={() => togglePlaceGroup(group.title)}
-                      layout
-                      initial={false}
-                      whileHover={{ y: -2 }}
-                      whileTap={{ scale: 0.98 }}
                     >
                       {expandedPlaceGroups[group.title]
                         ? "Show Less"
                         : "Load More"}
-                    </motion.button>
+                    </button>
                   )}
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
