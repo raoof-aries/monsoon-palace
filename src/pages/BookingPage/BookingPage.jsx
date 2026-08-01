@@ -147,47 +147,65 @@ const BookingPage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      const params = new URLSearchParams();
-      params.append("name", formData.name);
-      params.append("email", formData.email);
-      params.append("phone", formData.phone);
-      params.append("roomType", formData.roomType);
-      params.append("packageOption", formData.packageOption);
-      params.append("extraPerson", formData.extraPerson);
-      params.append("checkIn", formData.checkIn);
-      params.append("checkOut", formData.checkOut);
-      params.append("guests", formData.guests);
-      params.append("message", formData.message);
+    const payloadObj = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      roomType: formData.roomType,
+      packageOption: formData.packageOption,
+      extraPerson: formData.extraPerson,
+      checkIn: formData.checkIn,
+      checkOut: formData.checkOut,
+      guests: formData.guests,
+      message: formData.message || "",
+    };
 
-      const response = await fetch("/enquiry-action.php", {
+    const tryFetch = async (url, options) => {
+      try {
+        const res = await fetch(url, options);
+        if (res.ok) {
+          const text = await res.text();
+          const trimmed = text.trim();
+          let isOk = false;
+          try {
+            const parsed = JSON.parse(trimmed);
+            if (parsed && (parsed.status === "1" || parsed.status === 1 || parsed.status === "success")) {
+              isOk = true;
+            }
+          } catch {
+            if (trimmed === "1" || trimmed === "success" || trimmed.includes("success")) {
+              isOk = true;
+            }
+          }
+          if (isOk) return true;
+        }
+      } catch (err) {
+        console.warn("Fetch attempt failed:", err);
+      }
+      return false;
+    };
+
+    try {
+      // Attempt 1: FormData (populates $_POST for PHP's if(!empty($_POST)))
+      const fd = new FormData();
+      Object.keys(payloadObj).forEach((key) => fd.append(key, payloadObj[key]));
+      let success = await tryFetch("/enquiry-action.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: params.toString(),
+        body: fd,
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+      // Attempt 2: URLSearchParams (x-www-form-urlencoded)
+      if (!success) {
+        const params = new URLSearchParams();
+        Object.keys(payloadObj).forEach((key) => params.append(key, payloadObj[key]));
+        success = await tryFetch("/enquiry-action.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params.toString(),
+        });
       }
 
-      const resultText = await response.text();
-      const result = resultText.trim();
-
-      let isSuccess = false;
-      try {
-        const data = JSON.parse(result);
-        if (data && (data.status === "1" || data.status === 1 || data.status === "success")) {
-          isSuccess = true;
-        }
-      } catch (e) {
-        if (result === "1" || result === "success") {
-          isSuccess = true;
-        }
-      }
-
-      if (isSuccess) {
+      if (success) {
         setSubmitStatus("success");
         setFormData({
           name: "",
