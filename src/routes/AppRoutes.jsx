@@ -1,16 +1,13 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { Routes, Route } from "react-router";
 
 // Main Pages
-
-const HomePage = lazy(() => import("../pages/Home/Home.jsx"));
-const OurFacilityPage = lazy(
-  () => import("../pages/OurFacilityPage/OurFacilityPage.jsx"),
-);
-const GalleryPage = lazy(() => import("../pages/GalleryPage/GalleryPage.jsx"));
-const AboutPage = lazy(() => import("../pages/AboutPage/AboutPage.jsx"));
-const BookingPage = lazy(() => import("../pages/BookingPage/BookingPage.jsx"));
-const ContactPage = lazy(() => import("../pages/ContactPage/ContactPage.jsx"));
+import HomePage from "../pages/Home/Home.jsx";
+import OurFacilityPage from "../pages/OurFacilityPage/OurFacilityPage.jsx";
+import GalleryPage from "../pages/GalleryPage/GalleryPage.jsx";
+import AboutPage from "../pages/AboutPage/AboutPage.jsx";
+import BookingPage from "../pages/BookingPage/BookingPage.jsx";
+import ContactPage from "../pages/ContactPage/ContactPage.jsx";
 
 const AppRoutes = () => {
   return (

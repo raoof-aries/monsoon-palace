@@ -52,7 +52,13 @@ body {
     radial-gradient(circle at 86% 46%, rgba(255, 255, 255, 0.014) 0%, transparent 32%),
     linear-gradient(115deg, rgba(255, 255, 255, 0.01) 0%, transparent 36%),
     linear-gradient(180deg, #010101 0%, #0a0a0a 36%, #030303 68%, #0d0d0d 100%);
-  background-attachment: fixed;
+  background-attachment: scroll;
+}
+
+@media (min-width: 1025px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 #root {
@@ -132,4 +138,32 @@ a {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   background: var(--surface-deep);
+}
+
+/* Mobile Performance Overrides */
+@media (max-width: 768px) {
+  .aboutPage-factCard,
+  .aboutPage-stat,
+  .aboutPage-featureCard,
+  .aboutPage-timelineItem,
+  .aboutPage-institutionCard,
+  .aboutPage-filmCard,
+  .aboutPage-placeCard,
+  .aboutPage-placeGroupIntro,
+  .facilityPhoto-card,
+  .facilityAmenity-item,
+  .galleryPage-card,
+  .galleryPage-filterBtn,
+  .bookingPage-heroCard,
+  .bookingPackage-card,
+  .bookingPage-paymentPromoBox,
+  .bookingPage-form,
+  .faqSection-item,
+  .partnersSection-logo,
+  .reviewsSection-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Slightly increase opacity of background for mobile readability without blur */
+    background-color: rgba(18, 18, 18, 0.72) !important;
+  }
 }

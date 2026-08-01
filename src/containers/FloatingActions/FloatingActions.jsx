@@ -14,15 +14,13 @@ const FloatingActions = () => {
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
+    let lastHidden = null;
     const handleScroll = () => {
-      // Hide if on homepage and scroll is less than viewport height
-      if (
-        location.pathname === "/" &&
-        window.scrollY < window.innerHeight * 0.8
-      ) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
+      const isHome = location.pathname === "/";
+      const shouldHide = isHome && window.scrollY < window.innerHeight * 0.8;
+      if (shouldHide !== lastHidden) {
+        lastHidden = shouldHide;
+        setIsHidden(shouldHide);
       }
     };
 
