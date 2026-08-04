@@ -55,7 +55,7 @@ const HeroSection = () => {
 
             <p className="hero-desc">
               Wake to emerald views, private poolside calm, and architecture
-              shaped for slow, sunlit stays in the hills.
+              shaped for slow, sunlit stays along the banks of the River.
             </p>
 
             <div className="hero-contact-wrapper">
